@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html {
+    font-family: var(--font-yekanbakh);
+}
+
+:lang(en) {
+    font-family: var(--font-figtree);
+}
