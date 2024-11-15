@@ -76,9 +76,9 @@ const config: Config = {
         container: {
             center: true,
             padding: {
-                DEFAULT: '1rem',
-                lg: '3rem',
-                xl: '4rem'
+                DEFAULT: '3rem',
+                lg: '9rem',
+                xl: '15rem'
             }
         },
         extend: {
