@@ -1,6 +1,7 @@
 import { Figtree } from 'next/font/google';
 import localFont from 'next/font/local';
 
+import { Header } from './_components/header';
 import './globals.css';
 
 const figtree = Figtree({
@@ -14,6 +15,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html dir='ltr' className={`dark ${figtree.variable}`}>
             <body className='grid dark:bg-base-100 dark:text-base-content'>
+                <section className='my-16 flex justify-center'>
+                    <Header />
+                </section>
                 <main className='container'>{children}</main>
             </body>
         </html>

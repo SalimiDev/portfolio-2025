@@ -34,7 +34,7 @@ export default function Home() {
     );
 
     return (
-        <section className='flex h-screen flex-wrap'>
+        <section className='flex h-screen flex-wrap justify-center'>
             <DndContext
                 sensors={sensors}
                 collisionDetection={closestCenter}
