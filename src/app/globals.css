@@ -9,3 +9,13 @@ html {
 :lang(en) {
     font-family: var(--font-figtree);
 }
+
+.sortable-item {
+    transition:
+        transform 0.3s ease-in-out,
+        background-color 0.2s;
+}
+
+.sortable-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

@@ -14,11 +14,11 @@ const figtree = Figtree({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html dir='ltr' className={`dark ${figtree.variable}`}>
-            <body className='grid dark:bg-base-100 dark:text-base-content'>
+            <body className='container grid dark:bg-base-100 dark:text-base-content'>
                 <section className='my-16 flex justify-center'>
                     <Header />
                 </section>
-                <main className='container'>{children}</main>
+                <main className=''>{children}</main>
             </body>
         </html>
     );

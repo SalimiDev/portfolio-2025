@@ -20,13 +20,13 @@ export const TopNavigation: React.FC = () => {
 
                 return (
                     <li key={`navigation-${item.href}`}>
-                        <Link
-                            href={item.href}
+                        <button
+                            // href={item.href}
                             className={`pb-2 transition-colors hover:text-primary ${
                                 isActive && 'border-b-2 dark:border-primary/30 dark:text-primary'
                             }`}>
                             {item.title}
-                        </Link>
+                        </button>
                     </li>
                 );
             })}
