@@ -1,1 +1,1 @@
-type DraggableComponent = 'LocationCard' | 'ResumeCard' | 'AboutMeCard';
+type DraggableComponent = 'LocationCard' | 'ResumeCard' | 'AboutMeCard' | 'MovingBarCard';

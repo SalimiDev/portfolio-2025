@@ -6,4 +6,10 @@ export interface DraggableCardConfig {
     tags: string[];
     link?: string;
     icon?: string;
+    layout?: {
+        x?: number;
+        y?: number;
+        w?: number;
+        h?: number;
+    };
 }

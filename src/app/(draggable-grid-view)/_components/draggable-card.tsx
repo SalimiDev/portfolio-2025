@@ -4,11 +4,9 @@ import React, { Suspense } from 'react';
 
 import Loader from '@/app/_components/loader/loader';
 
-type ComponentType = 'LocationCard' | 'ResumeCard' | 'AboutMeCard';
-
 interface DraggableItemProps {
     item: {
-        componentType: ComponentType;
+        componentType: DraggableComponent;
         settings?: Record<string, unknown>;
         link?: string; // Optional link field
         icon?: string; // Optional icon field
@@ -18,13 +16,12 @@ interface DraggableItemProps {
 const components = {
     ResumeCard: React.lazy(() => import('../../(grid-cards)/resume/resume-card')),
     LocationCard: React.lazy(() => import('../../(grid-cards)/location/location-card')),
-    AboutMeCard: React.lazy(() => import('../../(grid-cards)/about-me/about-me-card'))
+    AboutMeCard: React.lazy(() => import('../../(grid-cards)/about-me/about-me-card')),
+    MovingBarCard: React.lazy(() => import('../../(grid-cards)/moving-bar/moving-bar-card'))
 };
 
 const DraggableItem: React.FC<DraggableItemProps> = ({ item }) => {
-    console.log('🚀 ~ DraggableItem ~ item:', item);
     const ItemComponent = components[item.componentType] || null;
-    console.log('🚀 ~ DraggableItem ~ ItemComponent:', ItemComponent);
 
     return (
         <Suspense fallback={<Loader />}>
