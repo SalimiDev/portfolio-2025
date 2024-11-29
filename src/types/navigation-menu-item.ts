@@ -1,4 +1,6 @@
+type NavigationTitles = 'all' | 'about' | 'work';
+
 type NavigationMenuItem = {
-    title: string;
+    title: NavigationTitles;
     href: string;
 };

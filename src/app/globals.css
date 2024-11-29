@@ -19,3 +19,13 @@ html {
 .sortable-item:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+/* .react-grid-layout {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; 
+} */
+
+.react-grid-item {
+    transition: all 0.5s ease-in-out; /* برای انیمیشن تغییرات */
+}

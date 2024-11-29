@@ -1,6 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+
+import useActiveMenuTab from '@/store/useActiveMenuTab';
 
 import { draggableCardConfigs } from '../draggable-card-configs';
 import DraggableItem from './draggable-card';
@@ -12,78 +14,50 @@ interface DraggableGridProps {
     layoutProps?: ResponsiveProps;
 }
 
-interface TabLayout {
-    [key: string]: {
-        lg: Array<{
-            x: number;
-            y: number;
-            w: number;
-            h: number;
-            i: string;
-        }>;
-    };
+interface LayoutItem {
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+    i: string; // معمولاً `i` به عنوان ID یا شناسه استفاده می‌شود
+    color: string; // اضافه‌شده برای دسترسی به رنگ هر آیتم
 }
 
 const DraggableGrid: React.FC<DraggableGridProps> = ({ layoutProps }) => {
-    const [activeTab, setActiveTab] = useState('all');
+    const { activeTab } = useActiveMenuTab();
 
-    const generateAllLayout = () =>
-        draggableCardConfigs.map((item, index) => ({
-            x: item.layout?.x || 4,
-            y: item.layout?.y || 2,
-            w: item.layout?.w || 3,
-            h: item.layout?.h || 4,
-            i: String(item.id),
-            color: item.color
-        }));
+    //==========new==========
+    type NavigationTitles = 'all' | 'about' | 'work';
 
-    const generateAboutLayout = () =>
-        draggableCardConfigs.map((item, index) => ({
-            x: index % 2,
-            y: Math.floor(index / 2),
-            w: 6,
-            h: 4,
-            i: String(item.id)
-        }));
+    const generateLayoutByTab = (tab: NavigationTitles): LayoutItem[] => {
+        // مرتب‌سازی کارت‌ها بر اساس priority
+        const sortedConfigs = [...draggableCardConfigs].sort((a, b) => {
+            const priorityA = a.priority?.[tab] || 0; // مقدار پیش‌فرض در صورت نبود priority
+            const priorityB = b.priority?.[tab] || 0;
 
-    const generateWorksLayout = () =>
-        draggableCardConfigs.map((item, index) => ({
-            x: 0,
-            y: index,
-            w: 12,
-            h: 4,
-            i: String(item.id)
-        }));
+            return priorityA - priorityB;
+        });
 
-    const [layout, setlayout] = useState(generateAllLayout());
+        // تولید layout بر اساس اولویت
+        return sortedConfigs.map((item) => {
+            const layout = item.layouts?.[tab] || { x: 0, y: 0, w: 1, h: 1 }; // اینجا دیگر خطایی نخواهد بود.
 
-    const tabLayouts: TabLayout = {
-        all: { lg: generateAllLayout() },
-        about: { lg: generateAboutLayout() },
-        works: { lg: generateWorksLayout() }
+            return {
+                ...layout,
+                i: String(item.id),
+                color: item.color
+            };
+        });
     };
+
+    const layout = generateLayoutByTab(activeTab);
 
     return (
         <div className='space-y-4'>
-            {/* Navigation Tabs */}
-            <nav className='border-gray-200 flex space-x-4 border-b pb-2'>
-                {['all', 'about', 'works'].map((tab) => (
-                    <button
-                        key={tab}
-                        onClick={() => setActiveTab(tab)}
-                        className={`rounded-lg px-4 py-2 transition-colors ${
-                            activeTab === tab ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'
-                        }`}>
-                        {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                    </button>
-                ))}
-            </nav>
-
-            {/* Grid Layout */}
             <div className='relative'>
                 <ResponsiveGridLayout
                     className='layout'
-                    layouts={tabLayouts[activeTab]}
+                    layouts={{ lg: layout }}
                     cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
                     rowHeight={30}
                     {...layoutProps}>
