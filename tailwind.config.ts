@@ -83,8 +83,17 @@ const config: Config = {
             }
         },
         extend: {
+            animation: {
+                marquee: 'marquee 15s linear infinite'
+            },
             backgroundImage: {
                 'hero-pattern': "url('/images/tile.svg')"
+            },
+            keyframes: {
+                marquee: {
+                    '0%': { transform: 'translateX(0)' },
+                    '100%': { transform: 'translateX(calc(-50% - 105px))' }
+                }
             }
         }
     },

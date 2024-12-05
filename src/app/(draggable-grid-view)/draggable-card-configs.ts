@@ -87,14 +87,14 @@ export const draggableCardConfigs: DraggableCardConfig[] = [
         id: 5,
         componentType: 'MovingBarCard',
         settings: { type: 'list', data: ['Project A', 'Project B', 'Project C'] },
-        color: '#FFA07A',
+        color: '',
         tags: ['Work'],
         link: '/projects',
         icon: 'project',
         layouts: {
-            all: { x: 6, y: 4, w: 6, h: 4 },
-            about: { x: 0, y: 8, w: 12, h: 4 },
-            work: { x: 0, y: 18, w: 12, h: 6 }
+            all: { x: 6, y: 4, w: 6, h: 2 },
+            about: { x: 0, y: 8, w: 12, h: 2 },
+            work: { x: 0, y: 18, w: 12, h: 2 }
         },
         priority: {
             all: 5,

@@ -1,7 +1,29 @@
 'use client';
 
+import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
+
 const MovingBar: React.FC = () => {
-    return <div className=''>MovingBar</div>;
+    const repeatCount = 11;
+
+    return (
+        <div className='h-full transform-none opacity-100 blur-0'>
+            <div className='relative overflow-hidden rounded-3xl bg-white/60 p-px dark:bg-white/10'>
+                <GradientBackdrop />
+                {/* Content */}
+                <div className='relative h-10 w-full overflow-hidden px-4 py-2'>
+                    <div className='absolute flex animate-marquee gap-4'>
+                        {Array.from({ length: repeatCount }).map((_, index) => (
+                            <span key={index} className='flex'>
+                                <p className=''>Personal</p>
+                                <span className='font-bold'>*</span>
+                                <p className='font-bold'>Portfolio</p>
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default MovingBar;
