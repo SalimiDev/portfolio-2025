@@ -24,14 +24,14 @@ export const draggableCardConfigs: DraggableCardConfig[] = [
         id: 2,
         componentType: 'ResumeCard',
         settings: { type: 'bar', data: [5, 10, 15] },
-        color: '#FFD700',
+        color: '',
         tags: ['Work'],
         link: '/statistics',
         icon: 'chart',
         layouts: {
-            all: { x: 4, y: 0, w: 4, h: 4 },
-            about: { x: 6, y: 0, w: 6, h: 4 },
-            work: { x: 0, y: 2, w: 12, h: 4 }
+            all: { x: 4, y: 0, w: 4, h: 3 },
+            about: { x: 6, y: 0, w: 6, h: 3 },
+            work: { x: 0, y: 2, w: 12, h: 3 }
         },
         priority: {
             all: 3,
