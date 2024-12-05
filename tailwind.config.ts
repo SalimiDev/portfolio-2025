@@ -36,7 +36,7 @@ type ColorObject = {
 export const tailwindColors: ColorObject = {
     current: 'currentColor',
     transparent: 'transparent',
-    white: '#F9F9F9',
+    white: '#f0f2f8',
     primary: '#007BEC',
     'primary-content': '#FFFFFF',
     'primary-focus': generateDarkenColorFrom('#007BEC'),
@@ -65,7 +65,8 @@ export const tailwindColors: ColorObject = {
     error: '#f87272',
     'error-content': generateForegroundColorFrom('#f87272'),
     'gradient-first': '#34eaa0',
-    'gradient-second': '#0fa2e9'
+    'gradient-second': '#0fa2e9',
+    'white-translucent': 'hsla(0, 0%, 100%, 0.1)'
 };
 
 // TailwindCSS configuration

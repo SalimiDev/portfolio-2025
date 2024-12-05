@@ -3,11 +3,7 @@
 @import 'tailwindcss/utilities';
 
 html {
-    font-family: var(--font-yekanbakh);
-}
-
-:lang(en) {
-    font-family: var(--font-figtree);
+    font-family: var(--font-poppins);
 }
 
 .sortable-item {
