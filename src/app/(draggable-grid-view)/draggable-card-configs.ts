@@ -43,14 +43,14 @@ export const draggableCardConfigs: DraggableCardConfig[] = [
         id: 3,
         componentType: 'AboutMeCard',
         settings: { type: 'map', location: 'New York' },
-        color: '#87CEEB',
+        color: '',
         tags: ['Work'],
         link: '/map',
         icon: 'location-pin',
         layouts: {
-            all: { x: 8, y: 0, w: 4, h: 4 },
-            about: { x: 0, y: 4, w: 12, h: 4 },
-            work: { x: 0, y: 6, w: 12, h: 6 }
+            all: { x: 8, y: 0, w: 4, h: 7 },
+            about: { x: 0, y: 4, w: 12, h: 7 },
+            work: { x: 0, y: 6, w: 12, h: 7 }
         },
         priority: {
             all: 2,
