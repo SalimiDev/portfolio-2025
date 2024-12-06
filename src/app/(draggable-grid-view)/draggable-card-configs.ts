@@ -60,7 +60,7 @@ export const draggableCardConfigs: DraggableCardConfig[] = [
     },
     {
         id: 4,
-        componentType: 'ResumeCard',
+        componentType: 'WorkExperiences',
         settings: {
             columns: ['Skill', 'Level'],
             data: [
@@ -68,14 +68,15 @@ export const draggableCardConfigs: DraggableCardConfig[] = [
                 ['CSS', 'Advanced']
             ]
         },
-        color: '#ADD8E6',
+        color: '',
+        // color: '#ADD8E6',
         tags: ['About'],
         link: '/resume',
         icon: 'file',
         layouts: {
-            all: { x: 0, y: 4, w: 6, h: 4 },
-            about: { x: 6, y: 4, w: 6, h: 4 },
-            work: { x: 0, y: 12, w: 12, h: 6 }
+            all: { x: 0, y: 4, w: 6, h: 12 },
+            about: { x: 6, y: 4, w: 6, h: 12 },
+            work: { x: 0, y: 12, w: 12, h: 12 }
         },
         priority: {
             all: 4,

@@ -17,7 +17,8 @@ const components = {
     ResumeCard: React.lazy(() => import('../../(grid-cards)/resume/resume-card')),
     LocationCard: React.lazy(() => import('../../(grid-cards)/location/location-card')),
     AboutMeCard: React.lazy(() => import('../../(grid-cards)/about-me/about-me-card')),
-    MovingBarCard: React.lazy(() => import('../../(grid-cards)/moving-bar/moving-bar-card'))
+    MovingBarCard: React.lazy(() => import('../../(grid-cards)/moving-bar/moving-bar-card')),
+    WorkExperiences: React.lazy(() => import('../../(grid-cards)/work-experiences/work-experiences'))
 };
 
 const DraggableItem: React.FC<DraggableItemProps> = ({ item }) => {
