@@ -5,14 +5,14 @@ export const draggableCardConfigs: DraggableCardConfig[] = [
         id: 1,
         componentType: 'LocationCard',
         settings: { type: 'profile', data: { name: 'John Doe', age: 30 } },
-        color: '#FFC0CB',
+        color: '',
         tags: ['About'],
         link: '/profile',
         icon: 'user',
         layouts: {
-            all: { x: 0, y: 0, w: 4, h: 4 },
-            about: { x: 0, y: 0, w: 6, h: 4 },
-            work: { x: 0, y: 0, w: 12, h: 2 }
+            all: { x: 0, y: 0, w: 2, h: 7 },
+            about: { x: 0, y: 0, w: 2, h: 7 },
+            work: { x: 0, y: 0, w: 2, h: 7 }
         },
         priority: {
             all: 1,
@@ -126,14 +126,14 @@ export const draggableCardConfigs: DraggableCardConfig[] = [
         id: 7,
         componentType: 'LocationCard',
         settings: { type: 'chat', messages: ['Hi!', 'Hello!', 'How are you?'] },
-        color: '#FFB6C1',
+        color: '#FFC0CB',
         tags: ['About', 'Work'],
         link: '/chat',
         icon: 'chat',
         layouts: {
-            all: { x: 4, y: 8, w: 4, h: 4 },
-            about: { x: 0, y: 12, w: 12, h: 4 },
-            work: { x: 0, y: 28, w: 12, h: 4 }
+            all: { x: 4, y: 8, w: 4, h: 20 },
+            about: { x: 0, y: 12, w: 12, h: 20 },
+            work: { x: 0, y: 28, w: 12, h: 20 }
         },
         priority: {
             all: 7,
