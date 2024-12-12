@@ -1,7 +1,7 @@
-export interface DraggableCardConfig {
+export interface GridCardConfig {
     id: number;
     settings: Record<string, unknown>;
-    componentType: DraggableComponent;
+    componentType: GridComponent;
     color: string;
     tags: string[];
     link: string;

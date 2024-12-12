@@ -1,6 +1,6 @@
-import { DraggableCardConfig } from './draggable-card-configs.type';
+import { GridCardConfig } from './grid-card-configs.type';
 
-export const draggableCardConfigs: DraggableCardConfig[] = [
+export const gridCardConfigs: GridCardConfig[] = [
     {
         id: 1,
         componentType: 'LocationCard',

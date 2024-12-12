@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 
-// تعریف نوع NavigationTitles
 // type NavigationTitles = 'all' | 'about' | 'work';
 
 // تعریف Zustand store

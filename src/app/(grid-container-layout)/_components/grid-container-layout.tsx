@@ -4,13 +4,13 @@ import React from 'react';
 
 import useActiveMenuTab from '@/store/useActiveMenuTab';
 
-import { draggableCardConfigs } from '../draggable-card-configs';
-import DraggableItem from './draggable-card';
+import { gridCardConfigs } from '../grid-card-configs';
+import GridCard from './grid-card';
 import { Responsive, ResponsiveProps, WidthProvider } from 'react-grid-layout';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
-interface DraggableGridProps {
+interface LayoutGridProps {
     layoutProps?: ResponsiveProps;
 }
 
@@ -23,7 +23,7 @@ interface LayoutItem {
     color: string; // اضافه‌شده برای دسترسی به رنگ هر آیتم
 }
 
-const DraggableGrid: React.FC<DraggableGridProps> = ({ layoutProps }) => {
+const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
     const { activeTab } = useActiveMenuTab();
 
     //==========new==========
@@ -31,7 +31,7 @@ const DraggableGrid: React.FC<DraggableGridProps> = ({ layoutProps }) => {
 
     const generateLayoutByTab = (tab: NavigationTitles): LayoutItem[] => {
         // مرتب‌سازی کارت‌ها بر اساس priority
-        const sortedConfigs = [...draggableCardConfigs].sort((a, b) => {
+        const sortedConfigs = [...gridCardConfigs].sort((a, b) => {
             const priorityA = a.priority?.[tab] || 0; // مقدار پیش‌فرض در صورت نبود priority
             const priorityB = b.priority?.[tab] || 0;
 
@@ -61,9 +61,9 @@ const DraggableGrid: React.FC<DraggableGridProps> = ({ layoutProps }) => {
                     cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
                     rowHeight={30}
                     {...layoutProps}>
-                    {draggableCardConfigs.map((item) => (
+                    {gridCardConfigs.map((item) => (
                         <div key={item.id} style={{ backgroundColor: item.color }}>
-                            <DraggableItem item={item} />
+                            <GridCard item={item} />
                         </div>
                     ))}
                 </ResponsiveGridLayout>
@@ -72,4 +72,4 @@ const DraggableGrid: React.FC<DraggableGridProps> = ({ layoutProps }) => {
     );
 };
 
-export default DraggableGrid;
+export default GridContainerLayout;

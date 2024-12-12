@@ -1,6 +1,6 @@
 'use client';
 
-import DraggableGrid from './(draggable-grid-view)/_components/draggable-grid-view';
+import DraggableGrid from './(grid-container-layout)/_components/grid-container-layout';
 
 export default function Home() {
     return (
