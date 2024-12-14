@@ -4,16 +4,21 @@ import React, { Suspense } from 'react';
 
 import Loader from '@/app/_components/loader/loader';
 
+import { GridCardConfig } from '../grid-card-configs.type';
+
 interface GridCardProps {
-    item: {
-        componentType: GridComponent;
-        settings?: Record<string, unknown>;
-        link?: string; // Optional link field
-        icon?: string; // Optional icon field
-    };
+    item: GridCardConfig;
 }
 
-const components = {
+// تعریف دقیق تایپ کامپوننت‌ها
+type ComponentMap = {
+    [key in GridCardConfig['componentType']]: React.ComponentType<{
+        config: Extract<GridCardConfig, { componentType: key }>;
+    }>;
+};
+
+// ایجاد نقشه کامپوننت‌ها
+const components: ComponentMap = {
     ResumeCard: React.lazy(() => import('../../_components/grid-cards/resume/resume-card')),
     LocationCard: React.lazy(() => import('../../_components/grid-cards/location/location-card')),
     AboutMeCard: React.lazy(() => import('../../_components/grid-cards/about-me/about-me-card')),
@@ -22,11 +27,14 @@ const components = {
 };
 
 const GridCard: React.FC<GridCardProps> = ({ item }) => {
-    const ItemComponent = components[item.componentType] || null;
+    // تطبیق نوع کامپوننت با استفاده از item.componentType
+    const ItemComponent = components[item.componentType] as React.ComponentType<{
+        config: typeof item;
+    }> | null;
 
     return (
         <Suspense fallback={<Loader />}>
-            {ItemComponent ? <ItemComponent {...item.settings} /> : <div>Component not found</div>}
+            {ItemComponent ? <ItemComponent config={item} /> : <div>Component not found</div>}
         </Suspense>
     );
 };

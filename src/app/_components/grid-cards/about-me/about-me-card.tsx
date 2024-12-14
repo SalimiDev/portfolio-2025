@@ -4,7 +4,9 @@ import Image from 'next/image';
 
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
 
-const AboutMeCard: React.FC = () => {
+const AboutMeCard: React.FC = (props) => {
+    console.log(props);
+
     return (
         <section className='group relative h-64 w-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
             <GradientBackdrop />
