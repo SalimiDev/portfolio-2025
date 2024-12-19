@@ -1,3 +1,20 @@
+import {
+    cssLogo,
+    figmaLogo,
+    gitLogo,
+    githubLogo,
+    gitlabLogo,
+    htmlLogo,
+    javascriptLogo,
+    materialUiLogo,
+    nextJsLogo,
+    reactjsLogo,
+    reduxLogo,
+    sassLogo,
+    tailwindCssLogo,
+    typescriptLogo
+} from '@/assets/images/tech-logos';
+
 import { GridCardConfig } from './grid-card-configs.type';
 
 export const gridCardConfigs: GridCardConfig[] = [
@@ -182,6 +199,41 @@ export const gridCardConfigs: GridCardConfig[] = [
             all: 6,
             about: 4,
             work: 6
+        }
+    },
+    {
+        id: 8,
+        componentType: 'TechCard',
+        settings: { type: 'notifications', count: 3 },
+        technologies: [
+            { techName: 'React', techLogo: reactjsLogo },
+            { techName: 'Next.js', techLogo: nextJsLogo },
+            { techName: 'JavaScript', techLogo: javascriptLogo },
+            { techName: 'TypeScript', techLogo: typescriptLogo },
+            { techName: 'Redux', techLogo: reduxLogo },
+            { techName: 'Tailwind CSS', techLogo: tailwindCssLogo },
+            { techName: 'Material UI', techLogo: materialUiLogo },
+            { techName: 'Sass', techLogo: sassLogo },
+            { techName: 'HTML', techLogo: htmlLogo },
+            { techName: 'CSS', techLogo: cssLogo },
+            { techName: 'Figma', techLogo: figmaLogo },
+            { techName: 'Git', techLogo: gitLogo },
+            { techName: 'GitHub', techLogo: githubLogo },
+            { techName: 'GitLab', techLogo: gitlabLogo }
+        ],
+        color: '',
+        tags: ['tech'],
+        link: '/notifications',
+        icon: 'bell',
+        layouts: {
+            all: { x: 8, y: 8, w: 4, h: 4 },
+            about: { x: 0, y: 16, w: 12, h: 4 },
+            work: { x: 0, y: 32, w: 12, h: 2 }
+        },
+        priority: {
+            all: 8,
+            about: 6,
+            work: 8
         }
     }
 ];

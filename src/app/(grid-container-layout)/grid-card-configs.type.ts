@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 import { ExperienceRecordTypes } from '../_components/grid-cards/work-experiences/experience-records.interface';
 
 interface BaseGridCardConfig {
@@ -48,6 +50,10 @@ interface ProjectCard extends BaseGridCardConfig {
     projectLink?: string;
     projectTags?: string[];
 }
+interface TechCard extends BaseGridCardConfig {
+    componentType: 'TechCard';
+    technologies: { techName: string; techLogo: StaticImageData }[];
+}
 
 export type GridCardConfig =
     | ResumeCard
@@ -55,17 +61,5 @@ export type GridCardConfig =
     | WorkExperiencesCard
     | LocationCard
     | MovingBarCard
-    | ProjectCard;
-
-//=========================================================================
-// export interface GridCardConfig {
-//     id: number;
-//     settings: Record<string, unknown>;
-//     componentType: GridComponent;
-//     color: string;
-//     tags: string[];
-//     link: string;
-//     icon: string;
-//     priority: Record<string, number>; // تعریف تایپ priority به صورت دینامیک
-//     layouts?: Record<NavigationTitles, { x: number; y: number; w: number; h: number }>;
-// }
+    | ProjectCard
+    | TechCard;

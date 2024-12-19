@@ -4,4 +4,5 @@ type GridComponent =
     | 'AboutMeCard'
     | 'MovingBarCard'
     | 'WorkExperiences'
-    | 'ProjectCard';
+    | 'ProjectCard'
+    | 'TechCard';
