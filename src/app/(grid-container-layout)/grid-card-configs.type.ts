@@ -38,8 +38,24 @@ interface MovingBarCard extends BaseGridCardConfig {
     // componentType: 'MovingBarCard';
     moveSpeed: number;
 }
+interface ProjectCard extends BaseGridCardConfig {
+    // componentType: 'MovingBarCard';
+    projectImage: string;
+    companyName?: string;
+    companyLogo?: string;
+    projectName: string;
+    projectDescription?: string;
+    projectLink?: string;
+    projectTags?: string[];
+}
 
-export type GridCardConfig = ResumeCard | AboutMeCard | WorkExperiencesCard | LocationCard | MovingBarCard;
+export type GridCardConfig =
+    | ResumeCard
+    | AboutMeCard
+    | WorkExperiencesCard
+    | LocationCard
+    | MovingBarCard
+    | ProjectCard;
 
 //=========================================================================
 // export interface GridCardConfig {

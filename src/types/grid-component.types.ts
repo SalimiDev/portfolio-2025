@@ -1,1 +1,7 @@
-type GridComponent = 'LocationCard' | 'ResumeCard' | 'AboutMeCard' | 'MovingBarCard' | 'WorkExperiences';
+type GridComponent =
+    | 'LocationCard'
+    | 'ResumeCard'
+    | 'AboutMeCard'
+    | 'MovingBarCard'
+    | 'WorkExperiences'
+    | 'ProjectCard';
