@@ -5,4 +5,5 @@ type GridComponent =
     | 'MovingBarCard'
     | 'WorkExperiences'
     | 'ProjectCard'
-    | 'TechCard';
+    | 'TechCard'
+    | 'SocialCard';

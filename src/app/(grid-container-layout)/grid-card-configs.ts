@@ -1,3 +1,4 @@
+import { emailIcon, githubIcon, instagramIcon, linkedinIcon } from '@/assets/images/social-icons';
 import {
     cssLogo,
     figmaLogo,
@@ -226,14 +227,98 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: '/notifications',
         icon: 'bell',
         layouts: {
-            all: { x: 8, y: 8, w: 4, h: 4 },
-            about: { x: 0, y: 16, w: 12, h: 4 },
-            work: { x: 0, y: 32, w: 12, h: 2 }
+            all: { x: 8, y: 8, w: 4, h: 5.5 },
+            about: { x: 0, y: 16, w: 12, h: 5.5 },
+            work: { x: 0, y: 32, w: 12, h: 5.5 }
         },
         priority: {
             all: 8,
             about: 6,
             work: 8
+        }
+    },
+    {
+        id: 9,
+        componentType: 'SocialCard',
+        settings: { type: 'notifications', count: 3 },
+        platform: 'Email',
+        platformIcon: emailIcon,
+        color: '',
+        tags: ['social'],
+        link: 'mailto:salimi.devop@gmail.com',
+        icon: 'bell',
+        layouts: {
+            all: { x: 0, y: 12, w: 1.3, h: 4 },
+            about: { x: 6, y: 12, w: 6, h: 4 },
+            work: { x: 0, y: 34, w: 12, h: 6 }
+        },
+        priority: {
+            all: 9,
+            about: 7,
+            work: 9
+        }
+    },
+    {
+        id: 10,
+        componentType: 'SocialCard',
+        settings: { type: 'notifications', count: 3 },
+        platform: 'Linkedin',
+        platformIcon: linkedinIcon,
+        color: '',
+        tags: ['social'],
+        link: 'https://www.linkedin.com/in/salimidevop/',
+        icon: 'bell',
+        layouts: {
+            all: { x: 1.3, y: 12, w: 1.3, h: 4 },
+            about: { x: 6, y: 12, w: 6, h: 4 },
+            work: { x: 0, y: 34, w: 12, h: 6 }
+        },
+        priority: {
+            all: 9,
+            about: 7,
+            work: 9
+        }
+    },
+    {
+        id: 11,
+        componentType: 'SocialCard',
+        settings: { type: 'notifications', count: 3 },
+        platform: 'GitHub',
+        platformIcon: githubIcon,
+        color: '',
+        tags: ['social'],
+        link: 'https://github.com/SalimiDev',
+        icon: 'bell',
+        layouts: {
+            all: { x: 0, y: 12, w: 1.3, h: 4 },
+            about: { x: 6, y: 12, w: 6, h: 4 },
+            work: { x: 0, y: 34, w: 12, h: 6 }
+        },
+        priority: {
+            all: 9,
+            about: 7,
+            work: 9
+        }
+    },
+    {
+        id: 12,
+        componentType: 'SocialCard',
+        settings: { type: 'notifications', count: 3 },
+        platform: 'Instagram',
+        platformIcon: instagramIcon,
+        color: '',
+        tags: ['social'],
+        link: 'https://www.instagram.com/mehdi_salimi92/',
+        icon: 'bell',
+        layouts: {
+            all: { x: 1.3, y: 12, w: 1.3, h: 4 },
+            about: { x: 6, y: 12, w: 6, h: 4 },
+            work: { x: 0, y: 34, w: 12, h: 6 }
+        },
+        priority: {
+            all: 9,
+            about: 7,
+            work: 9
         }
     }
 ];

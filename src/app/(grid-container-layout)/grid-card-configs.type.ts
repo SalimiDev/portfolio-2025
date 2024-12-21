@@ -54,6 +54,11 @@ interface TechCard extends BaseGridCardConfig {
     componentType: 'TechCard';
     technologies: { techName: string; techLogo: StaticImageData }[];
 }
+interface SocialCard extends BaseGridCardConfig {
+    componentType: 'SocialCard';
+    platform: string;
+    platformIcon: StaticImageData;
+}
 
 export type GridCardConfig =
     | ResumeCard
@@ -62,4 +67,5 @@ export type GridCardConfig =
     | LocationCard
     | MovingBarCard
     | ProjectCard
-    | TechCard;
+    | TechCard
+    | SocialCard;

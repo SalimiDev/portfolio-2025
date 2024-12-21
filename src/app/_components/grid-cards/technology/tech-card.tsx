@@ -12,18 +12,17 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
     const { technologies } = config;
 
     return (
-        <div className='h-full transform-none opacity-100 blur-0'>
-            <div className='relative overflow-hidden rounded-3xl bg-white/60 p-px py-3 dark:bg-white/10'>
+        <div style={{ opacity: 1, filter: 'blur(0px)', height: '100%', transform: 'none' }}>
+            <div className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
-                <div className='relative h-48 w-full overflow-hidden px-8 py-6'>
+                <div className='relative size-full overflow-hidden px-8 py-6'>
                     <div
                         className=''
                         style={{
                             maskImage:
                                 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)',
-                            margin: 'auto',
-                     
+                            margin: 'auto'
                         }}>
                         <div className='flex size-16 animate-marquee gap-4'>
                             {technologies.map((tech, index) => (
