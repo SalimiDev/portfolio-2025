@@ -52,6 +52,20 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
     };
 
     const layout = generateLayoutByTab(activeTab);
+    console.log(layout);
+
+    // const onStopLayoutFun = (lay) => {
+    //     const xys = lay.map((item) => {
+    //         const config = gridCardConfigs.find((config) => config.id === Number(item.i));
+
+    //         return {
+    //             ...item,
+    //             componentType: config ? config.componentType : null
+    //         };
+    //     });
+
+    //     console.log('gr', xys);
+    // };
 
     return (
         <div className='space-y-4'>
@@ -63,6 +77,7 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
                     layouts={{ lg: layout }}
                     cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
                     rowHeight={30}
+                    // onDragStop={(onStopLayout) => onStopLayoutFun(onStopLayout)}
                     {...layoutProps}>
                     {gridCardConfigs.map((item) => (
                         <div key={item.id} style={{ backgroundColor: item.color }}>
