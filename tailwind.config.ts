@@ -78,8 +78,8 @@ const config: Config = {
             center: true,
             padding: {
                 DEFAULT: '3rem',
-                lg: '9rem',
-                xl: '15rem'
+                lg: '3rem',
+                xl: '9rem'
             }
         },
         extend: {

@@ -19,13 +19,14 @@ type ComponentMap = {
 
 // ایجاد نقشه کامپوننت‌ها
 const components: ComponentMap = {
-    TechCard: React.lazy(() => import('../../_components/grid-cards/technology/tech-card')),
     SocialCard: React.lazy(() => import('../../_components/grid-cards/social/social-card')),
+    TechCard: React.lazy(() => import('../../_components/grid-cards/technology/tech-card')),
     ProjectCard: React.lazy(() => import('../../_components/grid-cards/project/project-card')),
     ResumeCard: React.lazy(() => import('../../_components/grid-cards/resume/resume-card')),
     LocationCard: React.lazy(() => import('../../_components/grid-cards/location/location-card')),
     AboutMeCard: React.lazy(() => import('../../_components/grid-cards/about-me/about-me-card')),
     MovingBarCard: React.lazy(() => import('../../_components/grid-cards/moving-bar/moving-bar-card')),
+    ThemeToggleCard: React.lazy(() => import('../../_components/grid-cards/theme-toggle/theme-toggle-card')),
     WorkExperiences: React.lazy(() => import('../../_components/grid-cards/work-experiences/work-experiences'))
 };
 

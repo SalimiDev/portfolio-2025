@@ -59,6 +59,11 @@ interface SocialCard extends BaseGridCardConfig {
     platform: string;
     platformIcon: StaticImageData;
 }
+interface ThemeToggleCard extends BaseGridCardConfig {
+    componentType: 'ThemeToggleCard';
+    platform: string;
+    platformIcon: StaticImageData;
+}
 
 export type GridCardConfig =
     | ResumeCard
@@ -68,4 +73,5 @@ export type GridCardConfig =
     | MovingBarCard
     | ProjectCard
     | TechCard
-    | SocialCard;
+    | SocialCard
+    | ThemeToggleCard;

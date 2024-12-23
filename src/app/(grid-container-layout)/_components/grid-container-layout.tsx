@@ -45,7 +45,8 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
             return {
                 ...layout,
                 i: String(item.id),
-                color: item.color
+                color: item.color,
+                componentType: item.componentType
             };
         });
     };
@@ -56,6 +57,8 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
         <div className='space-y-4'>
             <div className='relative'>
                 <ResponsiveGridLayout
+                    preventCollision={false}
+                    isDraggable={true}
                     className='layout'
                     layouts={{ lg: layout }}
                     cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}

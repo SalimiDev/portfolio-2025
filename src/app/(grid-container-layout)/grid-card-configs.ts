@@ -21,36 +21,36 @@ import { GridCardConfig } from './grid-card-configs.type';
 export const gridCardConfigs: GridCardConfig[] = [
     {
         id: 1,
-        location: 'string',
         componentType: 'LocationCard',
+        location: 'string',
         settings: { type: 'profile', data: { name: 'John Doe', age: 30 } },
         color: '',
         tags: ['About'],
         link: '/profile',
         icon: 'user',
         layouts: {
-            all: { x: 0, y: 0, w: 2, h: 7 },
+            all: { x: 5, y: 2, w: 2.5, h: 6.7 },
             about: { x: 0, y: 0, w: 2, h: 7 },
             work: { x: 0, y: 0, w: 2, h: 7 }
         },
         priority: {
-            all: 1,
+            all: 2,
             about: 1,
             work: 2
         }
     },
     {
         id: 2,
+        componentType: 'ResumeCard',
         downloadIcon: 'string',
         eyeIcon: 'string',
-        componentType: 'ResumeCard',
         settings: { type: 'bar', data: [5, 10, 15] },
         color: '',
         tags: ['Work'],
         link: '/statistics',
         icon: 'chart',
         layouts: {
-            all: { x: 4, y: 0, w: 4, h: 3 },
+            all: { x: 8, y: 2, w: 4.5, h: 3.3 },
             about: { x: 6, y: 0, w: 6, h: 3 },
             work: { x: 0, y: 2, w: 12, h: 3 }
         },
@@ -62,20 +62,20 @@ export const gridCardConfigs: GridCardConfig[] = [
     },
     {
         id: 3,
-        avatar: 'string',
         componentType: 'AboutMeCard',
+        avatar: 'string',
         settings: { type: 'map', location: 'New York' },
         color: '',
         tags: ['Work'],
         link: '/map',
         icon: 'location-pin',
         layouts: {
-            all: { x: 8, y: 0, w: 4, h: 7 },
+            all: { x: 0, y: 0, w: 5, h: 8.4 },
             about: { x: 0, y: 4, w: 12, h: 7 },
             work: { x: 0, y: 6, w: 12, h: 7 }
         },
         priority: {
-            all: 2,
+            all: 1,
             about: 1,
             work: 3
         }
@@ -120,12 +120,12 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: '/resume',
         icon: 'file',
         layouts: {
-            all: { x: 0, y: 4, w: 6, h: 12 },
+            all: { x: 7, y: 10, w: 6, h: 12 },
             about: { x: 6, y: 4, w: 6, h: 12 },
             work: { x: 0, y: 12, w: 12, h: 12 }
         },
         priority: {
-            all: 4,
+            all: 10,
             about: 2,
             work: 5
         }
@@ -140,7 +140,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: '/projects',
         icon: 'project',
         layouts: {
-            all: { x: 6, y: 4, w: 6, h: 2 },
+            all: { x: 5, y: 0, w: 7, h: 1.6 },
             about: { x: 0, y: 8, w: 12, h: 2 },
             work: { x: 0, y: 18, w: 12, h: 2 }
         },
@@ -166,7 +166,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: '/projects',
         icon: 'project',
         layouts: {
-            all: { x: 0, y: 8, w: 3.5, h: 18 },
+            all: { x: 0, y: 20.4, w: 6, h: 18 },
             about: { x: 6, y: 8, w: 4, h: 18 },
             work: { x: 0, y: 24, w: 5, h: 14 }
         },
@@ -192,7 +192,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: '/projects',
         icon: 'project',
         layouts: {
-            all: { x: 0, y: 8, w: 4, h: 20 },
+            all: { x: 6, y: 20.4, w: 6, h: 18 },
             about: { x: 6, y: 8, w: 4, h: 20 },
             work: { x: 5, y: 24, w: 5, h: 14 }
         },
@@ -227,7 +227,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: '/notifications',
         icon: 'bell',
         layouts: {
-            all: { x: 8, y: 8, w: 4, h: 5.5 },
+            all: { x: 1.5, y: 8.4, w: 4.5, h: 8 },
             about: { x: 0, y: 16, w: 12, h: 5.5 },
             work: { x: 0, y: 32, w: 12, h: 5.5 }
         },
@@ -248,7 +248,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: 'mailto:salimi.devop@gmail.com',
         icon: 'bell',
         layouts: {
-            all: { x: 0, y: 12, w: 1.3, h: 4 },
+            all: { x: 0, y: 16.4, w: 1.5, h: 4 },
             about: { x: 6, y: 12, w: 6, h: 4 },
             work: { x: 0, y: 34, w: 12, h: 6 }
         },
@@ -269,7 +269,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: 'https://www.linkedin.com/in/salimidevop/',
         icon: 'bell',
         layouts: {
-            all: { x: 1.3, y: 12, w: 1.3, h: 4 },
+            all: { x: 0, y: 8.4, w: 1.5, h: 4 },
             about: { x: 6, y: 12, w: 6, h: 4 },
             work: { x: 0, y: 34, w: 12, h: 6 }
         },
@@ -290,7 +290,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: 'https://github.com/SalimiDev',
         icon: 'bell',
         layouts: {
-            all: { x: 0, y: 12, w: 1.3, h: 4 },
+            all: { x: 1.5, y: 16.4, w: 4.5, h: 4 },
             about: { x: 6, y: 12, w: 6, h: 4 },
             work: { x: 0, y: 34, w: 12, h: 6 }
         },
@@ -311,7 +311,28 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: 'https://www.instagram.com/mehdi_salimi92/',
         icon: 'bell',
         layouts: {
-            all: { x: 1.3, y: 12, w: 1.3, h: 4 },
+            all: { x: 0, y: 12.4, w: 1.5, h: 4 },
+            about: { x: 6, y: 12, w: 6, h: 4 },
+            work: { x: 0, y: 34, w: 12, h: 6 }
+        },
+        priority: {
+            all: 9,
+            about: 7,
+            work: 9
+        }
+    },
+    {
+        id: 13,
+        componentType: 'ThemeToggleCard',
+        settings: { type: 'notifications', count: 3 },
+        platform: 'Instagram',
+        platformIcon: instagramIcon,
+        color: '',
+        tags: ['social'],
+        link: 'https://www.instagram.com/mehdi_salimi92/',
+        icon: 'bell',
+        layouts: {
+            all: { x: 8, y: 2, w: 4.5, h: 3.3 },
             about: { x: 6, y: 12, w: 6, h: 4 },
             work: { x: 0, y: 34, w: 12, h: 6 }
         },

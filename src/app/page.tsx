@@ -4,7 +4,7 @@ import DraggableGrid from './(grid-container-layout)/_components/grid-container-
 
 export default function Home() {
     return (
-        <div className=' '>
+        <div className=' border-warning'>
             <DraggableGrid />
         </div>
     );

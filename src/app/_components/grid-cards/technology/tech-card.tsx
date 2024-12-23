@@ -18,7 +18,6 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
                 {/* Content */}
                 <div className='relative size-full overflow-hidden px-8 py-6'>
                     <div
-                        className=''
                         style={{
                             maskImage:
                                 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)',

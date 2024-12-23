@@ -6,9 +6,10 @@ import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdr
 
 const AboutMeCard: React.FC = (props) => {
     console.log(props);
+    //h-80 w-full
 
     return (
-        <section className='group relative h-64 w-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
+        <section className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
             <GradientBackdrop />
             <div className='static flex flex-col items-center gap-6 px-6 py-5 sm:items-start sm:px-8 sm:py-6'>
                 <div className='flex flex-col items-center gap-2 sm:flex-row sm:justify-start sm:gap-6'>
@@ -28,7 +29,12 @@ const AboutMeCard: React.FC = (props) => {
                     </div>
                 </div>
                 <p className='text-slate-900 text-xs leading-6 tracking-wide dark:text-white sm:text-sm'>
-                    I am passionate about building beautiful and functional user interfaces.
+                    I am passionate about building beautiful and functional user interfaces. I am passionate about
+                    building beautiful and functional user interfaces. I am passionate about building beautiful and
+                    functional user interfaces. I am passionate about building beautiful and functional user interfaces.
+                    I am passionate about building beautiful and functional user interfaces. I am passionate about
+                    building beautiful and functional user interfaces. I am passionate about building beautiful and
+                    functional user interfaces.
                     <br />
                     Currently work at Paya on the BigData team.
                 </p>

@@ -6,4 +6,5 @@ type GridComponent =
     | 'WorkExperiences'
     | 'ProjectCard'
     | 'TechCard'
-    | 'SocialCard';
+    | 'SocialCard'
+    | 'ThemeToggleCard';

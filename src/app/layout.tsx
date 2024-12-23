@@ -1,5 +1,12 @@
+'use client';
+
+import { useEffect } from 'react';
+
 import { Figtree } from 'next/font/google';
 import localFont from 'next/font/local';
+
+import { useThemeStore } from '@/hooks/useThemeStore';
+import { loadThemeFromStorage, saveThemeToStorage } from '@/utils/theme';
 
 import { Header } from './_components/header';
 import './globals.css';
@@ -43,8 +50,25 @@ const poppins = localFont({
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+    const { theme, setTheme } = useThemeStore();
+
+    useEffect(() => {
+        const savedTheme = loadThemeFromStorage();
+        const initialTheme = savedTheme || 'dark';
+        setTheme(initialTheme);
+
+        // Set the theme to the document
+        document.documentElement.setAttribute('data-theme', initialTheme);
+    }, [setTheme]);
+
+    useEffect(() => {
+        // Save theme to localStorage and update the document
+        saveThemeToStorage(theme);
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
+
     return (
-        <html dir='ltr' className={`dark ${poppins.variable} ${figtree.variable}`}>
+        <html dir='ltr' className={`${theme} ${poppins.variable} ${figtree.variable}`}>
             <body className='container grid dark:bg-base-100 dark:text-base-content'>
                 <Header />
                 <main className=''>{children}</main>
