@@ -16,7 +16,7 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
             <div className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
-                <div className='relative size-full overflow-hidden px-8 py-6'>
+                <div className='relative size-full overflow-hidden px-8 py-16'>
                     <div
                         style={{
                             maskImage:
@@ -40,7 +40,7 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
                         </div>
                     </div>
 
-                    <div className='mt-12'>
+                    <div className='mt-14'>
                         <p className='text-base-content'>CURRENTLY USING</p>
                         <h3 className='text-2xl font-semibold text-primary-content'>TECH I ❤️</h3>
                     </div>
