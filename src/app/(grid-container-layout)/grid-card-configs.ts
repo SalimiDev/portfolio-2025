@@ -30,8 +30,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'user',
         layouts: {
             all: { x: 5, y: 2, w: 2.5, h: 6.7 },
-            about: { x: 0, y: 0, w: 2, h: 7 },
-            work: { x: 0, y: 0, w: 2, h: 7 }
+            about: { x: 10, y: 0, w: 3, h: 8.4 },
+            work: { x: 12, y: 30, w: 3, h: 8.4 }
         },
         priority: {
             all: 2,
@@ -51,8 +51,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'chart',
         layouts: {
             all: { x: 8, y: 2, w: 4.5, h: 3.3 },
-            about: { x: 6, y: 0, w: 6, h: 3 },
-            work: { x: 0, y: 2, w: 12, h: 3 }
+            about: { x: 7, y: 10.4, w: 5, h: 3 },
+            work: { x: 6, y: 0, w: 6, h: 3 }
         },
         priority: {
             all: 3,
@@ -71,8 +71,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'location-pin',
         layouts: {
             all: { x: 0, y: 0, w: 5, h: 8.4 },
-            about: { x: 0, y: 4, w: 12, h: 7 },
-            work: { x: 0, y: 6, w: 12, h: 7 }
+            about: { x: 0, y: 0, w: 5, h: 8.4 },
+            work: { x: 6, y: 22, w: 6, h: 8.4 }
         },
         priority: {
             all: 1,
@@ -121,8 +121,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'file',
         layouts: {
             all: { x: 7, y: 10, w: 6, h: 12 },
-            about: { x: 6, y: 4, w: 6, h: 12 },
-            work: { x: 0, y: 12, w: 12, h: 12 }
+            about: { x: 6, y: 16.1, w: 6, h: 12 },
+            work: { x: 0, y: 0, w: 6, h: 12 }
         },
         priority: {
             all: 10,
@@ -141,8 +141,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'project',
         layouts: {
             all: { x: 5, y: 0, w: 7, h: 1.6 },
-            about: { x: 0, y: 8, w: 12, h: 2 },
-            work: { x: 0, y: 18, w: 12, h: 2 }
+            about: { x: 7, y: 8.4, w: 5, h: 1.7 },
+            work: { x: 0, y: 58, w: 12, h: 2 }
         },
         priority: {
             all: 5,
@@ -166,9 +166,9 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: '/projects',
         icon: 'project',
         layouts: {
-            all: { x: 0, y: 20.4, w: 6, h: 18 },
-            about: { x: 6, y: 8, w: 4, h: 18 },
-            work: { x: 0, y: 24, w: 5, h: 14 }
+            all: { x: 0, y: 20.4, w: 6, h: 16 },
+            about: { x: 0, y: 16.1, w: 6, h: 16 },
+            work: { x: 6, y: 6, w: 6, h: 14 }
         },
         priority: {
             all: 6,
@@ -192,9 +192,9 @@ export const gridCardConfigs: GridCardConfig[] = [
         link: '/projects',
         icon: 'project',
         layouts: {
-            all: { x: 6, y: 20.4, w: 6, h: 18 },
-            about: { x: 6, y: 8, w: 4, h: 20 },
-            work: { x: 5, y: 24, w: 5, h: 14 }
+            all: { x: 6, y: 20.4, w: 6, h: 16 },
+            about: { x: 6, y: 28.1, w: 6, h: 16 },
+            work: { x: 0, y: 12, w: 6, h: 16.4 }
         },
         priority: {
             all: 6,
@@ -228,8 +228,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'bell',
         layouts: {
             all: { x: 1.5, y: 8.4, w: 4.5, h: 8 },
-            about: { x: 0, y: 16, w: 12, h: 5.5 },
-            work: { x: 0, y: 32, w: 12, h: 5.5 }
+            about: { x: 0, y: 8.4, w: 7, h: 7.7 },
+            work: { x: 4, y: 30, w: 5, h: 8.4 }
         },
         priority: {
             all: 8,
@@ -249,8 +249,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'bell',
         layouts: {
             all: { x: 0, y: 16.4, w: 1.5, h: 4 },
-            about: { x: 6, y: 12, w: 6, h: 4 },
-            work: { x: 0, y: 34, w: 12, h: 6 }
+            about: { x: 5, y: 1, w: 2, h: 4.2 },
+            work: { x: 0, y: 55, w: 2, h: 4.2 }
         },
         priority: {
             all: 9,
@@ -270,8 +270,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'bell',
         layouts: {
             all: { x: 0, y: 8.4, w: 1.5, h: 4 },
-            about: { x: 6, y: 12, w: 6, h: 4 },
-            work: { x: 0, y: 34, w: 12, h: 6 }
+            about: { x: 7, y: 0, w: 2, h: 4.2 },
+            work: { x: 0, y: 51, w: 2, h: 4.2 }
         },
         priority: {
             all: 9,
@@ -291,8 +291,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'bell',
         layouts: {
             all: { x: 1.5, y: 16.4, w: 4.5, h: 4 },
-            about: { x: 6, y: 12, w: 6, h: 4 },
-            work: { x: 0, y: 34, w: 12, h: 6 }
+            about: { x: 5, y: 0, w: 2, h: 4.2 },
+            work: { x: 2, y: 51, w: 2, h: 4.2 }
         },
         priority: {
             all: 9,
@@ -312,8 +312,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'bell',
         layouts: {
             all: { x: 0, y: 12.4, w: 1.5, h: 4 },
-            about: { x: 6, y: 12, w: 6, h: 4 },
-            work: { x: 0, y: 34, w: 12, h: 6 }
+            about: { x: 7, y: 1, w: 2, h: 4.2 },
+            work: { x: 2, y: 55, w: 2, h: 4.2 }
         },
         priority: {
             all: 9,
@@ -333,8 +333,8 @@ export const gridCardConfigs: GridCardConfig[] = [
         icon: 'bell',
         layouts: {
             all: { x: 8, y: 2, w: 4.5, h: 3.3 },
-            about: { x: 6, y: 12, w: 6, h: 4 },
-            work: { x: 0, y: 34, w: 12, h: 6 }
+            about: { x: 7, y: 15, w: 5, h: 3 },
+            work: { x: 6, y: 3, w: 6, h: 3 }
         },
         priority: {
             all: 9,

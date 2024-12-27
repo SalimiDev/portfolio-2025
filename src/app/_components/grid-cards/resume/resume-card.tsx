@@ -12,7 +12,7 @@ interface ResumeCardProps {
 const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
     return (
         <div style={{ opacity: 1, filter: 'blur(0px)', height: '100%', transform: 'none' }}>
-            <div className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
+            <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px dark:bg-white/10'>
                 <GradientBackdrop />
                 <div className='relative h-full'>
                     <div className='relative flex h-full flex-col justify-center gap-6 px-8 py-6'>
