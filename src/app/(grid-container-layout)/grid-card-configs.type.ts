@@ -1,5 +1,7 @@
 import { StaticImageData } from 'next/image';
 
+import { Layouts } from '@/types/layouts.types';
+
 import { ExperienceRecordTypes } from '../_components/grid-cards/work-experiences/experience-records.interface';
 
 interface BaseGridCardConfig {
@@ -7,7 +9,7 @@ interface BaseGridCardConfig {
     componentType: GridComponent;
     tags: string[];
     priority: Record<string, number>;
-    layouts?: Record<NavigationTitles, { x: number; y: number; w: number; h: number }>;
+    layouts?: Layouts;
     settings: Record<string, unknown>;
     color: string;
     link: string;

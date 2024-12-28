@@ -3,6 +3,7 @@
 import React from 'react';
 
 import useActiveMenuTab from '@/store/useActiveMenuTab';
+import { LayoutPosition, Layouts } from '@/types/layouts.types';
 
 import { gridCardConfigs } from '../grid-card-configs';
 import GridCard from './grid-card';
@@ -19,28 +20,27 @@ interface LayoutItem {
     y: number;
     w: number;
     h: number;
-    i: string; // معمولاً `i` به عنوان ID یا شناسه استفاده می‌شود
-    color: string; // اضافه‌شده برای دسترسی به رنگ هر آیتم
+    i: string; // i is used as an ID or identifier
+    color: string;
 }
 
 const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
     const { activeTab } = useActiveMenuTab();
 
-    //==========new==========
-    type NavigationTitles = 'all' | 'about' | 'work';
+    const generateLayoutByTab = (tab: NavigationTitles, screenSize: keyof Layouts): LayoutItem[] => {
+        const defaultLayout: LayoutPosition = { x: 0, y: 0, w: 1, h: 1 };
 
-    const generateLayoutByTab = (tab: NavigationTitles): LayoutItem[] => {
-        // مرتب‌سازی کارت‌ها بر اساس priority
+        // Sorting cards based on priority
         const sortedConfigs = [...gridCardConfigs].sort((a, b) => {
-            const priorityA = a.priority?.[tab] || 0; // مقدار پیش‌فرض در صورت نبود priority
+            const priorityA = a.priority?.[tab] || 0;
             const priorityB = b.priority?.[tab] || 0;
 
             return priorityA - priorityB;
         });
 
-        // تولید layout بر اساس اولویت
+        // Generating layout
         return sortedConfigs.map((item) => {
-            const layout = item.layouts?.[tab] || { x: 0, y: 0, w: 1, h: 1 }; // اینجا دیگر خطایی نخواهد بود.
+            const layout = item.layouts?.[screenSize]?.[tab] ?? defaultLayout;
 
             return {
                 ...layout,
@@ -51,21 +51,26 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
         });
     };
 
-    const layout = generateLayoutByTab(activeTab);
-    console.log(layout);
+    // Creating a layout for all available sizes
+    const layouts = {
+        lg: generateLayoutByTab(activeTab, 'lg'),
+        md: generateLayoutByTab(activeTab, 'md'),
+        sm: generateLayoutByTab(activeTab, 'sm')
+    };
 
-    // const onStopLayoutFun = (lay) => {
-    //     const xys = lay.map((item) => {
-    //         const config = gridCardConfigs.find((config) => config.id === Number(item.i));
+    const onStopLayoutFun = (layoutItems: LayoutItem[]) => {
+        const updatedConfigs = layoutItems.map((item) => {
+            const config = gridCardConfigs.find((config) => config.id === Number(item.i));
 
-    //         return {
-    //             ...item,
-    //             componentType: config ? config.componentType : null
-    //         };
-    //     });
+            return {
+                ...item,
+                // color: config?.color || '',
+                componentType: config?.componentType || null
+            };
+        });
 
-    //     console.log('gr', xys);
-    // };
+        console.log('Updated Layouts:', updatedConfigs);
+    };
 
     return (
         <div className='space-y-4'>
@@ -74,10 +79,10 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
                     preventCollision={false}
                     isDraggable={true}
                     className='layout'
-                    layouts={{ lg: layout }}
+                    layouts={layouts}
                     cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
                     rowHeight={30}
-                    // onDragStop={(onStopLayout) => onStopLayoutFun(onStopLayout)}
+                    onDragStop={(layout) => onStopLayoutFun(layout)}
                     {...layoutProps}>
                     {gridCardConfigs.map((item) => (
                         <div key={item.id} style={{ backgroundColor: item.color }}>
