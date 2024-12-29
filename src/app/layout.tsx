@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { Figtree } from 'next/font/google';
 import localFont from 'next/font/local';
 
-import { useThemeStore } from '@/hooks/useThemeStore';
+import { useThemeStore } from '@/store/useThemeStore';
 import { loadThemeFromStorage, saveThemeToStorage } from '@/utils/theme';
 
 import { Header } from './_components/header';

@@ -5,5 +5,4 @@ export type LayoutPosition = {
     h: number;
 };
 
-// export type Layouts = Record<'lg' | 'md' | 'sm' | 'xs' | 'xxs', Record<NavigationTitles, LayoutPosition>>;
 export type Layouts = Record<'lg' | 'md' | 'sm' | 'xs', Record<NavigationTitles, LayoutPosition>>;

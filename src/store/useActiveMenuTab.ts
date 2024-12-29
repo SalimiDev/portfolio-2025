@@ -1,13 +1,10 @@
 import { create } from 'zustand';
 
-// type NavigationTitles = 'all' | 'about' | 'work';
-
-// تعریف Zustand store
 const useActiveMenuTab = create<{
     activeTab: NavigationTitles;
     setActiveTab: (newTab: NavigationTitles) => void;
 }>((set) => ({
-    activeTab: 'all', // مقدار پیش‌فرض
+    activeTab: 'all', //default
     setActiveTab: (newTab: NavigationTitles) => set(() => ({ activeTab: newTab }))
 }));
 

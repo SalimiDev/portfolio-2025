@@ -1,7 +1,7 @@
 // src/components/ThemeToggle.tsx
 import React from 'react';
 
-import { useThemeStore } from '@/hooks/useThemeStore';
+import { useThemeStore } from '@/store/useThemeStore';
 
 export const ThemeToggle: React.FC = () => {
     const { theme, toggleTheme } = useThemeStore();
