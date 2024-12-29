@@ -40,7 +40,7 @@ interface MovingBarCard extends BaseGridCardConfig {
     moveSpeed: number;
 }
 interface ProjectCard extends BaseGridCardConfig {
-    componentType: 'ProjectCard';
+    // componentType: 'ProjectCard';
     projectImage: string;
     companyName?: string;
     companyLogo?: string;
