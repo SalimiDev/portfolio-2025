@@ -21,7 +21,7 @@ interface LayoutItem {
     w: number;
     h: number;
     i: string; // i is used as an ID or identifier
-    color: string;
+    // color: string;
 }
 
 const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
@@ -38,7 +38,7 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
             return priorityA - priorityB;
         });
 
-        // Generating layout
+        // Generating layout based on selected tab
         return sortedConfigs.map((item) => {
             const layout = item.layouts?.[screenSize]?.[tab] ?? defaultLayout;
 
@@ -51,11 +51,12 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
         });
     };
 
-    // Creating a layout for all available sizes
+    // Generating a layout for all available sizes
     const layouts = {
-        lg: generateLayoutByTab(activeTab, 'lg'),
+        xs: generateLayoutByTab(activeTab, 'xs'),
+        sm: generateLayoutByTab(activeTab, 'sm'),
         md: generateLayoutByTab(activeTab, 'md'),
-        sm: generateLayoutByTab(activeTab, 'sm')
+        lg: generateLayoutByTab(activeTab, 'lg')
     };
 
     const onStopLayoutFun = (layoutItems: LayoutItem[]) => {
@@ -64,7 +65,6 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
 
             return {
                 ...item,
-                // color: config?.color || '',
                 componentType: config?.componentType || null
             };
         });
@@ -76,13 +76,19 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
         <div className='space-y-4'>
             <div className='relative'>
                 <ResponsiveGridLayout
-                    preventCollision={false}
-                    isDraggable={true}
+                    isDraggable={false}
                     className='layout'
                     layouts={layouts}
-                    cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
+                    compactType={null}
                     rowHeight={30}
+                    breakpoints={{ lg: 996, md: 768, sm: 480, xs: 0 }}
+                    cols={{ lg: 12, md: 10, sm: 6, xs: 2 }}
+                    onBreakpointChange={(newBreakpoint) => console.log('Current Breakpoint:', newBreakpoint)}
                     onDragStop={(layout) => onStopLayoutFun(layout)}
+                    // draggableHandle=".grid-item__title"
+                    // preventCollision={false}
+                    // isRearrangeable
+                    // margin={[10, 10]}
                     {...layoutProps}>
                     {gridCardConfigs.map((item) => (
                         <div key={item.id} style={{ backgroundColor: item.color }}>

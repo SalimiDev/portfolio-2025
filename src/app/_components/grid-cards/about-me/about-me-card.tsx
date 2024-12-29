@@ -29,14 +29,11 @@ const AboutMeCard: React.FC = (props) => {
                     </div>
                 </div>
                 <p className='text-slate-900 text-xs leading-6 tracking-wide dark:text-white sm:text-sm'>
-                    I am passionate about building beautiful and functional user interfaces. I am passionate about
-                    building beautiful and functional user interfaces. I am passionate about building beautiful and
-                    functional user interfaces. I am passionate about building beautiful and functional user interfaces.
-                    I am passionate about building beautiful and functional user interfaces. I am passionate about
-                    building beautiful and functional user interfaces. I am passionate about building beautiful and
-                    functional user interfaces.
-                    <br />
-                    Currently work at Paya on the BigData team.
+                    I’m a front-end developer with three years of experience, specializing in building responsive
+                    dashboards and interactive websites. I work with modern tools like JavaScript, Next.js, React, and
+                    Tailwind CSS to craft beautiful user interfaces. Collaboration, creativity, and attention to detail
+                    are at the heart of my work. I’m passionate about improving user experiences and continuously
+                    enhancing my skills to deliver top-quality results.
                 </p>
             </div>
         </section>

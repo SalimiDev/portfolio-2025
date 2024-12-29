@@ -16,34 +16,31 @@ interface BaseGridCardConfig {
     icon: string;
 }
 
+//Grid cards types
 interface LocationCard extends BaseGridCardConfig {
-    // componentType: 'LocationCard';
+    componentType: 'LocationCard';
     location: string;
 }
-
 interface ResumeCard extends BaseGridCardConfig {
-    // componentType: 'ResumeCard';
-    // link: string;
+    componentType: 'ResumeCard';
     eyeIcon: string;
     downloadIcon: string;
 }
-
 interface AboutMeCard extends BaseGridCardConfig {
-    // componentType: 'AboutMeCard';
+    componentType: 'AboutMeCard';
     avatar: string;
 }
-
 interface WorkExperiencesCard extends BaseGridCardConfig {
-    // componentType: 'WorkExperiences';
+    componentType: 'WorkExperiences';
     content: ExperienceRecordTypes[];
     test?: string;
 }
 interface MovingBarCard extends BaseGridCardConfig {
-    // componentType: 'MovingBarCard';
+    componentType: 'MovingBarCard';
     moveSpeed: number;
 }
 interface ProjectCard extends BaseGridCardConfig {
-    // componentType: 'MovingBarCard';
+    componentType: 'ProjectCard';
     projectImage: string;
     companyName?: string;
     companyLogo?: string;
