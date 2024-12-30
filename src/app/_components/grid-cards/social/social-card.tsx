@@ -5,13 +5,16 @@ import Link from 'next/link';
 
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
+import { useThemeStore } from '@/store/useThemeStore';
 
 interface SocialCardProps {
     config: Extract<GridCardConfig, { componentType: 'SocialCard' }>;
 }
 
 const SocialCard: React.FC<SocialCardProps> = ({ config }) => {
-    const { platform, platformIcon, link } = config;
+    const { platform, platformIcon: PlatformIcon, link } = config;
+
+    const { theme } = useThemeStore();
 
     return (
         <div
@@ -44,12 +47,12 @@ const SocialCard: React.FC<SocialCardProps> = ({ config }) => {
                             href={link}
                             target='_blank'
                             rel='noopener noreferrer'>
-                            <div className='relative aspect-square h-full w-auto'>
-                                <Image
-                                    src={platformIcon}
-                                    alt={platform}
-                                    loading='lazy'
-                                    className='absolute inset-0 size-full'
+                            <div className='relative aspect-square size-auto opacity-85 transition-opacity hover:opacity-100'>
+                                <PlatformIcon
+                                    width={96}
+                                    height={96}
+                                    stroke='none'
+                                    fill={theme === 'dark' ? 'white' : 'black'}
                                 />
                             </div>
                         </Link>

@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import { StaticImageData } from 'next/image';
 
 import { Layouts } from '@/types/layouts.types';
@@ -40,13 +42,13 @@ interface MovingBarCard extends BaseGridCardConfig {
     moveSpeed: number;
 }
 interface ProjectCard extends BaseGridCardConfig {
-    // componentType: 'ProjectCard';
+    componentType: 'ProjectCard';
     projectImage: string;
     companyName?: string;
     companyLogo?: string;
     projectName: string;
     projectDescription?: string;
-    projectLink?: string;
+    projectLink: string;
     projectTags?: string[];
 }
 interface TechCard extends BaseGridCardConfig {
@@ -56,12 +58,12 @@ interface TechCard extends BaseGridCardConfig {
 interface SocialCard extends BaseGridCardConfig {
     componentType: 'SocialCard';
     platform: string;
-    platformIcon: StaticImageData;
+    // platformIcon: StaticImageData;
+    platformIcon: React.ElementType;
 }
 interface ThemeToggleCard extends BaseGridCardConfig {
     componentType: 'ThemeToggleCard';
     platform: string;
-    platformIcon: StaticImageData;
 }
 
 export type GridCardConfig =

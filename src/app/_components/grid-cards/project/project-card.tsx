@@ -5,15 +5,19 @@ import Link from 'next/link';
 
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
+import { useThemeStore } from '@/store/useThemeStore';
 
 import project_1 from '../../../../assets/images/project_1.png';
+import { IconExternalLink } from '../../icons/icons';
 
 interface ResumeCardProps {
-    config: Extract<GridCardConfig, { componentType: 'ResumeCard' }>;
+    config: Extract<GridCardConfig, { componentType: 'ProjectCard' }>;
 }
 
 const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
-    console.log('🚀 ~ config:', config);
+    const { theme } = useThemeStore();
+    const { componentType, projectLink } = config;
+    console.log(componentType, projectLink);
 
     return (
         <div className='h-full transform-none opacity-100 blur-0'>
@@ -58,31 +62,28 @@ const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
                                 <h1 className='text-black text-2xl font-medium uppercase opacity-90 dark:text-white'>
                                     Station Landing Page
                                 </h1>
-                                <Link
-                                    href='https://station.money/'
-                                    target='_blank'
-                                    rel='noreferrer noopener'
-                                    className='dark:hover:bg-zinc-700/25 relative z-10 flex size-12 items-center justify-center rounded-full border-white/10 transition-all hover:border hover:bg-white'>
-                                    <div className='size-8 opacity-50 transition-opacity hover:opacity-100'>
-                                        {/* SVG code goes here */}
-                                        <Image
-                                            decoding='async'
-                                            loading='lazy'
-                                            className='transparent rounded-lg'
-                                            src={'images/arrow-down.svg'}
-                                            width={25}
-                                            height={25}
-                                            alt='TFL logo'
-                                            // objectFit='cover'
-                                        />
-                                    </div>
-                                </Link>
+                                {projectLink && (
+                                    <Link
+                                        href={projectLink}
+                                        target='_blank'
+                                        rel='noreferrer noopener'
+                                        className='relative z-20 flex size-12 items-center'>
+                                        <div className='opacity-60 transition-opacity hover:opacity-100'>
+                                            <IconExternalLink
+                                                width={25}
+                                                height={25}
+                                                stroke='none'
+                                                fill={theme === 'dark' ? 'white' : 'black'}
+                                            />
+                                        </div>
+                                    </Link>
+                                )}
                             </div>
                             <div className='mt-1 flex flex-wrap gap-2'>
-                                <div className='dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border border-neutral-focus px-2 py-0.5 text-xs font-semibold text-neutral-focus transition-colors'>
+                                <div className='dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border border-neutral-focus px-2 py-0.5 text-xs font-semibold text-neutral-focus transition-colors dark:border-base-25 dark:text-base-25'>
                                     Solo Developer
                                 </div>
-                                <div className='dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold transition-colors'>
+                                <div className='dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border border-neutral-focus px-2 py-0.5 text-xs font-semibold text-neutral-focus transition-colors dark:border-base-25 dark:text-base-25'>
                                     Nextjs
                                 </div>
                                 {/* Other tags */}

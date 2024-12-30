@@ -1,12 +1,9 @@
 'use client';
 
-import Image from 'next/image';
-
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
 import { useThemeStore } from '@/store/useThemeStore';
 
-import moon from './moon.svg';
-import sun from './sun.svg';
+import { IconMoon, IconSun } from '../../icons/icons';
 
 const ThemeToggleCard: React.FC = () => {
     const { theme, toggleTheme } = useThemeStore();
@@ -30,15 +27,27 @@ const ThemeToggleCard: React.FC = () => {
                             <button
                                 onClick={() => toggleTheme()}
                                 className={`${theme === 'light' ? selectedButtonStyles : ''} relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px]`}>
-                                <div className='size-10 opacity-50 transition-opacity hover:opacity-100'>
-                                    <Image alt='asc' src={sun} width={45} height={45} />
+                                <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
+                                    <IconMoon
+                                        width={36}
+                                        height={36}
+                                        stroke='none'
+                                        strokeWidth={0.5}
+                                        fill={theme === 'dark' ? 'white' : 'black'}
+                                    />
                                 </div>
                             </button>
                             <button
                                 onClick={() => toggleTheme()}
                                 className={`${theme === 'dark' ? selectedButtonStyles : ''} relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px]`}>
-                                <div className='size-10 opacity-50 transition-opacity hover:opacity-100'>
-                                    <Image alt='asc' src={moon} width={36} height={36} />
+                                <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
+                                    <IconSun
+                                        width={36}
+                                        height={36}
+                                        stroke='none'
+                                        strokeWidth={0.5}
+                                        fill={theme === 'dark' ? 'white' : 'black'}
+                                    />
                                 </div>
                             </button>
                         </div>

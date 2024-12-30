@@ -1,15 +1,18 @@
 'use client';
 
-import Image from 'next/image';
-
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
+import { useThemeStore } from '@/store/useThemeStore';
+
+import { IconArrowDown, IconEye } from '../../icons/icons';
 
 interface ResumeCardProps {
     config: Extract<GridCardConfig, { componentType: 'ResumeCard' }>;
 }
 
 const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
+    const { theme } = useThemeStore();
+
     return (
         <div style={{ opacity: 1, filter: 'blur(0px)', height: '100%', transform: 'none' }}>
             <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px dark:bg-white/10'>
@@ -25,13 +28,23 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
                             </div>
                             <div className='flex items-center gap-2 lg:gap-6'>
                                 <a href='/MehdiSalimi-Resume.pdf' download='' className='relative z-20 cursor-pointer'>
-                                    <div className='size-10 opacity-50 transition-opacity hover:opacity-100'>
-                                        <Image alt='asc' src={'/images/arrow-down.svg'} width={36} height={36} />
+                                    <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
+                                        <IconArrowDown
+                                            width={36}
+                                            height={36}
+                                            stroke='none'
+                                            fill={theme === 'dark' ? 'white' : 'black'}
+                                        />
                                     </div>
                                 </a>
                                 <a href='/MehdiSalimi-Resume.pdf' download='' className='relative z-20 cursor-pointer'>
-                                    <div className='size-10 opacity-50 transition-opacity hover:opacity-100'>
-                                        <Image alt='asc' src={'/images/eye.svg'} width={36} height={36} />
+                                    <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
+                                        <IconEye
+                                            width={36}
+                                            height={36}
+                                            stroke='none'
+                                            fill={theme === 'dark' ? 'white' : 'black'}
+                                        />
                                     </div>
                                 </a>
                             </div>

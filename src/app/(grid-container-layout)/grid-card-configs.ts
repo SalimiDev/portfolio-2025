@@ -1,4 +1,3 @@
-import { emailIcon, githubIcon, instagramIcon, linkedinIcon } from '@/assets/images/social-icons';
 import {
     cssLogo,
     figmaLogo,
@@ -16,6 +15,7 @@ import {
     typescriptLogo
 } from '@/assets/images/tech-logos';
 
+import { IconEmail, IconGithub, IconInstagram, IconLinkedin } from '../_components/icons/icons';
 import { GridCardConfig } from './grid-card-configs.type';
 
 export const gridCardConfigs: GridCardConfig[] = [
@@ -241,7 +241,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         projectImage: 'string',
         projectName: 'Hillter Hotel',
         projectDescription: 'string',
-        projectLink: 'string',
+        projectLink: 'https://en.wikipedia.org/wiki/Yahoo',
         projectTags: ['scsc'],
         settings: { type: 'list', data: ['Project A', 'Project B', 'Project C'] },
         color: '',
@@ -284,7 +284,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         projectImage: 'string',
         projectName: 'Hillter Hotel',
         projectDescription: 'string',
-        projectLink: 'string',
+        projectLink: 'https://en.wikipedia.org/wiki/Yahoo',
         projectTags: ['scsc'],
         settings: { type: 'list', data: ['Project A', 'Project B', 'Project C'] },
         color: '',
@@ -376,7 +376,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         componentType: 'SocialCard',
         settings: { type: 'notifications', count: 3 },
         platform: 'Email',
-        platformIcon: emailIcon,
+        platformIcon: IconEmail,
         color: '',
         tags: ['social'],
         link: 'mailto:salimi.devop@gmail.com',
@@ -414,7 +414,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         componentType: 'SocialCard',
         settings: { type: 'notifications', count: 3 },
         platform: 'Linkedin',
-        platformIcon: linkedinIcon,
+        platformIcon: IconLinkedin,
         color: '',
         tags: ['social'],
         link: 'https://www.linkedin.com/in/salimidevop/',
@@ -452,7 +452,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         componentType: 'SocialCard',
         settings: { type: 'notifications', count: 3 },
         platform: 'GitHub',
-        platformIcon: githubIcon,
+        platformIcon: IconGithub,
         color: '',
         tags: ['social'],
         link: 'https://github.com/SalimiDev',
@@ -490,7 +490,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         componentType: 'SocialCard',
         settings: { type: 'notifications', count: 3 },
         platform: 'Instagram',
-        platformIcon: instagramIcon,
+        platformIcon: IconInstagram,
         color: '',
         tags: ['social'],
         link: 'https://www.instagram.com/mehdi_salimi92/',
@@ -528,7 +528,6 @@ export const gridCardConfigs: GridCardConfig[] = [
         componentType: 'ThemeToggleCard',
         settings: { type: 'notifications', count: 3 },
         platform: 'Instagram',
-        platformIcon: instagramIcon,
         color: '',
         tags: ['social'],
         link: 'https://www.instagram.com/mehdi_salimi92/',
