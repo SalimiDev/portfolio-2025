@@ -41,8 +41,8 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
                     </div>
 
                     <div className='mt-14'>
-                        <p className='text-base-content'>CURRENTLY USING</p>
-                        <h3 className='text-2xl font-semibold text-primary-content'>TECH I ❤️</h3>
+                        <p className='text-neutral dark:text-base-content'>CURRENTLY USING</p>
+                        <h3 className='text-2xl font-semibold text-base-200 dark:text-primary-content'>TECH I ❤️</h3>
                     </div>
                 </div>
             </div>

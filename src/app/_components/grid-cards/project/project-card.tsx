@@ -79,10 +79,10 @@ const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
                                 </Link>
                             </div>
                             <div className='mt-1 flex flex-wrap gap-2'>
-                                <div className='bg-zinc-500/15 dark:bg-zinc-700/95 text-primary-foreground dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold transition-colors'>
+                                <div className='dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border border-neutral-focus px-2 py-0.5 text-xs font-semibold text-neutral-focus transition-colors'>
                                     Solo Developer
                                 </div>
-                                <div className='bg-zinc-500/15 dark:bg-zinc-700/95 text-primary-foreground dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold transition-colors'>
+                                <div className='dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold transition-colors'>
                                     Nextjs
                                 </div>
                                 {/* Other tags */}

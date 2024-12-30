@@ -28,7 +28,7 @@ const WorkExperiences: React.FC = () => {
                                             {item.dates}
                                         </h5>
                                         <h1
-                                            className={`text-black w-fit text-left text-3xl font-medium dark:text-white md:text-4xl ${
+                                            className={`text-black w-fit text-left text-3xl font-medium text-base-300 dark:text-white md:text-4xl ${
                                                 item.lineThrough ? 'line-through' : ''
                                             }`}
                                             style={{ opacity: item.opacity / 100 }}>
@@ -36,10 +36,10 @@ const WorkExperiences: React.FC = () => {
                                         </h1>
                                     </div>
                                     <div className='flex flex-col md:items-end md:text-right'>
-                                        <h3 className='text-black text-sm font-medium opacity-80 dark:text-white lg:text-lg'>
+                                        <h3 className='text-black text-sm font-medium text-base-200 opacity-80 dark:text-white lg:text-lg'>
                                             {item.company}
                                         </h3>
-                                        <h5 className='lg:text-md text-black hidden text-xs font-medium opacity-35 dark:text-white md:block'>
+                                        <h5 className='lg:text-md text-black hidden text-xs font-medium text-base-200 opacity-35 dark:text-white md:block'>
                                             {item.dates}
                                         </h5>
                                     </div>

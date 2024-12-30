@@ -69,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     return (
         <html dir='ltr' className={`${theme} ${poppins.variable} ${figtree.variable}`}>
-            <body className='container grid dark:bg-base-100 dark:text-base-content'>
+            <body className='container grid bg-base-25 text-base-200 dark:bg-base-100 dark:text-base-content'>
                 <Header />
                 <main className=''>{children}</main>
             </body>
