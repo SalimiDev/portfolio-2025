@@ -2,9 +2,9 @@
 
 import React, { FC } from 'react';
 
-import { SvgIcon } from './icon.types';
+import { SvgIconProp } from './icon.types';
 
-export const BaseIcon: FC<SvgIcon> = ({
+export const BaseIcon: FC<SvgIconProp> = ({
     color = 'currentColor',
     width = 24,
     height = 24,
