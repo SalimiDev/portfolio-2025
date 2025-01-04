@@ -1,37 +1,47 @@
-'use client';
-
 import React, { Suspense } from 'react';
+
+import dynamic from 'next/dynamic';
 
 import Loader from '@/app/_components/loader/loader';
 
+import AboutMeCard from '../../_components/grid-cards/about-me/about-me-card';
+import MovingBarCard from '../../_components/grid-cards/moving-bar/moving-bar-card';
+import ResumeCard from '../../_components/grid-cards/resume/resume-card';
+import SocialCard from '../../_components/grid-cards/social/social-card';
+import ThemeToggleCard from '../../_components/grid-cards/theme-toggle/theme-toggle-card';
+import WorkExperiences from '../../_components/grid-cards/work-experiences/work-experiences';
 import { GridCardConfig } from '../grid-card-configs.type';
+
+const LocationCard = dynamic(() => import('../../_components/grid-cards/location/location-card'));
+const ProjectCard = dynamic(() => import('../../_components/grid-cards/project/project-card'), { ssr: false });
+const TechCard = dynamic(() => import('../../_components/grid-cards/technology/tech-card'), { ssr: false });
 
 interface GridCardProps {
     item: GridCardConfig;
 }
 
-// تعریف دقیق تایپ کامپوننت‌ها
+//Precise definition of component types
 type ComponentMap = {
     [key in GridCardConfig['componentType']]: React.ComponentType<{
         config: Extract<GridCardConfig, { componentType: key }>;
     }>;
 };
 
-// ایجاد نقشه کامپوننت‌ها
+// Creating a components map
 const components: ComponentMap = {
-    SocialCard: React.lazy(() => import('../../_components/grid-cards/social/social-card')),
-    TechCard: React.lazy(() => import('../../_components/grid-cards/technology/tech-card')),
-    ProjectCard: React.lazy(() => import('../../_components/grid-cards/project/project-card')),
-    ResumeCard: React.lazy(() => import('../../_components/grid-cards/resume/resume-card')),
-    LocationCard: React.lazy(() => import('../../_components/grid-cards/location/location-card')),
-    AboutMeCard: React.lazy(() => import('../../_components/grid-cards/about-me/about-me-card')),
-    MovingBarCard: React.lazy(() => import('../../_components/grid-cards/moving-bar/moving-bar-card')),
-    ThemeToggleCard: React.lazy(() => import('../../_components/grid-cards/theme-toggle/theme-toggle-card')),
-    WorkExperiences: React.lazy(() => import('../../_components/grid-cards/work-experiences/work-experiences'))
+    TechCard,
+    ProjectCard,
+    LocationCard,
+    SocialCard,
+    ResumeCard,
+    AboutMeCard,
+    MovingBarCard,
+    ThemeToggleCard,
+    WorkExperiences
 };
 
 const GridCard: React.FC<GridCardProps> = ({ item }) => {
-    // تطبیق نوع کامپوننت با استفاده از item.componentType
+    //Matching the component type using item.componentType
     const ItemComponent = components[item.componentType] as React.ComponentType<{
         config: typeof item;
     }> | null;

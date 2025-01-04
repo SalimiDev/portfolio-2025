@@ -89,7 +89,7 @@ const config: Config = {
         },
         extend: {
             animation: {
-                marquee: 'marquee 15s linear infinite'
+                marquee: 'marquee 20s linear infinite'
             },
             backgroundImage: {
                 'hero-pattern': "url('/images/tile.svg')"

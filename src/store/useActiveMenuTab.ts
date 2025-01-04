@@ -4,7 +4,7 @@ const useActiveMenuTab = create<{
     activeTab: NavigationTitles;
     setActiveTab: (newTab: NavigationTitles) => void;
 }>((set) => ({
-    activeTab: 'all', //default
+    activeTab: 'All', //default
     setActiveTab: (newTab: NavigationTitles) => set(() => ({ activeTab: newTab }))
 }));
 

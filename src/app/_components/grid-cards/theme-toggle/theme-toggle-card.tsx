@@ -1,12 +1,31 @@
-'use client';
+import { useEffect, useState } from 'react';
+
+import Image from 'next/image';
+
+import { useTheme } from 'next-themes';
 
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
-import { useThemeStore } from '@/store/useThemeStore';
 
 import { IconMoon, IconSun } from '../../icons/icons';
 
 const ThemeToggleCard: React.FC = () => {
-    const { theme, toggleTheme } = useThemeStore();
+    const { setTheme, resolvedTheme } = useTheme();
+
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted)
+        return (
+            <Image
+                src='data:image/svg+xml;base64,PHN2ZyBzdHJva2U9IiNGRkZGRkYiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBoZWlnaHQ9IjIwMHB4IiB3aWR0aD0iMjAwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiB4PSIyIiB5PSIyIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHJ4PSIyIj48L3JlY3Q+PC9zdmc+Cg=='
+                width={36}
+                height={36}
+                sizes='36x36'
+                priority={false}
+                alt='Loading Light/Dark Toggle'
+                title='Loading Light/Dark Toggle'
+            />
+        );
 
     const selectedButtonStyles = `
     shadow-darkmode bg-[#04040d29] 
@@ -25,29 +44,19 @@ const ThemeToggleCard: React.FC = () => {
                     <div className='relative flex h-full flex-col justify-center p-1'>
                         <div className='flex h-full items-center justify-around gap-1'>
                             <button
-                                onClick={() => toggleTheme()}
-                                className={`${theme === 'light' ? selectedButtonStyles : ''} relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px]`}>
+                                onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+                                className={`${resolvedTheme === 'dark' ? selectedButtonStyles : ''} relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px]`}
+                                aria-label='darkmode'>
                                 <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
-                                    <IconMoon
-                                        width={36}
-                                        height={36}
-                                        stroke='none'
-                                        strokeWidth={0.5}
-                                        fill={theme === 'dark' ? 'white' : 'black'}
-                                    />
+                                    <IconMoon width={36} height={36} stroke='none' strokeWidth={0.5} />
                                 </div>
                             </button>
                             <button
-                                onClick={() => toggleTheme()}
-                                className={`${theme === 'dark' ? selectedButtonStyles : ''} relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px]`}>
+                                onClick={() => setTheme(resolvedTheme === 'light' ? 'dark' : 'light')}
+                                className={`${resolvedTheme === 'light' ? selectedButtonStyles : ''} relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px]`}
+                                aria-label='lightmode'>
                                 <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
-                                    <IconSun
-                                        width={36}
-                                        height={36}
-                                        stroke='none'
-                                        strokeWidth={0.5}
-                                        fill={theme === 'dark' ? 'white' : 'black'}
-                                    />
+                                    <IconSun width={36} height={36} stroke='none' strokeWidth={0.5} />
                                 </div>
                             </button>
                         </div>

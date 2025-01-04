@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
@@ -17,16 +15,11 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
                 <GradientBackdrop />
                 {/* Content */}
                 <div className='relative size-full overflow-hidden px-8 py-16'>
-                    <div
-                        style={{
-                            maskImage:
-                                'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)',
-                            margin: 'auto'
-                        }}>
+                    <div className='mask-gradient-horizontal mx-auto'>
                         <div className='flex size-16 animate-marquee gap-4'>
-                            {technologies.map((tech, index) => (
-                                <span
-                                    key={index}
+                            {technologies.map((tech, _index) => (
+                                <figure
+                                    key={_index}
                                     className='bg-neutral-200 mx-2 my-0 flex aspect-square w-[72px] items-center justify-center gap-2 rounded-2xl dark:bg-neutral'>
                                     <Image
                                         src={tech.techLogo}
@@ -35,14 +28,14 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
                                         width={36}
                                         height={36}
                                     />
-                                </span>
+                                </figure>
                             ))}
                         </div>
                     </div>
 
-                    <div className='mt-14'>
+                    <div className='mt-14 flex flex-col-reverse'>
+                        <h2 className='text-2xl font-semibold text-base-200 dark:text-primary-content'>TECH I ❤️</h2>
                         <p className='text-neutral dark:text-base-content'>CURRENTLY USING</p>
-                        <h3 className='text-2xl font-semibold text-base-200 dark:text-primary-content'>TECH I ❤️</h3>
                     </div>
                 </div>
             </div>

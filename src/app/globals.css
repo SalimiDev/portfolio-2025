@@ -16,11 +16,22 @@ html {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* .react-grid-layout {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap; 
-} */
+.mask-gradient-horizontal {
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 12.5%,
+        rgb(0, 0, 0) 87.5%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 12.5%,
+        rgb(0, 0, 0) 87.5%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
 
 /* برای انیمیشن تغییرات */
 .react-grid-item {

@@ -21,7 +21,6 @@ interface LayoutItem {
     w: number;
     h: number;
     i: string; // i is used as an ID or identifier
-    // color: string;
 }
 
 const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
@@ -69,7 +68,7 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
             };
         });
 
-        console.log('Updated Layouts:', updatedConfigs);
+        // console.log('Updated Layouts:', updatedConfigs);
     };
 
     return (
@@ -85,10 +84,6 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
                     cols={{ lg: 12, md: 10, sm: 6, xs: 2 }}
                     onBreakpointChange={(newBreakpoint) => console.log('Current Breakpoint:', newBreakpoint)}
                     onDragStop={(layout) => onStopLayoutFun(layout)}
-                    // draggableHandle=".grid-item__title"
-                    // preventCollision={false}
-                    // isRearrangeable
-                    // margin={[10, 10]}
                     {...layoutProps}>
                     {gridCardConfigs.map((item) => (
                         <div key={item.id} style={{ backgroundColor: item.color }}>

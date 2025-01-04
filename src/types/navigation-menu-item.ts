@@ -1,4 +1,4 @@
-type NavigationTitles = 'all' | 'about' | 'work';
+type NavigationTitles = 'All' | 'About' | 'Work';
 
 type NavigationMenuItem = {
     title: NavigationTitles;

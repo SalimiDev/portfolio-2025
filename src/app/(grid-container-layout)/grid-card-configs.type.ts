@@ -14,7 +14,6 @@ interface BaseGridCardConfig {
     layouts?: Layouts;
     settings: Record<string, unknown>;
     color: string;
-    link: string;
     icon: string;
 }
 
@@ -22,19 +21,26 @@ interface BaseGridCardConfig {
 interface LocationCard extends BaseGridCardConfig {
     componentType: 'LocationCard';
     location: string;
+    locationImage: StaticImageData;
 }
 interface ResumeCard extends BaseGridCardConfig {
     componentType: 'ResumeCard';
-    eyeIcon: string;
-    downloadIcon: string;
+    resumePreviewIcon: React.ElementType;
+    resumeDownloadIcon: React.ElementType;
+    resumePreviewUrl: string;
+    resumeDownloadUrl: string;
+    CVDate: string;
 }
 interface AboutMeCard extends BaseGridCardConfig {
     componentType: 'AboutMeCard';
     avatar: string;
+    fullName: string;
+    description: string;
 }
 interface WorkExperiencesCard extends BaseGridCardConfig {
     componentType: 'WorkExperiences';
-    content: ExperienceRecordTypes[];
+    yearsOfExperience: number;
+    experiences: ExperienceRecordTypes[];
     test?: string;
 }
 interface MovingBarCard extends BaseGridCardConfig {
@@ -43,13 +49,13 @@ interface MovingBarCard extends BaseGridCardConfig {
 }
 interface ProjectCard extends BaseGridCardConfig {
     componentType: 'ProjectCard';
-    projectImage: string;
+    projectImage: StaticImageData;
     companyName?: string;
-    companyLogo?: string;
+    companyLogo?: React.ElementType;
     projectName: string;
     projectDescription?: string;
-    projectLink: string;
-    projectTags?: string[];
+    projectUrl: string;
+    projectTech?: string[];
 }
 interface TechCard extends BaseGridCardConfig {
     componentType: 'TechCard';
@@ -58,8 +64,8 @@ interface TechCard extends BaseGridCardConfig {
 interface SocialCard extends BaseGridCardConfig {
     componentType: 'SocialCard';
     platform: string;
-    // platformIcon: StaticImageData;
     platformIcon: React.ElementType;
+    platformUrl: string;
 }
 interface ThemeToggleCard extends BaseGridCardConfig {
     componentType: 'ThemeToggleCard';

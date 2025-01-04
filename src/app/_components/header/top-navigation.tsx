@@ -6,9 +6,9 @@ export const TopNavigation: React.FC = () => {
     const { activeTab, setActiveTab } = useActiveMenuTab();
 
     const menuItems: NavigationMenuItem[] = [
-        { title: 'all', href: '/' },
-        { title: 'about', href: '/about' },
-        { title: 'work', href: '/work' }
+        { title: 'All', href: '/' },
+        { title: 'About', href: '/about' },
+        { title: 'Work', href: '/work' }
     ];
 
     const activeIndex = menuItems.findIndex((item) => item.title === activeTab);
@@ -16,7 +16,7 @@ export const TopNavigation: React.FC = () => {
     return (
         <nav className='relative overflow-hidden rounded-3xl border bg-white/60 px-1 py-[4px] dark:bg-white/10'>
             <ul className='relative flex gap-1'>
-                <div
+                <li
                     className='absolute left-0 top-0 h-full w-[calc(100%/3)] rounded-3xl bg-base-25 transition-all duration-300 ease-out dark:bg-base-100'
                     style={{
                         transform: `translateX(${activeIndex * 100}%)`

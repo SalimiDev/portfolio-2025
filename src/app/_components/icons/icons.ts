@@ -1,6 +1,6 @@
 /* GENERATED FILE */
 
-export { default as IconArrowDown } from './src/arrow-down';
+export { default as IconDownload } from './src/download';
 export { default as IconEmail } from './src/email';
 export { default as IconExternalLink } from './src/external-link';
 export { default as IconEye } from './src/eye';

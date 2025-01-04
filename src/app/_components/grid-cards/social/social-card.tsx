@@ -1,20 +1,14 @@
-'use client';
-
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
-import { useThemeStore } from '@/store/useThemeStore';
 
 interface SocialCardProps {
     config: Extract<GridCardConfig, { componentType: 'SocialCard' }>;
 }
 
 const SocialCard: React.FC<SocialCardProps> = ({ config }) => {
-    const { platform, platformIcon: PlatformIcon, link } = config;
-
-    const { theme } = useThemeStore();
+    const { platformIcon: PlatformIcon, platformUrl, platform } = config;
 
     return (
         <div
@@ -25,35 +19,18 @@ const SocialCard: React.FC<SocialCardProps> = ({ config }) => {
                 transform: 'none'
             }}>
             <div className='group relative aspect-square size-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
-                <div
-                    className='absolute inset-0'
-                    style={{
-                        backgroundImage: 'radial-gradient(circle at 50% 150%, rgba(32, 141, 229, 0.17), transparent)'
-                    }}></div>
-                <div
-                    className='shine absolute inset-[-8px] z-10 opacity-40 blur'
-                    style={{
-                        maskImage: 'radial-gradient(circle at 50% 150%, white, transparent)',
-                        WebkitMaskImage: 'radial-gradient(circle at 50% 150%, white, transparent)',
-                        backgroundImage:
-                            'conic-gradient(from -45deg at 50% 150%, transparent 0deg, rgb(16, 7, 30) 15deg, transparent 30deg, rgb(16, 7, 30) 45deg, transparent 60deg, rgb(16, 7, 30) 75deg, transparent 90deg)'
-                    }}></div>
-                <div className='bg-zinc-950/15 bg-zinc-950/70 group-hover:bg-black/75 absolute inset-px z-[2] rounded-[23px] transition-colors duration-300'></div>
-                <canvas className='absolute inset-0 z-[2] size-full' width='285' height='207'></canvas>
+                <GradientBackdrop />
+                {/* Content */}
                 <div className='relative h-full'>
-                    <div className='relative z-10 flex size-full items-center justify-center opacity-80 transition-opacity hover:opacity-100'>
+                    <div className='relative z-20 flex size-full items-center justify-center opacity-65 transition-opacity hover:opacity-90'>
                         <Link
                             className='flex size-[55%] items-center justify-center rounded-3xl'
-                            href={link}
+                            href={platformUrl}
                             target='_blank'
+                            aria-label={`Visit My ${platform}`}
                             rel='noopener noreferrer'>
-                            <div className='relative aspect-square size-auto opacity-85 transition-opacity hover:opacity-100'>
-                                <PlatformIcon
-                                    width={96}
-                                    height={96}
-                                    stroke='none'
-                                    fill={theme === 'dark' ? 'white' : 'black'}
-                                />
+                            <div className='relative aspect-square size-auto transition-opacity'>
+                                <PlatformIcon width={96} height={96} stroke='none' />
                             </div>
                         </Link>
                     </div>
