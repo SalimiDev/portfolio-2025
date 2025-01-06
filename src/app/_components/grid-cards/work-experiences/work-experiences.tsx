@@ -29,7 +29,7 @@ const WorkExperiences: React.FC<ExperiencesCardProps> = ({ config }) => {
                                     className='flex flex-col items-stretch justify-between gap-3 py-4 md:flex-row md:items-center md:gap-2'>
                                     <div className='flex flex-col-reverse gap-1'>
                                         <h2
-                                            className={`text-black w-fit text-left text-3xl font-medium text-base-300 dark:text-white md:text-4xl ${
+                                            className={`text-black w-fit text-left text-2xl font-medium text-base-300 dark:text-white sm:text-3xl md:text-4xl ${
                                                 item.lineThrough ? 'line-through' : ''
                                             }`}
                                             style={{ opacity: item.opacity / 100 }}>

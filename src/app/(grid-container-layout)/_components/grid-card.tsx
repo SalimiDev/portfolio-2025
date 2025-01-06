@@ -13,8 +13,8 @@ import WorkExperiences from '../../_components/grid-cards/work-experiences/work-
 import { GridCardConfig } from '../grid-card-configs.type';
 
 const LocationCard = dynamic(() => import('../../_components/grid-cards/location/location-card'));
-const ProjectCard = dynamic(() => import('../../_components/grid-cards/project/project-card'), { ssr: false });
-const TechCard = dynamic(() => import('../../_components/grid-cards/technology/tech-card'), { ssr: false });
+const ProjectCard = dynamic(() => import('../../_components/grid-cards/project/project-card'));
+const TechCard = dynamic(() => import('../../_components/grid-cards/technology/tech-card'));
 
 interface GridCardProps {
     item: GridCardConfig;

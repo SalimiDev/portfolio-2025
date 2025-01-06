@@ -44,6 +44,7 @@ const poppins = localFont({
     variable: '--font-poppins'
 });
 
+export const viewport = 'width=device-width, initial-scale=1.0';
 export const metadata: Metadata = {
     title: 'Portfolio | Mehdi Salimi',
     description:
@@ -53,7 +54,6 @@ export const metadata: Metadata = {
     creator: 'Mehdi Salimi',
     publisher: 'Mehdi Salimi',
     metadataBase: new URL('https://mehdisalimi.com'),
-    viewport: 'width=device-width, initial-scale=1.0',
     keywords: [
         'Mehdi Salimi',
         'Mehdi',

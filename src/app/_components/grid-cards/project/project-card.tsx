@@ -24,14 +24,15 @@ const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
                             <div className='absolute size-full shadow-2xl'>
                                 <Image
                                     decoding='async'
-                                    className='transparent size-full rounded-lg object-cover'
+                                    className='transparent size-full rounded-lg'
                                     src={projectImage}
                                     alt={projectName}
                                     priority={false}
                                     placeholder='blur'
+                                    // object-cover
                                     // loading='lazy'
-                                    // width={1200}
-                                    // height={646}
+                                    width={1200}
+                                    height={646}
                                 />
                             </div>
                         </div>

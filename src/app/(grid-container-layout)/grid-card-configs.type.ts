@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 import { StaticImageData } from 'next/image';
 
 import { Layouts } from '@/types/layouts.types';
@@ -9,12 +7,8 @@ import { ExperienceRecordTypes } from '../_components/grid-cards/work-experience
 interface BaseGridCardConfig {
     id: number;
     componentType: GridComponent;
-    tags: string[];
-    priority: Record<string, number>;
     layouts?: Layouts;
-    settings: Record<string, unknown>;
     color: string;
-    icon: string;
 }
 
 //Grid cards types
@@ -41,7 +35,6 @@ interface WorkExperiencesCard extends BaseGridCardConfig {
     componentType: 'WorkExperiences';
     yearsOfExperience: number;
     experiences: ExperienceRecordTypes[];
-    test?: string;
 }
 interface MovingBarCard extends BaseGridCardConfig {
     componentType: 'MovingBarCard';
