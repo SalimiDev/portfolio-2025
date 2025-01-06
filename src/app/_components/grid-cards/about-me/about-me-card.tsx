@@ -11,7 +11,7 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ config }) => {
     const { avatar, fullName, description } = config;
 
     return (
-        <section className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
+        <section className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px shadow-2xl dark:bg-white/10'>
             <GradientBackdrop />
             <div className='static flex flex-col items-center gap-6 px-6 py-5 sm:items-start sm:px-8 sm:py-6'>
                 <div className='flex flex-col items-center gap-2 sm:flex-row sm:justify-start sm:gap-6'>

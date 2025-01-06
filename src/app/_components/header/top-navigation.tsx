@@ -14,7 +14,7 @@ export const TopNavigation: React.FC = () => {
     const activeIndex = menuItems.findIndex((item) => item.title === activeTab);
 
     return (
-        <nav className='relative overflow-hidden rounded-3xl border bg-white/60 px-1 py-[4px] dark:bg-white/10'>
+        <nav className='relative overflow-hidden rounded-3xl border border-base-25 bg-white/60 px-1 py-[4px] shadow-2xl dark:bg-white/10'>
             <ul className='relative flex gap-1'>
                 <li
                     className='absolute left-0 top-0 h-full w-[calc(100%/3)] rounded-3xl bg-base-25 transition-all duration-300 ease-out dark:bg-base-100'

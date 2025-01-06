@@ -11,8 +11,8 @@ const WorkExperiences: React.FC<ExperiencesCardProps> = ({ config }) => {
     const { yearsOfExperience, experiences } = config;
 
     return (
-        <div style={{ opacity: 1, filter: 'blur(0px)', height: '100%', transform: 'none' }}>
-            <div className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
+        <div className='h-full transform-none opacity-100 blur-0'>
+            <div className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 <div className='relative h-full'>
                     <div className='static flex h-full flex-col justify-start gap-6 p-8'>

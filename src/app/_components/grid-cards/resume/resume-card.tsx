@@ -16,7 +16,7 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
 
     return (
         <div className='h-full transform-none opacity-100 blur-0'>
-            <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px dark:bg-white/10'>
+            <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 <div className='relative h-full'>
                     <div className='relative flex h-full flex-col justify-center gap-6 px-8 py-6'>

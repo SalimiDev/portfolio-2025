@@ -10,8 +10,8 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
     const { technologies } = config;
 
     return (
-        <div style={{ opacity: 1, filter: 'blur(0px)', height: '100%', transform: 'none' }}>
-            <div className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px dark:bg-white/10'>
+        <div className='h-full transform-none opacity-100 blur-0'>
+            <div className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
                 <div className='relative size-full overflow-hidden px-8 py-16'>
