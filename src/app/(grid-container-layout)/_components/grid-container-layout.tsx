@@ -75,7 +75,7 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
         <div className='space-y-4'>
             <div className='relative'>
                 <ResponsiveGridLayout
-                    isDraggable={true}
+                    isDraggable={false}
                     className='layout'
                     layouts={layouts}
                     compactType={null}
