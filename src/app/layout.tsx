@@ -3,6 +3,7 @@ import { Figtree } from 'next/font/google';
 import localFont from 'next/font/local';
 
 import { Header } from './_components/header';
+import LoadingOverlay from './_components/ui/LoadingOverlay';
 import './globals.css';
 import { Providers } from './providers';
 
@@ -129,7 +130,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Providers>
                     <Header />
 
-                    <main className=''>{children}</main>
+                    <main className=''>
+                        <LoadingOverlay animation='backInOut' duration={1} position={200}>
+                            {children}
+                        </LoadingOverlay>
+                    </main>
                 </Providers>
             </body>
         </html>

@@ -47,7 +47,7 @@ export const tailwindColors: ColorObject = {
     'accent-content': '#FFFFFF',
     'accent-focus': generateDarkenColorFrom('#1FB2A5'),
     neutral: '#2a323c',
-    'neutral-content': generateForegroundColorFrom('#FFFFFF'),
+    'neutral-content': generateForegroundColorFrom('#FFFFFF', 0.7),
     'neutral-focus': generateDarkenColorFrom('#2a323c', 0.03),
     // 'base-25': '#353d47',
     // 'base-25': '#99a3b2',
