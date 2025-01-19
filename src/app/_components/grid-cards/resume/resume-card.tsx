@@ -38,7 +38,7 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
                             <div className='flex items-center gap-2 lg:gap-6'>
                                 <a
                                     href={resumeDownloadUrl}
-                                    download=''
+                                    download
                                     className='relative z-20 cursor-pointer'
                                     aria-label='Download My Resume'>
                                     <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
@@ -49,7 +49,9 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
                                 </a>
                                 <a
                                     href={resumePreviewUrl}
-                                    download=''
+                                    type='application/pdf'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
                                     className='relative z-20 cursor-pointer'
                                     aria-label='Preview My Resume'>
                                     <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>

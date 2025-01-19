@@ -29,14 +29,6 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
     const generateLayoutByTab = (tab: NavigationTitles, screenSize: keyof Layouts): LayoutItem[] => {
         const defaultLayout: LayoutPosition = { x: 0, y: 0, w: 1, h: 1 };
 
-        // Sorting cards based on priority
-        // const sortedConfigs = [...gridCardConfigs].sort((a, b) => {
-        //     const priorityA = a.priority?.[tab] || 0;
-        //     const priorityB = b.priority?.[tab] || 0;
-
-        //     return priorityA - priorityB;
-        // });
-
         // Generating layout based on selected tab
         return [...gridCardConfigs].map((item) => {
             const layout = item.layouts?.[screenSize]?.[tab] ?? defaultLayout;

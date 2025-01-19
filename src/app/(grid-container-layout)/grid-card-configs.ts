@@ -1,10 +1,10 @@
 import {
-    Developer_landing,
     Station_Setup,
     Station_money,
     admin_dash,
+    business_inteligence,
     hillter_hotel,
-    location,
+    location_dark,
     tesla_clone
 } from '@/assets/images';
 import {
@@ -119,8 +119,10 @@ export const gridCardConfigs: GridCardConfig[] = [
         componentType: 'ResumeCard',
         resumePreviewIcon: IconEye,
         resumeDownloadIcon: IconDownload,
-        resumePreviewUrl: 'ddd',
-        resumeDownloadUrl: 'ppp',
+        resumePreviewUrl:
+            'https://docs.google.com/gview?embedded=true&url=https://raw.githubusercontent.com/SalimiDev/SalimiDev/main/resume/Mehdi_Salimi-Frontend_Resume-Bahman-403_eng.pdf',
+        resumeDownloadUrl:
+            'https://github.com/SalimiDev/SalimiDev/blob/main/resume/Mehdi_Salimi-Frontend_Resume-Bahman-403_eng.pdf?raw=true',
         CVDate: '2025 CV',
         color: '',
         layouts: {
@@ -221,7 +223,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         id: 6,
         componentType: 'LocationCard',
         location: 'string',
-        locationImage: location,
+        locationImage: location_dark,
         color: '',
         layouts: {
             xs: {
@@ -402,7 +404,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         projectImage: hillter_hotel,
         projectName: 'Hillter Hotel',
         projectDescription: 'string',
-        projectUrl: 'https://en.wikipedia.org/wiki/Yahoo',
+        projectUrl: 'https://salimidev.github.io/Hotel-ReactJsApp',
         projectTech: ['Next.js', 'TypeScript', 'Tailwind-CSS'],
         color: '',
         layouts: {
@@ -470,7 +472,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         projectImage: admin_dash,
         projectName: 'Admin Dashboard',
         projectDescription: 'string',
-        projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
+        projectUrl: 'https://salimidev.github.io/react-admin-dashboard/',
         projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
         color: '',
         layouts: {
@@ -499,13 +501,13 @@ export const gridCardConfigs: GridCardConfig[] = [
     {
         id: 15,
         componentType: 'ProjectCard',
-        companyName: 'Freelance',
+        companyName: 'PAYA',
         companyLogo: IconGithub,
-        projectImage: Developer_landing,
-        projectName: 'Developer Landing',
+        projectImage: business_inteligence,
+        projectName: 'Business intelligence (BI)',
         projectDescription: 'string',
-        projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
-        projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
+        projectUrl: '',
+        projectTech: ['React.js', 'PrimeReact', 'Highcharts', 'Tailwind-CSS'],
         color: '',
         layouts: {
             xs: {
@@ -529,73 +531,73 @@ export const gridCardConfigs: GridCardConfig[] = [
                 Work: { x: 0, y: 29, w: 6, h: 15 }
             }
         }
-    },
-    {
-        id: 16,
-        componentType: 'ProjectCard',
-        companyName: 'Freelance',
-        companyLogo: IconGithub,
-        projectImage: Station_Setup,
-        projectName: 'Station Setup',
-        projectDescription: 'string',
-        projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
-        projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
-        color: '',
-        layouts: {
-            xs: {
-                All: { x: 0, y: 99, w: 2, h: 12 },
-                About: { x: 0, y: 97, w: 2, h: 12 },
-                Work: { x: 0, y: 67, w: 2, h: 12 }
-            },
-            sm: {
-                All: { x: 0, y: 95, w: 6, h: 12 },
-                About: { x: 0, y: 96, w: 6, h: 12 },
-                Work: { x: 0, y: 67, w: 6, h: 12 }
-            },
-            md: {
-                All: { x: 0, y: 50, w: 5, h: 12 },
-                About: { x: 0, y: 54, w: 5, h: 13 },
-                Work: { x: 5, y: 32, w: 5, h: 13 }
-            },
-            lg: {
-                All: { x: 0, y: 51, w: 6, h: 15 },
-                About: { x: 0, y: 47, w: 6, h: 15 },
-                Work: { x: 6, y: 36, w: 6, h: 15 }
-            }
-        }
-    },
-    {
-        id: 17,
-        componentType: 'ProjectCard',
-        companyName: 'Freelance',
-        companyLogo: IconGithub,
-        projectImage: Station_money,
-        projectName: 'Station Money',
-        projectDescription: 'string',
-        projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
-        projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
-        color: '',
-        layouts: {
-            xs: {
-                All: { x: 0, y: 111, w: 2, h: 12 },
-                About: { x: 0, y: 109, w: 2, h: 12 },
-                Work: { x: 0, y: 79, w: 2, h: 12 }
-            },
-            sm: {
-                All: { x: 0, y: 107, w: 6, h: 12 },
-                About: { x: 0, y: 108, w: 6, h: 12 },
-                Work: { x: 0, y: 79, w: 6, h: 12 }
-            },
-            md: {
-                All: { x: 5, y: 50, w: 5, h: 12 },
-                About: { x: 5, y: 54, w: 5, h: 13 },
-                Work: { x: 0, y: 40, w: 5, h: 13 }
-            },
-            lg: {
-                All: { x: 6, y: 51, w: 6, h: 15 },
-                About: { x: 6, y: 59, w: 6, h: 15 },
-                Work: { x: 0, y: 44, w: 6, h: 15 }
-            }
-        }
     }
+    // {
+    //     id: 16,
+    //     componentType: 'ProjectCard',
+    //     companyName: 'Freelance',
+    //     companyLogo: IconGithub,
+    //     projectImage: Station_Setup,
+    //     projectName: 'Station Setup',
+    //     projectDescription: 'string',
+    //     projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
+    //     projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
+    //     color: '',
+    //     layouts: {
+    //         xs: {
+    //             All: { x: 0, y: 99, w: 2, h: 12 },
+    //             About: { x: 0, y: 97, w: 2, h: 12 },
+    //             Work: { x: 0, y: 67, w: 2, h: 12 }
+    //         },
+    //         sm: {
+    //             All: { x: 0, y: 95, w: 6, h: 12 },
+    //             About: { x: 0, y: 96, w: 6, h: 12 },
+    //             Work: { x: 0, y: 67, w: 6, h: 12 }
+    //         },
+    //         md: {
+    //             All: { x: 0, y: 50, w: 5, h: 12 },
+    //             About: { x: 0, y: 54, w: 5, h: 13 },
+    //             Work: { x: 5, y: 32, w: 5, h: 13 }
+    //         },
+    //         lg: {
+    //             All: { x: 0, y: 51, w: 6, h: 15 },
+    //             About: { x: 0, y: 47, w: 6, h: 15 },
+    //             Work: { x: 6, y: 36, w: 6, h: 15 }
+    //         }
+    //     }
+    // },
+    // {
+    //     id: 17,
+    //     componentType: 'ProjectCard',
+    //     companyName: 'Freelance',
+    //     companyLogo: IconGithub,
+    //     projectImage: Station_money,
+    //     projectName: 'Station Money',
+    //     projectDescription: 'string',
+    //     projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
+    //     projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
+    //     color: '',
+    //     layouts: {
+    //         xs: {
+    //             All: { x: 0, y: 111, w: 2, h: 12 },
+    //             About: { x: 0, y: 109, w: 2, h: 12 },
+    //             Work: { x: 0, y: 79, w: 2, h: 12 }
+    //         },
+    //         sm: {
+    //             All: { x: 0, y: 107, w: 6, h: 12 },
+    //             About: { x: 0, y: 108, w: 6, h: 12 },
+    //             Work: { x: 0, y: 79, w: 6, h: 12 }
+    //         },
+    //         md: {
+    //             All: { x: 5, y: 50, w: 5, h: 12 },
+    //             About: { x: 5, y: 54, w: 5, h: 13 },
+    //             Work: { x: 0, y: 40, w: 5, h: 13 }
+    //         },
+    //         lg: {
+    //             All: { x: 6, y: 51, w: 6, h: 15 },
+    //             About: { x: 6, y: 59, w: 6, h: 15 },
+    //             Work: { x: 0, y: 44, w: 6, h: 15 }
+    //         }
+    //     }
+    // }
 ];

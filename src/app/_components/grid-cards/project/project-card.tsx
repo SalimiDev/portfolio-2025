@@ -21,20 +21,19 @@ const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
                 <div className='relative h-full overflow-hidden'>
                     <div className='relative flex h-full flex-col justify-center gap-6 overflow-hidden p-4 sm:px-8 sm:py-6'>
                         <div className='relative flex size-full flex-col items-stretch justify-between'>
-                            <div className='absolute size-full shadow-2xl'>
-                                <Image
-                                    decoding='async'
-                                    className='transparent size-full rounded-lg'
-                                    src={projectImage}
-                                    alt={projectName}
-                                    priority={false}
-                                    placeholder='blur'
-                                    // object-cover
-                                    // loading='lazy'
-                                    width={1200}
-                                    height={646}
-                                />
-                            </div>
+                            <Image
+                                className='transparent absolute inset-0 z-50 size-full rounded-lg shadow-2xl'
+                                src={projectImage}
+                                alt={projectName}
+                                loading='lazy'
+                                placeholder='blur'
+                                fill
+                                data-nimg='fill'
+                                sizes='(min-width: 640px) 559px, 591px'
+                                // decoding='async'
+                                // fetchPriority='high'
+                                // sizes='(max-width: 640px) 246px, (max-width: 1280px) 214px, (max-width: 1440px) 214px, (max-width: 1920px) 246px, 559px'
+                            />
                         </div>
 
                         <div className='flex flex-col items-start gap-1'>

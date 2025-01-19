@@ -50,11 +50,7 @@ export default [
             'import/no-named-as-default': 'off'
         }
     },
-    // ! ===================== DISCLAIMER =====================
-    // ! There is no official solution available for new ESLint 9 flat config structure for NextJS
-    // ! The solution is taken from the community and may not be the best practice, use it at your own risk
-    // ? Ref: https://github.com/vercel/next.js/discussions/49337?sort=top#discussioncomment-5998603
-    // ! ======================================================
+
     {
         plugins: {
             '@next/next': nextPlugin
