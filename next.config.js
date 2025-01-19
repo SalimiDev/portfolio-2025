@@ -11,6 +11,9 @@ const nextConfig = {
     swcMinify: true,
     experimental: {
         polyfillsOptimization: true
+    },
+    images: {
+        unoptimized: true
     }
 };
 
