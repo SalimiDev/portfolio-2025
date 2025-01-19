@@ -70,7 +70,7 @@ const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {
                     isDraggable={false}
                     className='layout'
                     layouts={layouts}
-                    compactType={null}
+                    compactType={'vertical'}
                     rowHeight={30}
                     breakpoints={{ lg: 996, md: 768, sm: 480, xs: 0 }}
                     cols={{ lg: 12, md: 10, sm: 6, xs: 2 }}
