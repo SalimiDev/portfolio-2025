@@ -41,13 +41,14 @@ export default [
             'react-hooks/exhaustive-deps': 'off',
             'react/display-name': 'off',
             'react/prop-types': 'off',
-            'newline-before-return': 'error',
+            'newline-before-return': 'off',
             '@typescript-eslint/no-unused-vars': 'off',
             '@typescript-eslint/no-unused-expressions': 'off',
             'tailwindcss/no-custom-classname': 'off',
             'tailwindcss/migration-from-tailwind-2': 'off',
             'import/no-unresolved': 'off',
-            'import/no-named-as-default': 'off'
+            'import/no-named-as-default': 'off',
+            'promise/param-names': 'off'
         }
     },
 
