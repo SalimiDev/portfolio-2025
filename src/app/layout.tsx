@@ -126,7 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
                 <link rel='manifest' href='/site.webmanifest' />
             </head>
-            <body className='container grid bg-base-25 text-base-200 dark:bg-base-100 dark:text-base-content'>
+            <body className='bg-base-25 text-base-200 dark:bg-base-100 dark:text-base-content container grid'>
                 <Providers>
                     <Header />
 

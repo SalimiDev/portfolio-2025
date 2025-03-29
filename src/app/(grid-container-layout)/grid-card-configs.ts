@@ -120,9 +120,9 @@ export const gridCardConfigs: GridCardConfig[] = [
         resumePreviewIcon: IconEye,
         resumeDownloadIcon: IconDownload,
         resumePreviewUrl:
-            'https://docs.google.com/gview?embedded=true&url=https://raw.githubusercontent.com/SalimiDev/SalimiDev/main/resume/Mehdi_Salimi-Frontend_Resume-Bahman-403_eng.pdf',
+            'https://docs.google.com/gview?embedded=true&url=https://raw.githubusercontent.com/SalimiDev/SalimiDev/main/resume/MehdiSalimi-Frontend-Esfand-403.pdf',
         resumeDownloadUrl:
-            'https://github.com/SalimiDev/SalimiDev/blob/main/resume/Mehdi_Salimi-Frontend_Resume-Bahman-403_eng.pdf?raw=true',
+            'https://github.com/SalimiDev/SalimiDev/blob/main/resume/MehdiSalimi-Frontend-Esfand-403.pdf?raw=true',
         CVDate: '2025 CV',
         color: '',
         layouts: {
