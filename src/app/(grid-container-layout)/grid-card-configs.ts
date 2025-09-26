@@ -69,21 +69,28 @@ export const gridCardConfigs: GridCardConfig[] = [
         experiences: [
             {
                 title: 'Frontend Developer',
-                company: 'Paya',
-                dates: '2023 - Present',
+                company: 'Armaghan Talaie',
+                dates: '2025 - present',
                 opacity: 100,
                 lineThrough: false
             },
             {
+                title: 'Frontend Developer',
+                company: 'Paya',
+                dates: '2023 - 2025',
+                opacity: 100,
+                lineThrough: true
+            },
+            {
                 title: 'Web Developer',
                 company: 'Freelance',
-                dates: '2021 - 2023',
+                dates: '2022 - 2023',
                 opacity: 55,
                 lineThrough: true
             },
             {
                 title: 'Frontend Developer',
-                company: 'Protein Gostar Sina',
+                company: 'Kimia Mehr Bastan',
                 dates: '2020 - 2021',
                 opacity: 55,
                 lineThrough: true
