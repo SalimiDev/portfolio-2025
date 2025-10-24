@@ -9,17 +9,14 @@ import { Providers } from './providers';
 const figtree = Figtree({
     display: 'swap',
     subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700', '800', '900'],
-    variable: '--font-figtree'
+    weight: ['400', '500', '600', '700'],
+    variable: '--font-figtree',
+    preload: true,
+    fallback: ['system-ui', 'arial']
 });
 
 const poppins = localFont({
     src: [
-        {
-            path: '../../public/fonts/poppins/poppins-light.woff2',
-            weight: '100',
-            style: 'normal'
-        },
         {
             path: '../../public/fonts/poppins/poppins-regular.woff2',
             weight: '400',
@@ -41,7 +38,10 @@ const poppins = localFont({
             style: 'normal'
         }
     ],
-    variable: '--font-poppins'
+    variable: '--font-poppins',
+    display: 'swap',
+    preload: true,
+    fallback: ['system-ui', 'arial']
 });
 
 export const viewport = 'width=device-width, initial-scale=1.0';
@@ -129,6 +129,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <head>
                 <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
                 <link rel='manifest' href='/site.webmanifest' />
+                <link
+                    rel='preload'
+                    href='/fonts/poppins/poppins-regular.woff2'
+                    as='font'
+                    type='font/woff2'
+                    crossOrigin='anonymous'
+                />
+                <link
+                    rel='preload'
+                    href='/fonts/poppins/poppins-medium.woff2'
+                    as='font'
+                    type='font/woff2'
+                    crossOrigin='anonymous'
+                />
             </head>
             <body className='container grid bg-base-25 text-base-200 dark:bg-base-100 dark:text-base-content'>
                 <Providers>
