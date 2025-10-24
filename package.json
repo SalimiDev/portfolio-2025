@@ -10,7 +10,9 @@
         "lint": "eslint",
         "format": "prettier --write .",
         "test": "echo \"No tests specified\" && exit 0",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "update-sitemap": "node scripts/update-sitemap.mjs",
+        "seo:update": "npm run update-sitemap"
     },
     "dependencies": {
         "colord": "^2.9.3",

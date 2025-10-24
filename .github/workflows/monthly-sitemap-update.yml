@@ -1,0 +1,84 @@
+name: Monthly Sitemap Update
+
+on:
+    # Automatic execution on the first day of each month
+    schedule:
+        - cron: '0 0 1 * *' # Every month at 00:00 UTC
+    # Manual execution
+    workflow_dispatch:
+        inputs:
+            update_date:
+                description: 'Update date (YYYY-MM-DD)'
+                required: false
+                default: ''
+
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+
+jobs:
+    update-sitemap:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  cache: 'npm'
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Update sitemap dates
+              run: |
+                  # Determine update date
+                  if [ -n "${{ github.event.inputs.update_date }}" ]; then
+                    UPDATE_DATE="${{ github.event.inputs.update_date }}"
+                  else
+                    UPDATE_DATE=$(date +%Y-%m-%d)
+                  fi
+
+                  echo "📅 Update date: $UPDATE_DATE"
+
+                  # Update sitemap.xml
+                  sed -i "s/<lastmod>[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}<\/lastmod>/<lastmod>$UPDATE_DATE<\/lastmod>/g" public/sitemap.xml
+
+                  # Show changes
+                  echo "📊 Changes applied:"
+                  git diff public/sitemap.xml || echo "No changes found"
+
+            - name: Skip backup creation
+              run: |
+                  echo "💾 Backup disabled - can be enabled if needed"
+
+            - name: Check for changes
+              run: |
+                  if git diff --quiet; then
+                    echo "No changes to commit"
+                    echo "SKIP_COMMIT=true" >> $GITHUB_ENV
+                  else
+                    echo "Changes found - ready for commit"
+                    echo "SKIP_COMMIT=false" >> $GITHUB_ENV
+                  fi
+
+            - name: Build and deploy
+              run: |
+                  npm run build
+
+            - name: Deploy to GitHub Pages
+              uses: actions/deploy-pages@v4
+              with:
+                  path: ./out
+
+            - name: Notify completion
+              run: |
+                  echo "🎉 Monthly sitemap update completed!"
+                  echo "📅 Date: $(date +%Y-%m-%d)"
+                  echo "🔗 Sitemap URL: https://mehdisalimi.com/sitemap.xml"
