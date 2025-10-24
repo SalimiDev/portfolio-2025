@@ -3,7 +3,6 @@ import { Figtree } from 'next/font/google';
 import localFont from 'next/font/local';
 
 import { Header } from './_components/header';
-import LoadingOverlay from './_components/ui/LoadingOverlay';
 import './globals.css';
 import { Providers } from './providers';
 
@@ -113,6 +112,14 @@ export const metadata: Metadata = {
             'max-snippet': -1,
             'max-video-preview': -1
         }
+    },
+    icons: {
+        icon: [
+            { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+            { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+            { url: '/favicon.ico' }
+        ],
+        apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }]
     }
 };
 
@@ -120,21 +127,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang='en' dir='ltr' className={` ${poppins.variable} ${figtree.variable}`} suppressHydrationWarning>
             <head>
-                <link rel='icon' href='/favicon.ico' type='image/x-icon' />
                 <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
-                <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
-                <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
                 <link rel='manifest' href='/site.webmanifest' />
             </head>
             <body className='container grid bg-base-25 text-base-200 dark:bg-base-100 dark:text-base-content'>
                 <Providers>
                     <Header />
 
-                    <main className=''>
-                        <LoadingOverlay animation='backInOut' duration={1} position={200}>
-                            {children}
-                        </LoadingOverlay>
-                    </main>
+                    <main className=''>{children}</main>
                 </Providers>
             </body>
         </html>
