@@ -37,18 +37,18 @@ const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
                         </div>
 
                         <div className='flex flex-col items-start gap-1'>
-                            <h2 className='flex flex-wrap items-center gap-2 text-xs font-medium uppercase opacity-80'>
+                            <p className='flex flex-wrap items-center gap-2 text-xs font-medium uppercase opacity-80'>
                                 <span>Project at</span>
                                 <span className='flex gap-1'>
                                     {CompanyLogo && <CompanyLogo width={16} height={12} stroke='none' />}
 
                                     {companyName}
                                 </span>
-                            </h2>
+                            </p>
                             <div className='flex w-full items-center gap-2'>
-                                <h1 className='text-black text-2xl font-medium uppercase opacity-90 dark:text-white'>
+                                <h2 className='text-black text-2xl font-medium uppercase opacity-90 dark:text-white'>
                                     {projectName}
-                                </h1>
+                                </h2>
                                 {projectUrl && (
                                     <Link
                                         href={projectUrl}

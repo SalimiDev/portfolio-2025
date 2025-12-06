@@ -30,10 +30,10 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
                     <div className='relative flex h-full flex-col justify-center gap-6 px-8 py-6'>
                         <div className='flex w-full items-center justify-between'>
                             <div className='flex flex-col items-start gap-1'>
-                                <h4 className='text-xs font-medium uppercase opacity-50'>{CVDate}</h4>
-                                <h1 className='text-black text-2xl font-medium uppercase opacity-90 dark:text-white'>
+                                <p className='text-xs font-medium uppercase opacity-50'>{CVDate}</p>
+                                <h2 className='text-black text-2xl font-medium uppercase opacity-90 dark:text-white'>
                                     Resume
-                                </h1>
+                                </h2>
                             </div>
                             <div className='flex items-center gap-2 lg:gap-6'>
                                 <a

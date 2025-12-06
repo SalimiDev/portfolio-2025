@@ -24,12 +24,12 @@ const WorkExperiences: React.FC<ExperiencesCardProps> = ({ config }) => {
                     <div className='relative h-full'>
                         <div className='static flex h-full flex-col justify-start gap-6 p-8'>
                             <div className='flex flex-col-reverse items-start gap-1'>
-                                <h1 className='text-black text-center text-2xl font-medium uppercase opacity-90 dark:text-white'>
+                                <h2 className='text-black text-center text-2xl font-medium uppercase opacity-90 dark:text-white'>
                                     Experience
-                                </h1>
-                                <h2 className='text-sm font-medium uppercase opacity-60'>
-                                    {yearsOfExperience} Years of
                                 </h2>
+                                <p className='text-sm font-medium uppercase opacity-60'>
+                                    {yearsOfExperience} Years of
+                                </p>
                             </div>
                             <div className='relative z-10 flex flex-col lg:justify-around'>
                                 {experiences.map((item, index) => (
