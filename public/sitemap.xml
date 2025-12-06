@@ -6,7 +6,7 @@
     <!-- Homepage - Main Portfolio Page -->
     <url>
         <loc>https://mehdisalimi.com/</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -19,7 +19,7 @@
     <!-- Resume/CV Page (if accessible) -->
     <url>
         <loc>https://mehdisalimi.com/resume</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -27,7 +27,7 @@
     <!-- Projects Section (if accessible) -->
     <url>
         <loc>https://mehdisalimi.com/projects</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -35,7 +35,7 @@
     <!-- About Section (if accessible) -->
     <url>
         <loc>https://mehdisalimi.com/about</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -43,7 +43,7 @@
     <!-- Contact Section (if accessible) -->
     <url>
         <loc>https://mehdisalimi.com/contact</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -51,7 +51,7 @@
     <!-- Individual Project Pages (if they exist) -->
     <url>
         <loc>https://mehdisalimi.com/projects/hillter-hotel</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -63,7 +63,7 @@
     
     <url>
         <loc>https://mehdisalimi.com/projects/tesla-clone</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -75,7 +75,7 @@
     
     <url>
         <loc>https://mehdisalimi.com/projects/admin-dashboard</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -87,7 +87,7 @@
     
     <url>
         <loc>https://mehdisalimi.com/projects/business-intelligence</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
         <image:image>
@@ -100,7 +100,7 @@
     <!-- Technology/Skills Section (if accessible) -->
     <url>
         <loc>https://mehdisalimi.com/technologies</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -108,7 +108,7 @@
     <!-- Experience Section (if accessible) -->
     <url>
         <loc>https://mehdisalimi.com/experience</loc>
-        <lastmod>2025-10-24</lastmod>
+        <lastmod>2025-12-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

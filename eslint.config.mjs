@@ -63,6 +63,6 @@ export default [
         }
     },
     {
-        ignores: ['.next/**', 'out/**']
+        ignores: ['.next/**', 'out/**', 'public/images/optimized/**', 'node_modules/**']
     }
 ];
