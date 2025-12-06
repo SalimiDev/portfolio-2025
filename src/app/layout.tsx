@@ -144,7 +144,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     crossOrigin='anonymous'
                 />
             </head>
-            <body className='container grid bg-base-25 text-base-200 dark:bg-base-100 dark:text-base-content'>
+            <body className='grid bg-base-25 p-1 text-base-200 lg:container dark:bg-base-100 dark:text-base-content'>
                 <Providers>
                     <Header />
 

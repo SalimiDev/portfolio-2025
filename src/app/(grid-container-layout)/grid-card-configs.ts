@@ -33,7 +33,7 @@ export const gridCardConfigs: GridCardConfig[] = [
         componentType: 'AboutMeCard',
         avatar: '/images/mehdi_salimi.jpg',
         fullName: 'Mehdi Salimi',
-        description: `I’m a front-end developer with three years of experience, specializing in building responsive
+        description: `I’m a front-end developer with four years of experience, specializing in building responsive
                     dashboards and interactive websites. I work with modern tools like JavaScript, Next.js, React, and
                     Tailwind CSS to craft beautiful user interfaces. Collaboration, creativity, and attention to detail
                     are at the heart of my work. I’m passionate about improving user experiences and continuously
@@ -69,16 +69,23 @@ export const gridCardConfigs: GridCardConfig[] = [
         experiences: [
             {
                 title: 'Frontend Developer',
-                company: 'Armaghan Talaie',
-                dates: '2025 - present',
+                company: 'Maltina',
+                dates: 'Dec 2025 - present',
                 opacity: 100,
+                lineThrough: false
+            },
+            {
+                title: 'Frontend Developer',
+                company: 'Armaghan Talaie',
+                dates: 'Mar 2025 - Nov 2025',
+                opacity: 55,
                 lineThrough: false
             },
             {
                 title: 'Frontend Developer',
                 company: 'Paya',
                 dates: '2023 - 2025',
-                opacity: 100,
+                opacity: 55,
                 lineThrough: true
             },
             {
@@ -100,18 +107,18 @@ export const gridCardConfigs: GridCardConfig[] = [
         color: '',
         layouts: {
             xs: {
-                All: { x: 7, y: 37, w: 2, h: 14 },
-                About: { x: 0, y: 36, w: 2, h: 13 },
-                Work: { x: 0, y: 6, w: 2, h: 13 }
+                All: { x: 7, y: 37, w: 2, h: 18 },
+                About: { x: 0, y: 36, w: 2, h: 18 },
+                Work: { x: 0, y: 6, w: 2, h: 18 }
             },
             sm: {
-                All: { x: 7, y: 35, w: 6, h: 12 },
-                About: { x: 0, y: 35, w: 6, h: 13 },
-                Work: { x: 0, y: 6, w: 6, h: 13 }
+                All: { x: 7, y: 35, w: 6, h: 18 },
+                About: { x: 0, y: 35, w: 6, h: 18 },
+                Work: { x: 0, y: 6, w: 6, h: 18 }
             },
             md: {
-                All: { x: 0, y: 16, w: 10, h: 10 },
-                About: { x: 10, y: 17, w: 10, h: 11 },
+                All: { x: 0, y: 16, w: 10, h: 12 },
+                About: { x: 10, y: 17, w: 10, h: 12 },
                 Work: { x: 0, y: 0, w: 5, h: 14 }
             },
             lg: {
