@@ -86,21 +86,21 @@ export const gridCardConfigs: GridCardConfig[] = [
                 company: 'Paya',
                 dates: '2023 - 2025',
                 opacity: 55,
-                lineThrough: true
+                lineThrough: false
             },
             {
                 title: 'Web Developer',
                 company: 'Freelance',
                 dates: '2022 - 2023',
                 opacity: 55,
-                lineThrough: true
+                lineThrough: false
             },
             {
                 title: 'Frontend Developer',
                 company: 'Kimia Mehr Bastan',
                 dates: '2020 - 2021',
                 opacity: 55,
-                lineThrough: true
+                lineThrough: false
             }
         ],
 
