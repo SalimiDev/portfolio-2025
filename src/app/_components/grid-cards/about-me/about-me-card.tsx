@@ -22,6 +22,7 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ config }) => {
                             alt={fullName}
                             width={90}
                             height={90}
+                            style={{ width: 'auto', height: 'auto' }}
                             priority={true}
                             // loading='lazy'
                         />
