@@ -31,7 +31,7 @@ export const gridCardConfigs: GridCardConfig[] = [
     {
         id: 1,
         componentType: 'AboutMeCard',
-        avatar: '/images/mehdi_salimi.webp',
+        avatar: '/images/user_avatar.webp',
         fullName: 'Mehdi Salimi',
         description: `I’m a front-end developer with four years of experience, specializing in building responsive
                     dashboards and interactive websites. I work with modern tools like JavaScript, Next.js, React, and
