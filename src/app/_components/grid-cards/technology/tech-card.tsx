@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import Image from 'next/image';
 
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
@@ -8,7 +10,7 @@ import { motion } from 'framer-motion';
 interface TechCardProps {
     config: Extract<GridCardConfig, { componentType: 'TechCard' }>;
 }
-const TechCard: React.FC<TechCardProps> = ({ config }) => {
+const TechCard: React.FC<TechCardProps> = memo(({ config }) => {
     const { technologies } = config;
 
     return (
@@ -51,6 +53,6 @@ const TechCard: React.FC<TechCardProps> = ({ config }) => {
             </div>
         </motion.div>
     );
-};
+});
 
 export default TechCard;

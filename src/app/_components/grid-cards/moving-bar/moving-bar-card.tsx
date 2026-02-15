@@ -1,6 +1,8 @@
+import { memo } from 'react';
+
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
 
-const MovingBar: React.FC = () => {
+const MovingBar: React.FC = memo(() => {
     const repeatCount = 50;
 
     return (
@@ -21,6 +23,6 @@ const MovingBar: React.FC = () => {
             </div>
         </div>
     );
-};
+});
 
 export default MovingBar;

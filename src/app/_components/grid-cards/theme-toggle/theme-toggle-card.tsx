@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 
 import { useTheme } from 'next-themes';
 
@@ -9,13 +9,30 @@ import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdr
 import { IconMoon, IconSun } from '../../icons/icons';
 import { motion } from 'framer-motion';
 
-const ThemeToggleCard: React.FC = () => {
+const selectedButtonStyles = `
+    shadow-darkmode bg-[#04040d29]
+    before:absolute before:-z-10 before:size-full
+    before:rounded-[20px] before:bg-gradient-to-br
+    before:from-0% before:to-100% before:opacity-40
+    before:transition-all before:duration-300 before:ease-in-out
+`;
+
+const whileHover = {
+    scale: 1.1,
+    transition: { duration: 0.2 }
+};
+const whileTap = { scale: 0.8 };
+
+const ThemeToggleCard: React.FC = memo(() => {
     const [mounted, setMounted] = useState(false);
     const { setTheme, resolvedTheme } = useTheme();
 
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    const handleSetDark = useCallback(() => setTheme('dark'), [setTheme]);
+    const handleSetLight = useCallback(() => setTheme('light'), [setTheme]);
 
     if (!mounted) {
         return (
@@ -29,20 +46,6 @@ const ThemeToggleCard: React.FC = () => {
 
     const isDark = resolvedTheme === 'dark';
 
-    const selectedButtonStyles = `
-    shadow-darkmode bg-[#04040d29] 
-    before:absolute before:-z-10 before:size-full 
-    before:rounded-[20px] before:bg-gradient-to-br 
-    before:from-0% before:to-100% before:opacity-40 
-    before:transition-all before:duration-300 before:ease-in-out
-`;
-
-    const whileHover = {
-        scale: 1.1,
-        transition: { duration: 0.2 }
-    };
-    const whileTap = { scale: 0.8 };
-
     return (
         <div className='h-full transform-none opacity-100 blur-0'>
             <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
@@ -53,7 +56,7 @@ const ThemeToggleCard: React.FC = () => {
                         <div className='flex h-full items-center justify-around gap-1'>
                             {/* Dark Mode Button */}
                             <motion.button
-                                onClick={() => setTheme('dark')}
+                                onClick={handleSetDark}
                                 className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px] ${isDark ? selectedButtonStyles : ''}`}
                                 whileHover={whileHover}
                                 whileTap={whileTap}
@@ -65,7 +68,7 @@ const ThemeToggleCard: React.FC = () => {
 
                             {/* Light Mode Button */}
                             <motion.button
-                                onClick={() => setTheme('light')}
+                                onClick={handleSetLight}
                                 className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px] ${!isDark ? selectedButtonStyles : ''}`}
                                 whileHover={whileHover}
                                 whileTap={whileTap}
@@ -80,6 +83,6 @@ const ThemeToggleCard: React.FC = () => {
             </div>
         </div>
     );
-};
+});
 
 export default ThemeToggleCard;

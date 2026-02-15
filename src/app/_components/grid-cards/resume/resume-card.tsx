@@ -1,13 +1,21 @@
+import { memo } from 'react';
+
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
 
 import { motion } from 'framer-motion';
 
+const whileHover = {
+    scale: 1.1,
+    transition: { duration: 0.2 }
+};
+const whileTap = { scale: 0.8 };
+
 interface ResumeCardProps {
     config: Extract<GridCardConfig, { componentType: 'ResumeCard' }>;
 }
 
-const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
+const ResumeCard: React.FC<ResumeCardProps> = memo(({ config }) => {
     const {
         resumeDownloadIcon: DownloadIcon,
         resumePreviewIcon: PreviewIcon,
@@ -15,12 +23,6 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
         resumePreviewUrl,
         CVDate
     } = config;
-
-    const whileHover = {
-        scale: 1.1,
-        transition: { duration: 0.2 }
-    };
-    const whileTap = { scale: 0.8 };
 
     return (
         <div className='h-full transform-none opacity-100 blur-0'>
@@ -67,6 +69,6 @@ const ResumeCard: React.FC<ResumeCardProps> = ({ config }) => {
             </div>
         </div>
     );
-};
+});
 
 export default ResumeCard;

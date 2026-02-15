@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import Image from 'next/image';
 
 import { useTheme } from 'next-themes';
@@ -12,7 +13,7 @@ interface LocationCardProps {
     config: Extract<GridCardConfig, { componentType: 'LocationCard' }>;
 }
 
-const LocationCard: React.FC<LocationCardProps> = ({ config }) => {
+const LocationCard: React.FC<LocationCardProps> = memo(({ config }) => {
     const { resolvedTheme } = useTheme();
 
     const { locationImage } = config;
@@ -39,6 +40,6 @@ const LocationCard: React.FC<LocationCardProps> = ({ config }) => {
             </div>
         </div>
     );
-};
+});
 
 export default LocationCard;

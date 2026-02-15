@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Image from 'next/image';
 
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
@@ -7,7 +8,7 @@ interface AboutMeCardProps {
     config: Extract<GridCardConfig, { componentType: 'AboutMeCard' }>;
 }
 
-const AboutMeCard: React.FC<AboutMeCardProps> = ({ config }) => {
+const AboutMeCard: React.FC<AboutMeCardProps> = memo(({ config }) => {
     const { avatar, fullName, description } = config;
 
     return (
@@ -39,6 +40,6 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ config }) => {
             </div>
         </section>
     );
-};
+});
 
 export default AboutMeCard;

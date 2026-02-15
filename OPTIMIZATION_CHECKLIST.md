@@ -4,12 +4,12 @@
 
 ### Performance Optimizations
 
-- [ ] **Remove `unoptimized: true` from next.config.js**
+- [x] **Remove `unoptimized: true` from next.config.js**
     - File: [next.config.js:13](next.config.js#L13)
     - Impact: Reduces bundle size, improves load times
     - Action: Reconfigure for static export with proper image optimization
 
-- [ ] **Memoize Grid Card Components**
+- [x] **Memoize Grid Card Components**
     - Files: All components in `src/app/_components/grid-cards/`
     - Impact: Prevents unnecessary re-renders on layout changes
     - Action: Wrap with `React.memo()` and use `useCallback` for handlers

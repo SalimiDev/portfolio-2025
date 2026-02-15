@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import Link from 'next/link';
 
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
@@ -5,18 +7,18 @@ import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdr
 
 import { motion } from 'framer-motion';
 
+const whileHover = {
+    scale: 1.1,
+    transition: { duration: 0.2 }
+};
+const whileTap = { scale: 0.8 };
+
 interface SocialCardProps {
     config: Extract<GridCardConfig, { componentType: 'SocialCard' }>;
 }
 
-const SocialCard: React.FC<SocialCardProps> = ({ config }) => {
+const SocialCard: React.FC<SocialCardProps> = memo(({ config }) => {
     const { platformIcon: PlatformIcon, platformUrl, platform } = config;
-
-    const whileHover = {
-        scale: 1.1,
-        transition: { duration: 0.2 }
-    };
-    const whileTap = { scale: 0.8 };
 
     return (
         <motion.div
@@ -48,6 +50,6 @@ const SocialCard: React.FC<SocialCardProps> = ({ config }) => {
             </div>
         </motion.div>
     );
-};
+});
 
 export default SocialCard;

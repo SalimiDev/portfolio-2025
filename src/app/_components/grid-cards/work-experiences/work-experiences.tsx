@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
@@ -9,7 +9,7 @@ interface ExperiencesCardProps {
     config: Extract<GridCardConfig, { componentType: 'WorkExperiences' }>;
 }
 
-const WorkExperiences: React.FC<ExperiencesCardProps> = ({ config }) => {
+const WorkExperiences: React.FC<ExperiencesCardProps> = memo(({ config }) => {
     const { yearsOfExperience, experiences } = config;
 
     return (
@@ -63,6 +63,6 @@ const WorkExperiences: React.FC<ExperiencesCardProps> = ({ config }) => {
             </div>
         </motion.div>
     );
-};
+});
 
 export default WorkExperiences;

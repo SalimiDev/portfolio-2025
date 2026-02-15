@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,7 +12,7 @@ interface ResumeCardProps {
     config: Extract<GridCardConfig, { componentType: 'ProjectCard' }>;
 }
 
-const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
+const ProjectCard: React.FC<ResumeCardProps> = memo(({ config }) => {
     const { projectUrl, projectImage, projectName, companyName, projectTech, companyLogo: CompanyLogo } = config;
 
     return (
@@ -74,6 +76,6 @@ const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
             </div>
         </div>
     );
-};
+});
 
 export default ProjectCard;
