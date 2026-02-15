@@ -5,14 +5,14 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "npm run optimize:images && next build",
+        "build": "pnpm run optimize:images && next build",
         "build:fast": "next build",
         "start": "next start",
         "lint": "eslint . --fix",
         "format": "prettier --write .",
         "optimize:images": "node scripts/optimize-images.mjs",
         "update-sitemap": "node scripts/update-sitemap.mjs",
-        "seo:update": "npm run update-sitemap"
+        "seo:update": "pnpm run update-sitemap"
     },
     "dependencies": {
         "colord": "^2.9.3",
