@@ -12,6 +12,7 @@
         "lint": "eslint . --fix",
         "format": "prettier --write .",
         "optimize:images": "node scripts/optimize-images.mjs",
+        "optimize:project-images": "node scripts/resize-project-images.mjs",
         "update-sitemap": "node scripts/update-sitemap.mjs",
         "seo:update": "pnpm run update-sitemap"
     },

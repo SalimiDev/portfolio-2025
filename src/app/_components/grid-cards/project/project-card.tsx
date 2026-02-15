@@ -28,11 +28,7 @@ const ProjectCard: React.FC<ResumeCardProps> = ({ config }) => {
                                 loading='lazy'
                                 placeholder='blur'
                                 fill
-                                data-nimg='fill'
-                                sizes='(min-width: 640px) 559px, 591px'
-                                // decoding='async'
-                                // fetchPriority='high'
-                                // sizes='(max-width: 640px) 246px, (max-width: 1280px) 214px, (max-width: 1440px) 214px, (max-width: 1920px) 246px, 559px'
+                                sizes='(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 996px) 50vw, 600px'
                             />
                         </div>
 
