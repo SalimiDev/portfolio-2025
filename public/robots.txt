@@ -1,11 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
-Disallow: /node_modules/
 
-# Sitemap location
 Sitemap: https://mehdisalimi.com/sitemap.xml
-
-# Crawl delay (optional)
-Crawl-delay: 1

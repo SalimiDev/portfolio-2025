@@ -8,11 +8,11 @@ import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdr
 
 import { IconExternalLink } from '../../icons/icons';
 
-interface ResumeCardProps {
+interface ProjectCardProps {
     config: Extract<GridCardConfig, { componentType: 'ProjectCard' }>;
 }
 
-const ProjectCard: React.FC<ResumeCardProps> = memo(({ config }) => {
+const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
     const { projectUrl, projectImage, projectName, companyName, projectTech, companyLogo: CompanyLogo } = config;
 
     return (

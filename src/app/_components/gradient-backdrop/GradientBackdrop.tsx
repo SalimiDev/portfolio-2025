@@ -30,8 +30,6 @@ const GradientBackdrop: React.FC = () => {
             />
             {/* Hover Background */}
             <div className='bg-zinc-950/15 group-hover:bg-black/75 absolute inset-px z-20 rounded-[23px] transition-colors duration-300' />
-            {/* Canvas */}
-            <canvas className='absolute inset-0 z-10' width={347} height={559} />
         </>
     );
 };

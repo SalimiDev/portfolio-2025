@@ -1,6 +1,4 @@
 import {
-    Station_Setup,
-    Station_money,
     admin_dash,
     business_inteligence,
     hillter_hotel,
@@ -546,72 +544,4 @@ export const gridCardConfigs: GridCardConfig[] = [
             }
         }
     }
-    // {
-    //     id: 16,
-    //     componentType: 'ProjectCard',
-    //     companyName: 'Freelance',
-    //     companyLogo: IconGithub,
-    //     projectImage: Station_Setup,
-    //     projectName: 'Station Setup',
-    //     projectDescription: 'string',
-    //     projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
-    //     projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
-    //     color: '',
-    //     layouts: {
-    //         xs: {
-    //             All: { x: 0, y: 99, w: 2, h: 12 },
-    //             About: { x: 0, y: 97, w: 2, h: 12 },
-    //             Work: { x: 0, y: 67, w: 2, h: 12 }
-    //         },
-    //         sm: {
-    //             All: { x: 0, y: 95, w: 6, h: 12 },
-    //             About: { x: 0, y: 96, w: 6, h: 12 },
-    //             Work: { x: 0, y: 67, w: 6, h: 12 }
-    //         },
-    //         md: {
-    //             All: { x: 0, y: 50, w: 5, h: 12 },
-    //             About: { x: 0, y: 54, w: 5, h: 13 },
-    //             Work: { x: 5, y: 32, w: 5, h: 13 }
-    //         },
-    //         lg: {
-    //             All: { x: 0, y: 51, w: 6, h: 15 },
-    //             About: { x: 0, y: 47, w: 6, h: 15 },
-    //             Work: { x: 6, y: 36, w: 6, h: 15 }
-    //         }
-    //     }
-    // },
-    // {
-    //     id: 17,
-    //     componentType: 'ProjectCard',
-    //     companyName: 'Freelance',
-    //     companyLogo: IconGithub,
-    //     projectImage: Station_money,
-    //     projectName: 'Station Money',
-    //     projectDescription: 'string',
-    //     projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
-    //     projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
-    //     color: '',
-    //     layouts: {
-    //         xs: {
-    //             All: { x: 0, y: 111, w: 2, h: 12 },
-    //             About: { x: 0, y: 109, w: 2, h: 12 },
-    //             Work: { x: 0, y: 79, w: 2, h: 12 }
-    //         },
-    //         sm: {
-    //             All: { x: 0, y: 107, w: 6, h: 12 },
-    //             About: { x: 0, y: 108, w: 6, h: 12 },
-    //             Work: { x: 0, y: 79, w: 6, h: 12 }
-    //         },
-    //         md: {
-    //             All: { x: 5, y: 50, w: 5, h: 12 },
-    //             About: { x: 5, y: 54, w: 5, h: 13 },
-    //             Work: { x: 0, y: 40, w: 5, h: 13 }
-    //         },
-    //         lg: {
-    //             All: { x: 6, y: 51, w: 6, h: 15 },
-    //             About: { x: 6, y: 59, w: 6, h: 15 },
-    //             Work: { x: 0, y: 44, w: 6, h: 15 }
-    //         }
-    //     }
-    // }
 ];

@@ -2,9 +2,9 @@ import { memo } from 'react';
 
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
 
-const MovingBar: React.FC = memo(() => {
-    const repeatCount = 50;
+const repeatCount = 14;
 
+const MovingBar: React.FC = memo(() => {
     return (
         <div className='h-full transform-none opacity-100 blur-0'>
             <div className='relative h-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>

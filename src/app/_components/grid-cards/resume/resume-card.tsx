@@ -3,14 +3,6 @@ import { memo } from 'react';
 import { GridCardConfig } from '@/app/(grid-container-layout)/grid-card-configs.type';
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
 
-import { motion } from 'framer-motion';
-
-const whileHover = {
-    scale: 1.1,
-    transition: { duration: 0.2 }
-};
-const whileTap = { scale: 0.8 };
-
 interface ResumeCardProps {
     config: Extract<GridCardConfig, { componentType: 'ResumeCard' }>;
 }
@@ -43,10 +35,8 @@ const ResumeCard: React.FC<ResumeCardProps> = memo(({ config }) => {
                                     download
                                     className='relative z-20 cursor-pointer'
                                     aria-label='Download My Resume'>
-                                    <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
-                                        <motion.div whileHover={whileHover} whileTap={whileTap}>
-                                            <DownloadIcon width={36} height={36} stroke='none' />
-                                        </motion.div>
+                                    <div className='size-10 opacity-60 transition hover:scale-110 hover:opacity-100 active:scale-95'>
+                                        <DownloadIcon width={36} height={36} stroke='none' />
                                     </div>
                                 </a>
                                 <a
@@ -56,10 +46,8 @@ const ResumeCard: React.FC<ResumeCardProps> = memo(({ config }) => {
                                     rel='noopener noreferrer'
                                     className='relative z-20 cursor-pointer'
                                     aria-label='Preview My Resume'>
-                                    <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
-                                        <motion.div whileHover={whileHover} whileTap={whileTap}>
-                                            <PreviewIcon width={36} height={36} stroke='none' />
-                                        </motion.div>
+                                    <div className='size-10 opacity-60 transition hover:scale-110 hover:opacity-100 active:scale-95'>
+                                        <PreviewIcon width={36} height={36} stroke='none' />
                                     </div>
                                 </a>
                             </div>

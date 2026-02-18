@@ -26,8 +26,7 @@ const LocationCard: React.FC<LocationCardProps> = memo(({ config }) => {
                 <div className='transparent absolute inset-0 z-50 size-full rounded-lg shadow-2xl'>
                     <Image
                         src={resolvedTheme === 'light' ? location_light : locationImage}
-                        alt='location'
-                        priority={true}
+                        alt='Map showing current location in Tehran, Iran'
                         placeholder='blur'
                         className='size-full object-cover'
                         fill

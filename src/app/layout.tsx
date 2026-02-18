@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { Figtree } from 'next/font/google';
 import localFont from 'next/font/local';
 
@@ -44,47 +44,54 @@ const poppins = localFont({
     fallback: ['system-ui', 'arial']
 });
 
-export const viewport = 'width=device-width, initial-scale=1.0';
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    themeColor: [
+        { media: '(prefers-color-scheme: light)', color: '#f8fafc' },
+        { media: '(prefers-color-scheme: dark)', color: '#04040d' }
+    ]
+};
+
+const siteUrl = 'https://mehdisalimi.com';
+const siteTitle = 'Mehdi Salimi | Frontend Engineer';
+const siteDescription =
+    "Frontend engineer building high-performance, accessible web applications with React, Next.js, and TypeScript.";
+
 export const metadata: Metadata = {
-    title: 'Portfolio | Mehdi Salimi',
-    description:
-        "Hello, I'm Mehdi. 👋 a software engineer based in Tehran, Iran. I specialize in web development and have a passion for building beautiful and functional web applications. 🧑‍💻",
+    metadataBase: new URL(siteUrl),
+    title: {
+        default: siteTitle,
+        template: '%s | Mehdi Salimi'
+    },
+    description: siteDescription,
     applicationName: 'Mehdi Salimi Portfolio',
-    generator: 'Next.js',
     creator: 'Mehdi Salimi',
     publisher: 'Mehdi Salimi',
-    metadataBase: new URL('https://mehdisalimi.com'),
+    manifest: '/site.webmanifest',
     keywords: [
         'Mehdi Salimi',
-        'Mehdi',
-        'Salimi',
         'Software Engineer',
         'React',
         'Next.js',
         'Tailwind CSS',
         'TypeScript',
         'JavaScript',
-        'HTML',
-        'CSS',
-        'Web Development',
-        'Web Development',
+        'Portfolio',
         'Frontend Development',
-        'Web Developer',
-        'Software Developer',
-        'Software Engineer'
+        'Web Performance',
+        'SEO'
     ],
     referrer: 'origin-when-cross-origin',
     alternates: {
-        types: {
-            'application/rss+xml': '/feed.xml'
-        }
+        canonical: '/'
     },
     openGraph: {
-        title: 'Mehdi Salimi',
-        description:
-            "Hello, I'm Mehdi. 👋 a software engineer based in Tehran, Iran. I specialize in web development and have a passion for building beautiful and functional web applications. 🧑‍💻",
-        url: 'https://mehdisalimi.com',
+        title: siteTitle,
+        description: siteDescription,
+        url: siteUrl,
         siteName: 'Mehdi Salimi Portfolio',
+        locale: 'en_US',
         images: [
             {
                 url: '/images/mehdi_salimi.jpg',
@@ -97,9 +104,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Mehdi Salimi',
-        description:
-            "Hello, I'm Mehdi. 👋 a software engineer based in Tehran, Iran. I specialize in web development and have a passion for building beautiful and functional web applications. 🧑‍💻",
+        title: siteTitle,
+        description: siteDescription,
+        creator: '@salimidevop',
         images: ['/images/mehdi_salimi.jpg']
     },
     robots: {
@@ -123,33 +130,26 @@ export const metadata: Metadata = {
     }
 };
 
+const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Mehdi Salimi',
+    jobTitle: 'Frontend Engineer',
+    url: siteUrl,
+    image: `${siteUrl}/images/mehdi_salimi.jpg`,
+    sameAs: ['https://github.com/SalimiDev', 'https://www.linkedin.com/in/salimidevop/']
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang='en' dir='ltr' className={` ${poppins.variable} ${figtree.variable}`} suppressHydrationWarning>
-            <head>
-                <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
-                <link rel='manifest' href='/site.webmanifest' />
-                <link
-                    rel='preload'
-                    href='/fonts/poppins/poppins-regular.woff2'
-                    as='font'
-                    type='font/woff2'
-                    crossOrigin='anonymous'
-                />
-                <link
-                    rel='preload'
-                    href='/fonts/poppins/poppins-medium.woff2'
-                    as='font'
-                    type='font/woff2'
-                    crossOrigin='anonymous'
-                />
-            </head>
-            <body className='grid bg-base-25 p-1 text-base-200 lg:container dark:bg-base-100 dark:text-base-content'>
+        <html lang='en' dir='ltr' className={`${poppins.variable} ${figtree.variable}`} suppressHydrationWarning>
+            <body className='grid bg-base-25 p-1 text-base-200 antialiased lg:container dark:bg-base-100 dark:text-base-content'>
                 <Providers>
                     <Header />
 
-                    <main className=''>{children}</main>
+                    <main>{children}</main>
                 </Providers>
+                <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
             </body>
         </html>
     );

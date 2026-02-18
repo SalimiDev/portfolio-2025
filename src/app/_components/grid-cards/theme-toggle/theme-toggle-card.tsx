@@ -7,21 +7,10 @@ import { useTheme } from 'next-themes';
 import GradientBackdrop from '@/app/_components/gradient-backdrop/GradientBackdrop';
 
 import { IconMoon, IconSun } from '../../icons/icons';
-import { motion } from 'framer-motion';
-
-const selectedButtonStyles = `
-    shadow-darkmode bg-[#04040d29]
-    before:absolute before:-z-10 before:size-full
-    before:rounded-[20px] before:bg-gradient-to-br
-    before:from-0% before:to-100% before:opacity-40
-    before:transition-all before:duration-300 before:ease-in-out
-`;
-
-const whileHover = {
-    scale: 1.1,
-    transition: { duration: 0.2 }
-};
-const whileTap = { scale: 0.8 };
+const selectedButtonStyles =
+    'shadow-darkmode bg-[#04040d29] before:absolute before:-z-10 before:size-full before:rounded-[20px] ' +
+    'before:bg-gradient-to-br before:from-0% before:to-100% before:opacity-40 before:transition-all ' +
+    'before:duration-300 before:ease-in-out';
 
 const ThemeToggleCard: React.FC = memo(() => {
     const [mounted, setMounted] = useState(false);
@@ -55,28 +44,26 @@ const ThemeToggleCard: React.FC = memo(() => {
                     <div className='relative flex h-full flex-col justify-center p-1'>
                         <div className='flex h-full items-center justify-around gap-1'>
                             {/* Dark Mode Button */}
-                            <motion.button
+                            <button
                                 onClick={handleSetDark}
-                                className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px] ${isDark ? selectedButtonStyles : ''}`}
-                                whileHover={whileHover}
-                                whileTap={whileTap}
+                                type='button'
+                                className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px] transition hover:scale-[1.03] active:scale-95 ${isDark ? selectedButtonStyles : ''}`}
                                 aria-label='darkmode'>
                                 <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
                                     <IconMoon width={36} height={36} stroke='none' strokeWidth={0.5} />
                                 </div>
-                            </motion.button>
+                            </button>
 
                             {/* Light Mode Button */}
-                            <motion.button
+                            <button
                                 onClick={handleSetLight}
-                                className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px] ${!isDark ? selectedButtonStyles : ''}`}
-                                whileHover={whileHover}
-                                whileTap={whileTap}
+                                type='button'
+                                className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px] transition hover:scale-[1.03] active:scale-95 ${!isDark ? selectedButtonStyles : ''}`}
                                 aria-label='lightmode'>
                                 <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
                                     <IconSun width={36} height={36} stroke='none' strokeWidth={0.5} />
                                 </div>
-                            </motion.button>
+                            </button>
                         </div>
                     </div>
                 </div>
