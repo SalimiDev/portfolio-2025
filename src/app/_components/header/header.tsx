@@ -1,5 +1,3 @@
-'use client';
-
 import { TopNavigation } from './top-navigation';
 
 export const Header: React.FC = () => {

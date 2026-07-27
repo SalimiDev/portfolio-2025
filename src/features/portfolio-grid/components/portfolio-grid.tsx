@@ -11,7 +11,6 @@ import {
 import { gridCardConfigs } from '../config/grid-cards';
 import type { Layouts } from '../model/layout.types';
 import type { NavigationTitle } from '../model/navigation.types';
-import useActiveMenuTab from '../model/use-active-menu-tab';
 import GridCard from './grid-card';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -27,12 +26,11 @@ const generateLayoutByTab = (tab: NavigationTitle, screenSize: keyof Layouts) =>
     });
 
 interface LayoutGridProps {
+    activeTab: NavigationTitle;
     layoutProps?: LegacyResponsiveReactGridLayoutProps;
 }
 
-const PortfolioGrid: React.FC<LayoutGridProps> = ({ layoutProps }) => {
-    const { activeTab } = useActiveMenuTab();
-
+const PortfolioGrid: React.FC<LayoutGridProps> = ({ activeTab, layoutProps }) => {
     // Keep layout object stable between renders unless the selected tab changes.
     const layouts = useMemo(
         () => ({

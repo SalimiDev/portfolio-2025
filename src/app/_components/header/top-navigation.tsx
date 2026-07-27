@@ -1,18 +1,15 @@
 'use client';
 
-import type { NavigationMenuItem } from '@/features/portfolio-grid/model/navigation.types';
-import useActiveMenuTab from '@/features/portfolio-grid/model/use-active-menu-tab';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-const menuItems: NavigationMenuItem[] = [
-    { title: 'All', href: '/' },
-    { title: 'About', href: '/about' },
-    { title: 'Work', href: '/work' }
-];
+import { getNavigationTitle, navigationItems } from '@/features/portfolio-grid/model/navigation';
 
 export const TopNavigation: React.FC = () => {
-    const { activeTab, setActiveTab } = useActiveMenuTab();
+    const pathname = usePathname();
+    const activeTab = getNavigationTitle(pathname);
 
-    const activeIndex = menuItems.findIndex((item) => item.title === activeTab);
+    const activeIndex = navigationItems.findIndex((item) => item.title === activeTab);
 
     return (
         <nav
@@ -20,22 +17,22 @@ export const TopNavigation: React.FC = () => {
             className='relative overflow-hidden rounded-3xl border border-base-25 bg-white/60 p-1 shadow-2xl dark:bg-white/10'>
             <ul className='relative flex gap-1'>
                 <li
+                    aria-hidden='true'
                     className='absolute top-0 left-0 h-full w-[calc(100%/3)] rounded-3xl bg-base-25 transition-all duration-300 ease-out dark:bg-base-100'
                     style={{
                         transform: `translateX(${activeIndex * 100}%)`
                     }}
                 />
-                {menuItems.map((item) => (
+                {navigationItems.map((item) => (
                     <li
                         key={`navigation-${item.title}`}
                         className='relative z-10 w-24 flex-1 py-[5px] text-center dark:text-white'>
-                        <button
-                            type='button'
-                            onClick={() => setActiveTab(item.title)}
+                        <Link
+                            href={item.href}
                             aria-current={activeTab === item.title ? 'page' : undefined}
-                            className={`transition-colors hover:text-base-50 dark:hover:text-base-25`}>
+                            className='block transition-colors hover:text-base-50 dark:hover:text-base-25'>
                             {item.title}
-                        </button>
+                        </Link>
                     </li>
                 ))}
             </ul>
