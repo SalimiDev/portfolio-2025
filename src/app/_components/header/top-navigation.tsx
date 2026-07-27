@@ -1,7 +1,7 @@
 'use client';
 
-import useActiveMenuTab from '@/store/useActiveMenuTab';
-import type { NavigationMenuItem } from '@/types/navigation-menu-item';
+import type { NavigationMenuItem } from '@/features/portfolio-grid/model/navigation.types';
+import useActiveMenuTab from '@/features/portfolio-grid/model/use-active-menu-tab';
 
 const menuItems: NavigationMenuItem[] = [
     { title: 'All', href: '/' },

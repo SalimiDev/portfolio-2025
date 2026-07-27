@@ -1,0 +1,39 @@
+import { memo } from 'react';
+
+import Link from 'next/link';
+
+import GradientBackdrop from '@/components/gradient-backdrop';
+import type { GridCardConfig } from '@/features/portfolio-grid/model/grid-card.types';
+
+interface SocialCardProps {
+    config: Extract<GridCardConfig, { componentType: 'SocialCard' }>;
+}
+
+const SocialCard: React.FC<SocialCardProps> = memo(({ config }) => {
+    const { platformIcon: PlatformIcon, platformUrl, platform } = config;
+
+    return (
+        <div className='blur-0 h-full transform-none opacity-100'>
+        <div className='group relative aspect-square size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
+                <GradientBackdrop />
+                {/* Content */}
+                <div className='relative h-full'>
+                    <div className='relative z-20 flex size-full items-center justify-center opacity-65 transition-opacity hover:opacity-90'>
+                        <Link
+                            className='flex size-[55%] items-center justify-center rounded-3xl'
+                            href={platformUrl}
+                            target='_blank'
+                            aria-label={`Visit My ${platform}`}
+                            rel='noopener noreferrer'>
+                            <div className='relative aspect-square size-auto transition hover:scale-110 active:scale-95'>
+                                <PlatformIcon width={96} height={96} stroke='none' />
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+});
+
+export default SocialCard;

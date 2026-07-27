@@ -1,5 +1,5 @@
-import GridContainerLayout from './(grid-container-layout)/_components/grid-container-layout';
+import PortfolioGrid from '@/features/portfolio-grid/components/portfolio-grid';
 
 export default function Home() {
-    return <GridContainerLayout />;
+    return <PortfolioGrid />;
 }
