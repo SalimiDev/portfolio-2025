@@ -10,14 +10,13 @@
     },
     "scripts": {
         "dev": "next dev",
-        "build": "pnpm run optimize:images && next build",
+        "build": "next build",
         "build:fast": "next build",
         "start": "next start",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "typecheck": "tsc --noEmit",
         "format": "prettier --write .",
-        "optimize:images": "node scripts/optimize-images.mjs",
         "optimize:project-images": "node scripts/resize-project-images.mjs",
         "update-sitemap": "node scripts/update-sitemap.mjs",
         "seo:update": "pnpm run update-sitemap"

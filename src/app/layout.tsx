@@ -1,39 +1,29 @@
 import { Metadata, Viewport } from 'next';
-import { Figtree } from 'next/font/google';
 import localFont from 'next/font/local';
 
 import { Header } from './_components/header';
 import './globals.css';
 import { Providers } from './providers';
 
-const figtree = Figtree({
-    display: 'swap',
-    subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
-    variable: '--font-figtree',
-    preload: true,
-    fallback: ['system-ui', 'arial']
-});
-
 const poppins = localFont({
     src: [
         {
-            path: '../../public/fonts/poppins/poppins-regular.woff2',
+            path: '../assets/fonts/poppins/poppins-regular.woff2',
             weight: '400',
             style: 'normal'
         },
         {
-            path: '../../public/fonts/poppins/poppins-medium.woff2',
+            path: '../assets/fonts/poppins/poppins-medium.woff2',
             weight: '500',
             style: 'normal'
         },
         {
-            path: '../../public/fonts/poppins/poppins-semibold.woff2',
+            path: '../assets/fonts/poppins/poppins-semibold.woff2',
             weight: '600',
             style: 'normal'
         },
         {
-            path: '../../public/fonts/poppins/poppins-bold.woff2',
+            path: '../assets/fonts/poppins/poppins-bold.woff2',
             weight: '700',
             style: 'normal'
         }
@@ -94,9 +84,9 @@ export const metadata: Metadata = {
         locale: 'en_US',
         images: [
             {
-                url: '/images/mehdi_salimi.jpg',
-                width: 1200,
-                height: 630,
+                url: '/images/user_avatar.webp',
+                width: 914,
+                height: 864,
                 alt: 'Mehdi Salimi'
             }
         ],
@@ -107,7 +97,7 @@ export const metadata: Metadata = {
         title: siteTitle,
         description: siteDescription,
         creator: '@salimidevop',
-        images: ['/images/mehdi_salimi.jpg']
+        images: ['/images/user_avatar.webp']
     },
     robots: {
         index: true,
@@ -136,13 +126,13 @@ const personJsonLd = {
     name: 'Mehdi Salimi',
     jobTitle: 'Frontend Engineer',
     url: siteUrl,
-    image: `${siteUrl}/images/mehdi_salimi.jpg`,
+    image: `${siteUrl}/images/user_avatar.webp`,
     sameAs: ['https://github.com/SalimiDev', 'https://www.linkedin.com/in/salimidevop/']
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang='en' dir='ltr' className={`${poppins.variable} ${figtree.variable}`} suppressHydrationWarning>
+        <html lang='en' dir='ltr' className={poppins.variable} suppressHydrationWarning>
             <body className='grid bg-base-25 p-1 text-base-200 antialiased lg:container dark:bg-base-100 dark:text-base-content'>
                 <Providers>
                     <Header />

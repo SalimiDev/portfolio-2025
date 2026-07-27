@@ -6,8 +6,8 @@ import { ThemeProvider } from 'next-themes';
 
 export function Providers({ children }: { children: React.ReactNode }) {
     useEffect(() => {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
+        if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+            void navigator.serviceWorker.register('/sw.js');
         }
     }, []);
 

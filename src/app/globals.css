@@ -84,39 +84,6 @@ html {
     font-display: swap; /* بهبود عملکرد فونت */
 }
 
-/* بهینه‌سازی فونت‌ها */
-@font-face {
-    font-family: 'Poppins';
-    font-display: swap;
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/poppins/poppins-regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Poppins';
-    font-display: swap;
-    font-style: normal;
-    font-weight: 500;
-    src: url('/fonts/poppins/poppins-medium.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Poppins';
-    font-display: swap;
-    font-style: normal;
-    font-weight: 600;
-    src: url('/fonts/poppins/poppins-semibold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Poppins';
-    font-display: swap;
-    font-style: normal;
-    font-weight: 700;
-    src: url('/fonts/poppins/poppins-bold.woff2') format('woff2');
-}
-
 .sortable-item {
     transition:
         transform 0.3s ease-in-out,
