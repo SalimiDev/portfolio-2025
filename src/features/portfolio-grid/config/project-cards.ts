@@ -47,12 +47,12 @@ export const projectCards = [
         projectTech: ['React.js', 'Redux', 'styled-components'],
         layouts: {
             xs: {
-                All: { x: 6, y: 63, w: 2, h: 12 },
+                All: { x: 0, y: 63, w: 2, h: 12 },
                 About: { x: 0, y: 61, w: 2, h: 12 },
                 Work: { x: 0, y: 31, w: 2, h: 12 }
             },
             sm: {
-                All: { x: 6, y: 59, w: 6, h: 12 },
+                All: { x: 0, y: 59, w: 6, h: 12 },
                 About: { x: 0, y: 60, w: 6, h: 12 },
                 Work: { x: 0, y: 31, w: 6, h: 12 }
             },
@@ -133,4 +133,3 @@ export const projectCards = [
         }
     }
 ] satisfies GridCardConfig[];
-

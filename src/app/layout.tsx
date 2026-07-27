@@ -1,6 +1,8 @@
 import { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 
+import RoutedPortfolioGrid from '@/features/portfolio-grid/components/routed-portfolio-grid';
+
 import { Header } from './_components/header';
 import './globals.css';
 import { Providers } from './providers';
@@ -137,7 +139,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Providers>
                     <Header />
 
-                    <main>{children}</main>
+                    <main className='min-w-0'>
+                        <RoutedPortfolioGrid />
+                        {children}
+                    </main>
                 </Providers>
                 <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
             </body>

@@ -33,7 +33,7 @@ export const profileCards = [
                     enhancing my skills to deliver top-quality results.`,
         layouts: {
             xs: {
-                All: { x: 0, y: 1, w: 5, h: 11 },
+                All: { x: 0, y: 1, w: 2, h: 11 },
                 About: { x: 0, y: 0, w: 2, h: 11 },
                 Work: { x: 0, y: 92, w: 2, h: 10 }
             },
@@ -97,18 +97,18 @@ export const profileCards = [
         ],
         layouts: {
             xs: {
-                All: { x: 7, y: 37, w: 2, h: 18 },
+                All: { x: 0, y: 37, w: 2, h: 18 },
                 About: { x: 0, y: 36, w: 2, h: 18 },
                 Work: { x: 0, y: 6, w: 2, h: 18 }
             },
             sm: {
-                All: { x: 7, y: 35, w: 6, h: 18 },
+                All: { x: 0, y: 35, w: 6, h: 18 },
                 About: { x: 0, y: 35, w: 6, h: 18 },
                 Work: { x: 0, y: 6, w: 6, h: 18 }
             },
             md: {
                 All: { x: 0, y: 16, w: 10, h: 12 },
-                About: { x: 10, y: 17, w: 10, h: 12 },
+                About: { x: 0, y: 17, w: 10, h: 12 },
                 Work: { x: 0, y: 0, w: 5, h: 14 }
             },
             lg: {
@@ -130,17 +130,17 @@ export const profileCards = [
         cvDate: '2025 CV',
         layouts: {
             xs: {
-                All: { x: 8, y: 12, w: 2, h: 3 },
+                All: { x: 0, y: 12, w: 2, h: 3 },
                 About: { x: 0, y: 33.5, w: 2, h: 2.5 },
                 Work: { x: 0, y: 3, w: 2, h: 3 }
             },
             sm: {
-                All: { x: 8, y: 10, w: 6, h: 3 },
+                All: { x: 0, y: 10, w: 6, h: 3 },
                 About: { x: 0, y: 32.5, w: 6, h: 2.5 },
                 Work: { x: 0, y: 3, w: 6, h: 3 }
             },
             md: {
-                All: { x: 8, y: 2, w: 5, h: 3.5 },
+                All: { x: 5, y: 2, w: 5, h: 3.5 },
                 About: { x: 5, y: 9, w: 5, h: 3 },
                 Work: { x: 5, y: 0, w: 5, h: 3 }
             },
@@ -172,12 +172,12 @@ export const profileCards = [
         ],
         layouts: {
             xs: {
-                All: { x: 1.5, y: 30, w: 4.5, h: 7 },
+                All: { x: 0, y: 30, w: 2, h: 7 },
                 About: { x: 0, y: 23, w: 2, h: 7 },
                 Work: { x: 0, y: 102, w: 2, h: 7 }
             },
             sm: {
-                All: { x: 1.5, y: 28, w: 6, h: 7 },
+                All: { x: 0, y: 28, w: 6, h: 7 },
                 About: { x: 0, y: 22, w: 6, h: 7 },
                 Work: { x: 0, y: 102, w: 6, h: 7 }
             },
@@ -225,23 +225,23 @@ export const profileCards = [
         locationImage: location_dark,
         layouts: {
             xs: {
-                All: { x: 5, y: 18, w: 2, h: 4 },
+                All: { x: 0, y: 18, w: 2, h: 4 },
                 About: { x: 0, y: 11, w: 2, h: 4 },
                 Work: { x: 0, y: 117, w: 2, h: 4 }
             },
             sm: {
-                All: { x: 5, y: 16, w: 6, h: 4 },
+                All: { x: 0, y: 16, w: 6, h: 4 },
                 About: { x: 0, y: 10, w: 6, h: 4 },
                 Work: { x: 0, y: 117, w: 6, h: 4 }
             },
             md: {
-                All: { x: 10, y: 9, w: 2, h: 7 },
-                About: { x: 10, y: 0, w: 3, h: 6 },
+                All: { x: 8, y: 9, w: 2, h: 7 },
+                About: { x: 7, y: 0, w: 3, h: 6 },
                 Work: { x: 8, y: 55, w: 2, h: 8 }
             },
             lg: {
                 All: { x: 5, y: 2, w: 2.5, h: 7 },
-                About: { x: 10, y: 0, w: 3, h: 9 },
+                About: { x: 9, y: 0, w: 3, h: 9 },
                 Work: { x: 9, y: 61, w: 3, h: 8 }
             }
         }
@@ -252,7 +252,7 @@ export const profileCards = [
         layouts: {
             xs: {
                 All: { x: 0, y: 15, w: 2, h: 3 },
-                About: { x: 7, y: 31, w: 5, h: 2.5 },
+                About: { x: 0, y: 31, w: 2, h: 2.5 },
                 Work: { x: 0, y: 0, w: 2, h: 3 }
             },
             sm: {
@@ -271,6 +271,5 @@ export const profileCards = [
                 Work: { x: 6, y: 3, w: 6, h: 3 }
             }
         }
-    },
+    }
 ] satisfies GridCardConfig[];
-

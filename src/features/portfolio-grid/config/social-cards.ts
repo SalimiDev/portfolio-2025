@@ -83,7 +83,7 @@ export const socialCards = [
             },
             md: {
                 All: { x: 4, y: 12.5, w: 2, h: 3.5 },
-                About: { x: 8, y: 5, w: 3, h: 3 },
+                About: { x: 7, y: 5, w: 3, h: 3 },
                 Work: { x: 0, y: 59, w: 2, h: 4 }
             },
             lg: {
@@ -121,6 +121,5 @@ export const socialCards = [
                 Work: { x: 2, y: 61, w: 2, h: 4 }
             }
         }
-    },
+    }
 ] satisfies GridCardConfig[];
-

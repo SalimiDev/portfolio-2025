@@ -3,24 +3,27 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { gridCardConfigs } from '../config/grid-cards';
-import { generateLayoutByTab } from '../model/layout';
+import { generateLayoutByTab, gridBreakpoints, gridColumns } from '../model/layout';
 import type { Layouts } from '../model/layout.types';
 import type { NavigationTitle } from '../model/navigation.types';
 import GridCard from './grid-card';
-import { LegacyResponsiveReactGridLayoutProps, Responsive, WidthProvider } from 'react-grid-layout/legacy';
-
-const ResponsiveGridLayout = WidthProvider(Responsive);
+import { useContainerWidth } from 'react-grid-layout';
+import { LegacyResponsiveReactGridLayoutProps, Responsive } from 'react-grid-layout/legacy';
 
 interface LayoutGridProps {
     activeTab: NavigationTitle;
-    layoutProps?: LegacyResponsiveReactGridLayoutProps;
+    layoutProps?: Partial<Omit<LegacyResponsiveReactGridLayoutProps, 'children' | 'width'>>;
 }
 
 type WidthChangeHandler = NonNullable<LegacyResponsiveReactGridLayoutProps['onWidthChange']>;
 
 const PortfolioGrid: React.FC<LayoutGridProps> = ({ activeTab, layoutProps }) => {
-    const [isInitialWidthSettled, setIsInitialWidthSettled] = useState(false);
-    const settleFrameRef = useRef<number | null>(null);
+    const { width, containerRef, mounted } = useContainerWidth({
+        measureBeforeMount: true
+    });
+    const [animationsReady, setAnimationsReady] = useState(false);
+    const readinessFrameRef = useRef<number | null>(null);
+    const animationsReadyRef = useRef(false);
     const { className: layoutClassName, onWidthChange, ...responsiveLayoutProps } = layoutProps ?? {};
 
     // Keep layout object stable between renders unless the selected tab changes.
@@ -34,17 +37,18 @@ const PortfolioGrid: React.FC<LayoutGridProps> = ({ activeTab, layoutProps }) =>
         [activeTab]
     );
 
-    const settleInitialWidth = useCallback(() => {
-        if (settleFrameRef.current !== null) {
+    const enableAnimations = useCallback(() => {
+        if (animationsReadyRef.current || readinessFrameRef.current !== null) {
             return;
         }
 
-        // WidthProvider measures in requestAnimationFrame. Enable layout transitions
-        // one frame later so the first measurement cannot animate from its SSR fallback.
-        settleFrameRef.current = requestAnimationFrame(() => {
-            settleFrameRef.current = requestAnimationFrame(() => {
-                setIsInitialWidthSettled(true);
-                settleFrameRef.current = null;
+        // Responsive updates its breakpoint in an effect after receiving the measured
+        // width. Wait until that correction has painted before enabling transitions.
+        readinessFrameRef.current = requestAnimationFrame(() => {
+            readinessFrameRef.current = requestAnimationFrame(() => {
+                animationsReadyRef.current = true;
+                setAnimationsReady(true);
+                readinessFrameRef.current = null;
             });
         });
     }, []);
@@ -52,47 +56,52 @@ const PortfolioGrid: React.FC<LayoutGridProps> = ({ activeTab, layoutProps }) =>
     const handleWidthChange = useCallback<WidthChangeHandler>(
         (...args) => {
             onWidthChange?.(...args);
-            settleInitialWidth();
+            enableAnimations();
         },
-        [onWidthChange, settleInitialWidth]
+        [enableAnimations, onWidthChange]
     );
 
     useEffect(() => {
-        // If the fallback width already matches the container, WidthProvider does
-        // not emit a change. Still enable normal animations after the first paint.
-        const fallbackTimer = window.setTimeout(settleInitialWidth, 250);
+        if (!mounted) {
+            return;
+        }
+
+        // When the measured width equals the SSR fallback, Responsive emits no
+        // width change and no correction is needed.
+        const fallbackTimer = window.setTimeout(enableAnimations, 100);
 
         return () => {
             window.clearTimeout(fallbackTimer);
 
-            if (settleFrameRef.current !== null) {
-                cancelAnimationFrame(settleFrameRef.current);
+            if (readinessFrameRef.current !== null) {
+                cancelAnimationFrame(readinessFrameRef.current);
             }
         };
-    }, [settleInitialWidth]);
+    }, [enableAnimations, mounted]);
 
     return (
         <div className='space-y-4'>
-            <div className='relative'>
-                <ResponsiveGridLayout
+            <div ref={containerRef} className='relative min-w-0'>
+                <Responsive
                     isDraggable={false}
-                    className={['layout', !isInitialWidthSettled && 'grid-width-pending', layoutClassName]
+                    className={['layout', !animationsReady && 'grid-measuring', layoutClassName]
                         .filter(Boolean)
                         .join(' ')}
                     layouts={layouts}
                     compactType={'vertical'}
                     rowHeight={30}
-                    breakpoints={{ lg: 996, md: 768, sm: 480, xs: 0 }}
-                    cols={{ lg: 12, md: 10, sm: 6, xs: 2 }}
+                    breakpoints={gridBreakpoints}
+                    cols={gridColumns}
                     isResizable={false}
+                    {...responsiveLayoutProps}
                     onWidthChange={handleWidthChange}
-                    {...responsiveLayoutProps}>
+                    width={width}>
                     {gridCardConfigs.map((item) => (
                         <div key={item.id}>
                             <GridCard item={item} />
                         </div>
                     ))}
-                </ResponsiveGridLayout>
+                </Responsive>
             </div>
         </div>
     );

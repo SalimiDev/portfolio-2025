@@ -73,7 +73,6 @@
 }
 
 html {
-    scrollbar-gutter: stable;
     font-family:
         var(--font-poppins),
         system-ui,
@@ -112,14 +111,28 @@ html {
     );
 }
 
-/* Keep grid animations, but do not animate WidthProvider's first client measurement. */
-.react-grid-item {
-    transition:
-        transform 0.3s ease-in-out,
-        width 0.3s ease-in-out,
-        height 0.3s ease-in-out;
+.layout {
+    opacity: 1;
+    transition: opacity 0.12s ease-out;
 }
 
-.grid-width-pending > .react-grid-item {
+.layout.grid-measuring {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.layout.grid-measuring > .react-grid-item {
     transition: none;
+}
+
+@media (scripting: none) {
+    .layout.grid-measuring {
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
+
+/* برای انیمیشن تغییرات */
+.react-grid-item {
+    transition: all 0.3s ease-in-out;
 }
