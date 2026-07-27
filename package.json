@@ -18,7 +18,7 @@
         "lint:fix": "eslint . --fix",
         "test": "jest --runInBand",
         "test:watch": "jest --watch",
-        "typecheck": "tsc --noEmit",
+        "typecheck": "next typegen && tsc --noEmit",
         "format": "prettier --write .",
         "generate:icons": "gulp --cwd icons && prettier --write \"src/components/icons/**/*.{ts,tsx}\"",
         "optimize:project-images": "node scripts/resize-project-images.mjs",
