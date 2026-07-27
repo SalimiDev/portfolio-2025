@@ -1,6 +1,7 @@
 'use client';
 
 import useActiveMenuTab from '@/store/useActiveMenuTab';
+import type { NavigationMenuItem } from '@/types/navigation-menu-item';
 
 const menuItems: NavigationMenuItem[] = [
     { title: 'All', href: '/' },

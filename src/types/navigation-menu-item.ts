@@ -1,6 +1,6 @@
-type NavigationTitles = 'All' | 'About' | 'Work';
+export type NavigationTitle = 'All' | 'About' | 'Work';
 
-type NavigationMenuItem = {
-    title: NavigationTitles;
+export type NavigationMenuItem = {
+    title: NavigationTitle;
     href: string;
 };

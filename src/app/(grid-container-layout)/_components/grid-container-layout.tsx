@@ -10,6 +10,7 @@ import {
 
 import useActiveMenuTab from '@/store/useActiveMenuTab';
 import { LayoutPosition, Layouts } from '@/types/layouts.types';
+import type { NavigationTitle } from '@/types/navigation-menu-item';
 
 import { gridCardConfigs } from '../grid-card-configs';
 import GridCard from './grid-card';
@@ -17,7 +18,7 @@ import GridCard from './grid-card';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 const defaultLayout: LayoutPosition = { x: 0, y: 0, w: 1, h: 1 };
 
-const generateLayoutByTab = (tab: NavigationTitles, screenSize: keyof Layouts) =>
+const generateLayoutByTab = (tab: NavigationTitle, screenSize: keyof Layouts) =>
     [...gridCardConfigs].map((item) => {
         const layout = item.layouts?.[screenSize]?.[tab] ?? defaultLayout;
 

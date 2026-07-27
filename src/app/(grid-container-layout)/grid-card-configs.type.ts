@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
 
+import type { GridComponent } from '@/types/grid-component.types';
 import { Layouts } from '@/types/layouts.types';
 
 import { ExperienceRecordTypes } from '../_components/grid-cards/work-experiences/experience-records.interface';

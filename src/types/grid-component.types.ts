@@ -1,4 +1,4 @@
-type GridComponent =
+export type GridComponent =
     | 'LocationCard'
     | 'ResumeCard'
     | 'AboutMeCard'

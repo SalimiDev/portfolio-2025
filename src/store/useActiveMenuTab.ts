@@ -1,11 +1,13 @@
 import { create } from 'zustand';
 
+import type { NavigationTitle } from '@/types/navigation-menu-item';
+
 const useActiveMenuTab = create<{
-    activeTab: NavigationTitles;
-    setActiveTab: (newTab: NavigationTitles) => void;
+    activeTab: NavigationTitle;
+    setActiveTab: (newTab: NavigationTitle) => void;
 }>((set) => ({
     activeTab: 'All', //default
-    setActiveTab: (newTab: NavigationTitles) => set(() => ({ activeTab: newTab }))
+    setActiveTab: (newTab: NavigationTitle) => set({ activeTab: newTab })
 }));
 
 export default useActiveMenuTab;
