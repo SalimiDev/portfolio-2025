@@ -6,7 +6,7 @@ import svgmin from 'gulp-svgmin';
 import wrap from 'gulp-wrap';
 
 const svg_files_folder = './icons-svg',
-    dest_folder = '../src/app/_components/icons/',
+    dest_folder = '../src/components/icons/',
     jsx_template = './icon-template.txt';
 
 let icons_component_list = [];
