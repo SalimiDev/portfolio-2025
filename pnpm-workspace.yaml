@@ -12,9 +12,9 @@ minimumReleaseAgeExclude:
     - '@next/eslint-plugin-next@16.2.12'
     - eslint-config-next@16.2.12
     - globals@17.8.0
-onlyBuiltDependencies:
-    - sharp
-    - unrs-resolver
+allowBuilds:
+    sharp@0.34.5 || 0.35.3: true
+    unrs-resolver@1.12.2: true
 peerDependencyRules:
     allowedVersions:
         react: '19'
