@@ -73,6 +73,7 @@
 }
 
 html {
+    scrollbar-gutter: stable;
     font-family:
         var(--font-poppins),
         system-ui,
@@ -111,7 +112,14 @@ html {
     );
 }
 
-/* برای انیمیشن تغییرات */
+/* Keep grid animations, but do not animate WidthProvider's first client measurement. */
 .react-grid-item {
-    transition: all 0.3s ease-in-out;
+    transition:
+        transform 0.3s ease-in-out,
+        width 0.3s ease-in-out,
+        height 0.3s ease-in-out;
+}
+
+.grid-width-pending > .react-grid-item {
+    transition: none;
 }
