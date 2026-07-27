@@ -9,21 +9,12 @@ import {
 } from 'react-grid-layout/legacy';
 
 import { gridCardConfigs } from '../config/grid-cards';
+import { generateLayoutByTab } from '../model/layout';
 import type { Layouts } from '../model/layout.types';
 import type { NavigationTitle } from '../model/navigation.types';
 import GridCard from './grid-card';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
-
-const generateLayoutByTab = (tab: NavigationTitle, screenSize: keyof Layouts) =>
-    [...gridCardConfigs].map((item) => {
-        const layout = item.layouts[screenSize][tab];
-
-        return {
-            ...layout,
-            i: String(item.id)
-        };
-    });
 
 interface LayoutGridProps {
     activeTab: NavigationTitle;
@@ -34,10 +25,10 @@ const PortfolioGrid: React.FC<LayoutGridProps> = ({ activeTab, layoutProps }) =>
     // Keep layout object stable between renders unless the selected tab changes.
     const layouts = useMemo(
         () => ({
-            xs: generateLayoutByTab(activeTab, 'xs'),
-            sm: generateLayoutByTab(activeTab, 'sm'),
-            md: generateLayoutByTab(activeTab, 'md'),
-            lg: generateLayoutByTab(activeTab, 'lg')
+            xs: generateLayoutByTab(gridCardConfigs, activeTab, 'xs'),
+            sm: generateLayoutByTab(gridCardConfigs, activeTab, 'sm'),
+            md: generateLayoutByTab(gridCardConfigs, activeTab, 'md'),
+            lg: generateLayoutByTab(gridCardConfigs, activeTab, 'lg')
         }),
         [activeTab]
     );
