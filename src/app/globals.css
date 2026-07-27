@@ -35,15 +35,16 @@
     --color-gradient-second: #0fa2e9;
     --color-white-translucent: hsla(0, 0%, 100%, 0.1);
     --background-image-hero-pattern: url('/images/tile.svg');
-    --animate-marquee: marquee 20s linear infinite;
+    --animate-tech-marquee: seamless-marquee 45s linear infinite;
+    --animate-moving-marquee: seamless-marquee 70s linear infinite;
 
-    @keyframes marquee {
-        0% {
-            transform: translateX(0);
+    @keyframes seamless-marquee {
+        from {
+            left: 0;
         }
 
-        100% {
-            transform: translateX(calc(-50% - 105px));
+        to {
+            left: var(--marquee-offset);
         }
     }
 }
@@ -95,6 +96,7 @@ html {
 }
 
 .mask-gradient-horizontal {
+    contain: paint;
     mask-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0) 0%,
