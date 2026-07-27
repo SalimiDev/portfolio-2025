@@ -1,6 +1,76 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-white: #f0f2f8;
+    --color-primary: #007bec;
+    --color-primary-content: #ffffff;
+    --color-primary-focus: #0068c8;
+    --color-secondary: #6c5ce7;
+    --color-secondary-content: #ffffff;
+    --color-secondary-focus: #503de2;
+    --color-accent: #1fb2a5;
+    --color-accent-content: #ffffff;
+    --color-accent-focus: #1a9489;
+    --color-neutral: #2a323c;
+    --color-neutral-content: #474747;
+    --color-neutral-focus: #242a33;
+    --color-base-25: #778698;
+    --color-base-50: #2a323c;
+    --color-base-75: #20272e;
+    --color-base-100: #1d232a;
+    --color-base-200: #191e24;
+    --color-base-300: #15191e;
+    --color-base-content: #a6adbb;
+    --color-info: #3abff8;
+    --color-info-content: #18272f;
+    --color-success: #36d399;
+    --color-success-content: #162a21;
+    --color-warning: #fbbd23;
+    --color-warning-content: #312612;
+    --color-error: #f87272;
+    --color-error-content: #311c1b;
+    --color-gradient-first: #34eaa0;
+    --color-gradient-second: #0fa2e9;
+    --color-white-translucent: hsla(0, 0%, 100%, 0.1);
+    --background-image-hero-pattern: url('/images/tile.svg');
+    --animate-marquee: marquee 20s linear infinite;
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-50% - 105px));
+        }
+    }
+}
+
+@utility container {
+    margin-inline: auto;
+
+    @media (width >= 30rem) {
+        padding-inline: 1rem;
+    }
+
+    @media (width >= 40rem) {
+        padding-inline: 1.5rem;
+    }
+
+    @media (width >= 48rem) {
+        padding-inline: 3rem;
+    }
+
+    @media (width >= 64rem) {
+        padding-inline: 3rem;
+    }
+
+    @media (width >= 80rem) {
+        padding-inline: 9rem;
+    }
+}
 
 html {
     font-family:

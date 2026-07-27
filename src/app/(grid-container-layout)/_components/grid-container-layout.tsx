@@ -2,12 +2,17 @@
 
 import React, { useMemo } from 'react';
 
+import {
+    LegacyResponsiveReactGridLayoutProps,
+    Responsive,
+    WidthProvider
+} from 'react-grid-layout/legacy';
+
 import useActiveMenuTab from '@/store/useActiveMenuTab';
 import { LayoutPosition, Layouts } from '@/types/layouts.types';
 
 import { gridCardConfigs } from '../grid-card-configs';
 import GridCard from './grid-card';
-import { Responsive, ResponsiveProps, WidthProvider } from 'react-grid-layout';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 const defaultLayout: LayoutPosition = { x: 0, y: 0, w: 1, h: 1 };
@@ -23,7 +28,7 @@ const generateLayoutByTab = (tab: NavigationTitles, screenSize: keyof Layouts) =
     });
 
 interface LayoutGridProps {
-    layoutProps?: ResponsiveProps;
+    layoutProps?: LegacyResponsiveReactGridLayoutProps;
 }
 
 const GridContainerLayout: React.FC<LayoutGridProps> = ({ layoutProps }) => {

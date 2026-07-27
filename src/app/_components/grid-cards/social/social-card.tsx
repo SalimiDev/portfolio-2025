@@ -13,8 +13,8 @@ const SocialCard: React.FC<SocialCardProps> = memo(({ config }) => {
     const { platformIcon: PlatformIcon, platformUrl, platform } = config;
 
     return (
-        <div className='h-full transform-none opacity-100 blur-0'>
-            <div className='group relative aspect-square size-full overflow-hidden rounded-[24px] bg-white/60 p-px shadow-2xl dark:bg-white/10'>
+        <div className='blur-0 h-full transform-none opacity-100'>
+        <div className='group relative aspect-square size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
                 <div className='relative h-full'>

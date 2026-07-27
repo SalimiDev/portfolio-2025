@@ -2,7 +2,6 @@
 const nextConfig = {
     /* config options here */
     output: 'export',
-    swcMinify: true,
     images: {
         loader: 'custom',
         loaderFile: './src/utils/image-loader.js',

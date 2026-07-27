@@ -16,10 +16,10 @@ export const TopNavigation: React.FC = () => {
     return (
         <nav
             aria-label='Portfolio sections'
-            className='relative overflow-hidden rounded-3xl border border-base-25 bg-white/60 px-1 py-[4px] shadow-2xl dark:bg-white/10'>
+            className='relative overflow-hidden rounded-3xl border border-base-25 bg-white/60 p-1 shadow-2xl dark:bg-white/10'>
             <ul className='relative flex gap-1'>
                 <li
-                    className='absolute left-0 top-0 h-full w-[calc(100%/3)] rounded-3xl bg-base-25 transition-all duration-300 ease-out dark:bg-base-100'
+                    className='absolute top-0 left-0 h-full w-[calc(100%/3)] rounded-3xl bg-base-25 transition-all duration-300 ease-out dark:bg-base-100'
                     style={{
                         transform: `translateX(${activeIndex * 100}%)`
                     }}

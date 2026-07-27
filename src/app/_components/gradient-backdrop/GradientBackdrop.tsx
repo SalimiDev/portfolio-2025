@@ -10,7 +10,7 @@ const GradientBackdrop: React.FC = () => {
             />
             {/* Shine Effect */}
             <div
-                className='absolute inset-[-8px] z-10 opacity-40 blur'
+                className='absolute -inset-2 z-10 opacity-40 blur-sm'
                 style={{
                     maskImage: 'radial-gradient(circle at 50% 150%, white, transparent)',
                     WebkitMaskImage: 'radial-gradient(circle at 50% 150%, white, transparent)',
@@ -29,7 +29,7 @@ const GradientBackdrop: React.FC = () => {
                 }}
             />
             {/* Hover Background */}
-            <div className='bg-zinc-950/15 group-hover:bg-black/75 absolute inset-px z-20 rounded-[23px] transition-colors duration-300' />
+            <div className='absolute inset-px z-20 rounded-[23px] bg-transparent' />
         </>
     );
 };

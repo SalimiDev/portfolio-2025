@@ -17,7 +17,7 @@ const ResumeCard: React.FC<ResumeCardProps> = memo(({ config }) => {
     } = config;
 
     return (
-        <div className='h-full transform-none opacity-100 blur-0'>
+        <div className='blur-0 h-full transform-none opacity-100'>
             <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 <div className='relative h-full'>
@@ -25,7 +25,7 @@ const ResumeCard: React.FC<ResumeCardProps> = memo(({ config }) => {
                         <div className='flex w-full items-center justify-between'>
                             <div className='flex flex-col items-start gap-1'>
                                 <p className='text-xs font-medium uppercase opacity-50'>{CVDate}</p>
-                                <h2 className='text-black text-2xl font-medium uppercase opacity-90 dark:text-white'>
+                                <h2 className='text-2xl font-medium text-black uppercase opacity-90 dark:text-white'>
                                     Resume
                                 </h2>
                             </div>

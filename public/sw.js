@@ -48,16 +48,20 @@ self.addEventListener('fetch', (event) => {
         url.pathname.endsWith('.ico')
     ) {
         event.respondWith(
-            caches.match(request).then((cached) => {
+            (async () => {
+                const cached = await caches.match(request);
+
                 if (cached) return cached;
-                return fetch(request).then((response) => {
-                    if (response.ok) {
-                        const clone = response.clone();
-                        caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-                    }
-                    return response;
-                });
-            })
+
+                const response = await fetch(request);
+
+                if (response.ok) {
+                    const cache = await caches.open(CACHE_NAME);
+                    await cache.put(request, response.clone());
+                }
+
+                return response;
+            })()
         );
         return;
     }

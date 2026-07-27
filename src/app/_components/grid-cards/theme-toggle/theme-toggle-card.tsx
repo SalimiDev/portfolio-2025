@@ -25,7 +25,7 @@ const ThemeToggleCard: React.FC = memo(() => {
 
     if (!mounted) {
         return (
-            <div className='h-full transform-none opacity-100 blur-0'>
+            <div className='blur-0 h-full transform-none opacity-100'>
                 <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                     <GradientBackdrop />
                 </div>
@@ -36,7 +36,7 @@ const ThemeToggleCard: React.FC = memo(() => {
     const isDark = resolvedTheme === 'dark';
 
     return (
-        <div className='h-full transform-none opacity-100 blur-0'>
+        <div className='blur-0 h-full transform-none opacity-100'>
             <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
@@ -47,7 +47,7 @@ const ThemeToggleCard: React.FC = memo(() => {
                             <button
                                 onClick={handleSetDark}
                                 type='button'
-                                className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px] transition hover:scale-[1.03] active:scale-95 ${isDark ? selectedButtonStyles : ''}`}
+                                className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-3xl transition hover:scale-[1.03] active:scale-95 ${isDark ? selectedButtonStyles : ''}`}
                                 aria-label='darkmode'>
                                 <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
                                     <IconMoon width={36} height={36} stroke='none' strokeWidth={0.5} />
@@ -58,7 +58,7 @@ const ThemeToggleCard: React.FC = memo(() => {
                             <button
                                 onClick={handleSetLight}
                                 type='button'
-                                className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-[24px] transition hover:scale-[1.03] active:scale-95 ${!isDark ? selectedButtonStyles : ''}`}
+                                className={`relative z-20 flex h-full w-2/4 items-center justify-center rounded-3xl transition hover:scale-[1.03] active:scale-95 ${!isDark ? selectedButtonStyles : ''}`}
                                 aria-label='lightmode'>
                                 <div className='size-10 opacity-60 transition-opacity hover:opacity-100'>
                                     <IconSun width={36} height={36} stroke='none' strokeWidth={0.5} />

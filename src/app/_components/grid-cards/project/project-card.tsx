@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
     const { projectUrl, projectImage, projectName, companyName, projectTech, companyLogo: CompanyLogo } = config;
 
     return (
-        <div className='h-full transform-none opacity-100 blur-0'>
+        <div className='blur-0 h-full transform-none opacity-100'>
             <div className='relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
                                 </span>
                             </p>
                             <div className='flex w-full items-center gap-2'>
-                                <h2 className='text-black text-2xl font-medium uppercase opacity-90 dark:text-white'>
+                                <h2 className='text-2xl font-medium text-black uppercase opacity-90 dark:text-white'>
                                     {projectName}
                                 </h2>
                                 {projectUrl && (
@@ -65,7 +65,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
                                     projectTech.map((tech, _i) => (
                                         <div
                                             key={`${_i}-${tech}`}
-                                            className='dark:hover:bg-zinc-950/80 inline-flex items-center rounded-full border border-neutral-focus px-2 py-0.5 text-xs font-semibold text-neutral-focus transition-colors dark:border-base-25 dark:text-base-25'>
+                                            className='inline-flex items-center rounded-full border border-neutral-focus px-2 py-0.5 text-xs font-semibold text-neutral-focus transition-colors dark:border-base-25 dark:text-base-25 dark:hover:bg-zinc-950/80'>
                                             {tech}
                                         </div>
                                     ))}

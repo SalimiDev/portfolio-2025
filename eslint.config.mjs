@@ -2,9 +2,7 @@ import pluginJs from '@eslint/js';
 import nextPlugin from '@next/eslint-plugin-next';
 
 import eslintConfigPrettier from 'eslint-config-prettier';
-import importPlugin from 'eslint-plugin-import';
 import pluginPromise from 'eslint-plugin-promise';
-import pluginReact from 'eslint-plugin-react';
 import tailwind from 'eslint-plugin-tailwindcss';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -19,35 +17,25 @@ export default [
             globals: { ...globals.browser, ...globals.node }
         }
     },
-    {
-        settings: {
-            react: {
-                version: 'detect'
-            }
-        }
-    },
     pluginJs.configs.recommended, // ? https://github.com/eslint/eslint
-    importPlugin.flatConfigs.recommended, // ? https://github.com/import-js/eslint-plugin-import
     ...tseslint.configs.recommended, // ? https://github.com/typescript-eslint/typescript-eslint
     pluginPromise.configs['flat/recommended'], // ? https://github.com/eslint-community/eslint-plugin-promise
-    pluginReact.configs.flat.recommended, // ? https://github.com/jsx-eslint/eslint-plugin-react
-    pluginReact.configs.flat['jsx-runtime'], // ? https://github.com/jsx-eslint/eslint-plugin-react
     eslintConfigPrettier, // ? https://github.com/prettier/eslint-config-prettier
-    ...tailwind.configs['flat/recommended'], // ? https://github.com/francoismassart/eslint-plugin-tailwindcss
+    tailwind.configs.recommended, // ? https://github.com/francoismassart/eslint-plugin-tailwindcss
     {
+        settings: {
+            tailwindcss: {
+                cssConfigPath: './src/app/globals.css'
+            }
+        },
         rules: {
             'no-unused-vars': 'off',
-            'react/react-in-jsx-scope': 'off',
-            'react-hooks/exhaustive-deps': 'off',
-            'react/display-name': 'off',
-            'react/prop-types': 'off',
             'newline-before-return': 'off',
             '@typescript-eslint/no-unused-vars': 'off',
             '@typescript-eslint/no-unused-expressions': 'off',
             'tailwindcss/no-custom-classname': 'off',
             'tailwindcss/migration-from-tailwind-2': 'off',
-            'import/no-unresolved': 'off',
-            'import/no-named-as-default': 'off',
+            'tailwindcss/no-unnecessary-arbitrary-value': 'off',
             'promise/param-names': 'off'
         }
     },

@@ -12,8 +12,8 @@ const TechCard: React.FC<TechCardProps> = memo(({ config }) => {
     const { technologies } = config;
 
     return (
-        <div className='h-full transform-none opacity-100 blur-0'>
-            <div className='group relative size-full overflow-hidden rounded-[24px] bg-white/60 p-px shadow-2xl dark:bg-white/10'>
+        <div className='blur-0 h-full transform-none opacity-100'>
+            <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
                 <div className='relative size-full overflow-hidden px-8 py-16'>
@@ -22,7 +22,7 @@ const TechCard: React.FC<TechCardProps> = memo(({ config }) => {
                             {technologies.map((tech, _index) => (
                                 <figure
                                     key={_index}
-                                    className='bg-neutral-200 mx-2 my-0 flex aspect-square w-[72px] items-center justify-center gap-2 rounded-2xl bg-neutral-content dark:bg-neutral'>
+                                    className='mx-2 my-0 flex aspect-square w-18 items-center justify-center gap-2 rounded-2xl bg-neutral-content dark:bg-neutral'>
                                     <Image src={tech.techLogo} alt={tech.techName} loading='lazy' width={36} height={36} />
                                 </figure>
                             ))}
