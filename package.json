@@ -13,6 +13,7 @@
         "build": "next build",
         "build:fast": "next build",
         "start": "next start",
+        "check": "pnpm lint && pnpm typecheck && pnpm test",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "test": "jest --runInBand",

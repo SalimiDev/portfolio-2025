@@ -1,8 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mehdi Salimi Portfolio
 
-## Getting Started
+A statically exported portfolio built with Next.js, React, TypeScript, Tailwind CSS, and React Grid Layout.
 
-Install dependencies and run the development server with pnpm:
+## Requirements
+
+- Node.js 22.13 or newer
+- pnpm 11.17 or newer
+
+## Development
 
 ```bash
 corepack enable
@@ -10,23 +15,38 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The development server is available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm check                    # lint, typecheck, and tests
+pnpm test                     # run Jest tests
+pnpm build                    # create the static export in out/
+pnpm optimize:project-images  # resize project images with Sharp
+pnpm seo:update               # update sitemap lastmod values
+```
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+├── app/                       # routes, metadata, providers, and global styles
+├── components/                # shared UI and icon primitives
+├── features/
+│   └── portfolio-grid/
+│       ├── components/        # grid and card components
+│       ├── config/            # profile, social, and project card data
+│       └── model/             # types, navigation, and layout logic
+└── assets/                    # local fonts and images
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application exposes three statically generated routes:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/`
+- `/about`
+- `/work`
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pushes to `main` run linting, type checking, tests, a production build, and deployment to GitHub Pages. The monthly sitemap workflow updates `lastmod`, commits the change, and lets the main deployment workflow publish it.
