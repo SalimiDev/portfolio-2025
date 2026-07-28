@@ -44,6 +44,7 @@ interface MovingBarCard extends BaseGridCardConfig {
 interface ProjectCard extends BaseGridCardConfig {
     componentType: 'ProjectCard';
     projectImage: StaticImageData;
+    projectImageFit?: 'fill' | 'contain' | 'cover';
     companyName?: string;
     companyLogo?: IconComponent;
     projectName: string;

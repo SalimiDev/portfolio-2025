@@ -12,7 +12,17 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
-    const { projectUrl, projectImage, projectName, companyName, projectTech, companyLogo: CompanyLogo } = config;
+    const {
+        projectUrl,
+        projectImage,
+        projectImageFit = 'fill',
+        projectName,
+        companyName,
+        projectTech,
+        companyLogo: CompanyLogo
+    } = config;
+    const imageFitClass =
+        projectImageFit === 'contain' ? 'object-contain' : projectImageFit === 'cover' ? 'object-cover' : 'object-fill';
 
     return (
         <article className='blur-0 h-full transform-none opacity-100'>
@@ -23,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
                     <div className='relative flex h-full flex-col justify-center gap-6 overflow-hidden p-4 sm:px-8 sm:py-6'>
                         <div className='relative flex size-full flex-col items-stretch justify-between'>
                             <Image
-                                className='transparent absolute inset-0 z-50 size-full rounded-lg shadow-2xl'
+                                className={`transparent absolute inset-0 z-50 size-full rounded-lg shadow-2xl ${imageFitClass}`}
                                 src={projectImage}
                                 alt={projectName}
                                 loading='lazy'
