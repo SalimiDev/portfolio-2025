@@ -11,7 +11,7 @@ const WorkExperiences: React.FC<ExperiencesCardProps> = memo(({ config }) => {
     const { yearsOfExperience, experiences } = config;
 
     return (
-        <div className='blur-0 h-full transform-none opacity-100'>
+        <section className='blur-0 h-full transform-none opacity-100'>
             <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 <div className='relative h-full'>
@@ -24,36 +24,36 @@ const WorkExperiences: React.FC<ExperiencesCardProps> = memo(({ config }) => {
                         </div>
                         <div className='relative z-10 flex flex-col lg:justify-around'>
                             {experiences.map((item, index) => (
-                                <div
+                                <article
                                     key={index}
                                     className='flex flex-col items-stretch justify-between gap-3 py-4 md:flex-row md:items-center md:gap-2'>
                                     <div className='flex flex-col-reverse gap-1'>
-                                        <h2
+                                        <h3
                                             className={`w-fit text-left text-2xl font-medium text-base-300 sm:text-2xl md:text-2xl dark:text-white ${
                                                 item.lineThrough ? 'line-through' : ''
                                             }`}
                                             style={{ opacity: item.opacity / 100 }}>
                                             {item.company}
-                                        </h2>
-                                        <h3 className='md:text-md block text-xs font-medium text-black opacity-35 md:hidden dark:text-white'>
-                                            {item.dates}
                                         </h3>
+                                        <time className='md:text-md block text-xs font-medium text-black opacity-35 md:hidden dark:text-white'>
+                                            {item.dates}
+                                        </time>
                                     </div>
                                     <div className='flex flex-col md:items-end md:text-right'>
-                                        <h2 className='text-md lg:text-md font-medium text-base-200 opacity-80 dark:text-white'>
+                                        <p className='text-md lg:text-md font-medium text-base-200 opacity-80 dark:text-white'>
                                             {item.title}
-                                        </h2>
-                                        <h3 className='lg:text-md hidden text-xs font-medium text-base-200 opacity-35 md:block dark:text-white'>
+                                        </p>
+                                        <time className='lg:text-md hidden text-xs font-medium text-base-200 opacity-35 md:block dark:text-white'>
                                             {item.dates}
-                                        </h3>
+                                        </time>
                                     </div>
-                                </div>
+                                </article>
                             ))}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 });
 

@@ -1,5 +1,5 @@
 {
-    "name": "portfolio-2025",
+    "name": "portfolio-2026",
     "homepage": "https://mehdisalimi.com",
     "version": "0.2.0",
     "private": true,
@@ -10,6 +10,7 @@
     },
     "scripts": {
         "dev": "next dev",
+        "prebuild": "pnpm run seo:update",
         "build": "next build",
         "build:fast": "next build",
         "start": "next start",

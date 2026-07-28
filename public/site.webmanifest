@@ -1,6 +1,10 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Mehdi Salimi Portfolio",
+    "short_name": "Mehdi Salimi",
+    "description": "Software engineer portfolio featuring React, Next.js, and TypeScript work.",
+    "lang": "en",
+    "start_url": "/",
+    "scope": "/",
     "icons": [
         { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
         { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }

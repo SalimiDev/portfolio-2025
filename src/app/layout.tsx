@@ -46,9 +46,9 @@ export const viewport: Viewport = {
 };
 
 const siteUrl = 'https://mehdisalimi.com';
-const siteTitle = 'Mehdi Salimi | Frontend Engineer';
+const siteTitle = 'Mehdi Salimi | Software Engineer';
 const siteDescription =
-    "Frontend engineer building high-performance, accessible web applications with React, Next.js, and TypeScript.";
+    'Software engineer building high-performance, accessible web applications with React, Next.js, and TypeScript.';
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -61,20 +61,9 @@ export const metadata: Metadata = {
     creator: 'Mehdi Salimi',
     publisher: 'Mehdi Salimi',
     manifest: '/site.webmanifest',
-    keywords: [
-        'Mehdi Salimi',
-        'Software Engineer',
-        'React',
-        'Next.js',
-        'Tailwind CSS',
-        'TypeScript',
-        'JavaScript',
-        'Portfolio',
-        'Frontend Development',
-        'Web Performance',
-        'SEO'
-    ],
     referrer: 'origin-when-cross-origin',
+    // About and Work are alternate layouts of the same portfolio content.
+    // Keep the root URL canonical while allowing each layout to stay directly addressable.
     alternates: {
         canonical: '/'
     },
@@ -89,13 +78,14 @@ export const metadata: Metadata = {
                 url: '/images/user_avatar.webp',
                 width: 914,
                 height: 864,
-                alt: 'Mehdi Salimi'
+                alt: 'Portrait of Mehdi Salimi',
+                type: 'image/webp'
             }
         ],
         type: 'website'
     },
     twitter: {
-        card: 'summary_large_image',
+        card: 'summary',
         title: siteTitle,
         description: siteDescription,
         creator: '@salimidevop',
@@ -122,14 +112,52 @@ export const metadata: Metadata = {
     }
 };
 
-const personJsonLd = {
+const personId = `${siteUrl}/#person`;
+const websiteId = `${siteUrl}/#website`;
+
+const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Mehdi Salimi',
-    jobTitle: 'Frontend Engineer',
-    url: siteUrl,
-    image: `${siteUrl}/images/user_avatar.webp`,
-    sameAs: ['https://github.com/SalimiDev', 'https://www.linkedin.com/in/salimidevop/']
+    '@graph': [
+        {
+            '@type': 'WebSite',
+            '@id': websiteId,
+            url: siteUrl,
+            name: 'Mehdi Salimi Portfolio',
+            description: siteDescription,
+            inLanguage: 'en-US',
+            author: { '@id': personId }
+        },
+        {
+            '@type': 'ProfilePage',
+            '@id': `${siteUrl}/#profile`,
+            url: siteUrl,
+            name: siteTitle,
+            description: siteDescription,
+            inLanguage: 'en-US',
+            isPartOf: { '@id': websiteId },
+            mainEntity: { '@id': personId }
+        },
+        {
+            '@type': 'Person',
+            '@id': personId,
+            name: 'Mehdi Salimi',
+            jobTitle: 'Software Engineer',
+            description: siteDescription,
+            url: siteUrl,
+            image: {
+                '@type': 'ImageObject',
+                url: `${siteUrl}/images/user_avatar.webp`,
+                width: 914,
+                height: 864
+            },
+            knowsAbout: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Web Performance', 'Accessibility'],
+            sameAs: [
+                'https://github.com/SalimiDev',
+                'https://www.linkedin.com/in/salimidevop/',
+                'https://www.instagram.com/mehdi_salimi92/'
+            ]
+        }
+    ]
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -144,7 +172,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         {children}
                     </main>
                 </Providers>
-                <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+                <script
+                    type='application/ld+json'
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+                />
             </body>
         </html>
     );

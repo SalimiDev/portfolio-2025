@@ -15,7 +15,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
     const { projectUrl, projectImage, projectName, companyName, projectTech, companyLogo: CompanyLogo } = config;
 
     return (
-        <div className='blur-0 h-full transform-none opacity-100'>
+        <article className='blur-0 h-full transform-none opacity-100'>
             <div className='relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
                                     <Link
                                         href={projectUrl}
                                         target='_blank'
-                                        aria-label='View Project'
+                                        aria-label={`View ${projectName} project`}
                                         rel='noreferrer noopener'
                                         className='relative z-20 flex size-12 items-center'>
                                         <div className='opacity-60 transition-opacity hover:opacity-100'>
@@ -73,7 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     );
 });
 

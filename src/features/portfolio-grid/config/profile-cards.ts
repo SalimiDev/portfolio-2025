@@ -19,6 +19,7 @@ import IconDownload from '@/components/icons/src/download';
 import IconEye from '@/components/icons/src/eye';
 
 import type { GridCardConfig } from '../model/grid-card.types';
+import { PORTFOLIO_YEAR, YEARS_OF_EXPERIENCE } from './portfolio';
 
 export const profileCards = [
     {
@@ -26,7 +27,7 @@ export const profileCards = [
         componentType: 'AboutMeCard',
         avatar: '/images/user_avatar.webp',
         fullName: 'Mehdi Salimi',
-        description: `I’m a front-end developer with four years of experience, specializing in building responsive
+        description: `I’m a software engineer with ${YEARS_OF_EXPERIENCE} years of experience, specializing in building responsive
                     dashboards and interactive websites. I work with modern tools like JavaScript, Next.js, React, and
                     Tailwind CSS to craft beautiful user interfaces. Collaboration, creativity, and attention to detail
                     are at the heart of my work. I’m passionate about improving user experiences and continuously
@@ -57,24 +58,24 @@ export const profileCards = [
     {
         id: 2,
         componentType: 'WorkExperiences',
-        yearsOfExperience: 4,
+        yearsOfExperience: YEARS_OF_EXPERIENCE,
         experiences: [
             {
-                title: 'Frontend Developer',
+                title: 'Software Engineer',
                 company: 'Maltina',
                 dates: 'Dec 2025 - present',
                 opacity: 100,
                 lineThrough: false
             },
             {
-                title: 'Frontend Developer',
+                title: 'Software Engineer',
                 company: 'Armaghan Talaie',
                 dates: 'Mar 2025 - Nov 2025',
                 opacity: 55,
                 lineThrough: false
             },
             {
-                title: 'Frontend Developer',
+                title: 'Software Engineer',
                 company: 'Paya',
                 dates: '2023 - 2025',
                 opacity: 55,
@@ -88,7 +89,7 @@ export const profileCards = [
                 lineThrough: false
             },
             {
-                title: 'Frontend Developer',
+                title: 'Software Engineer',
                 company: 'Kimia Mehr Bastan',
                 dates: '2020 - 2021',
                 opacity: 55,
@@ -127,7 +128,7 @@ export const profileCards = [
             'https://docs.google.com/gview?embedded=true&url=https://raw.githubusercontent.com/SalimiDev/SalimiDev/main/resume/MehdiSalimi-Frontend-Esfand-403.pdf',
         resumeDownloadUrl:
             'https://github.com/SalimiDev/SalimiDev/blob/main/resume/MehdiSalimi-Frontend-Esfand-403.pdf?raw=true',
-        cvDate: '2025 CV',
+        cvDate: `${PORTFOLIO_YEAR} CV`,
         layouts: {
             xs: {
                 All: { x: 0, y: 12, w: 2, h: 3 },

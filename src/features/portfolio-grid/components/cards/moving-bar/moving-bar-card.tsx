@@ -1,6 +1,7 @@
 import { type CSSProperties, memo } from 'react';
 
 import GradientBackdrop from '@/components/gradient-backdrop';
+import { PORTFOLIO_YEAR } from '@/features/portfolio-grid/config/portfolio';
 
 const repeatCount = 14;
 const marqueeCopies = ['primary', 'duplicate'] as const;
@@ -24,8 +25,8 @@ const MovingBar: React.FC = memo(() => {
                                 className='flex shrink-0 gap-4 pr-4'>
                                 {Array.from({ length: repeatCount }).map((_, index) => (
                                     <span key={`${copy}-${index}`} className='flex w-42 shrink-0 gap-1'>
-                                        <h3 className='font-bold text-nowrap'>Mehdi Salimi</h3>
-                                        <span>&copy;2025</span>
+                                        <span className='font-bold text-nowrap'>Mehdi Salimi</span>
+                                        <span>&copy;{PORTFOLIO_YEAR}</span>
                                     </span>
                                 ))}
                             </div>

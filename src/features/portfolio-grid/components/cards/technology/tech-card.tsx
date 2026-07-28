@@ -23,7 +23,7 @@ const TechCard: React.FC<TechCardProps> = memo(({ config }) => {
     } as MarqueeStyle;
 
     return (
-        <div className='blur-0 h-full transform-none opacity-100'>
+        <section className='blur-0 h-full transform-none opacity-100'>
             <div className='group relative size-full overflow-hidden rounded-3xl bg-white/60 p-px shadow-2xl dark:bg-white/10'>
                 <GradientBackdrop />
                 {/* Content */}
@@ -59,7 +59,7 @@ const TechCard: React.FC<TechCardProps> = memo(({ config }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 });
 

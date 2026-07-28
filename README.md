@@ -22,9 +22,9 @@ The development server is available at [http://localhost:3000](http://localhost:
 ```bash
 pnpm check                    # lint, typecheck, and tests
 pnpm test                     # run Jest tests
-pnpm build                    # create the static export in out/
+pnpm build                    # refresh sitemap and create the static export in out/
 pnpm optimize:project-images  # resize project images with Sharp
-pnpm seo:update               # update sitemap lastmod values
+pnpm seo:update               # derive sitemap lastmod from the latest content commit
 ```
 
 ## Architecture
@@ -49,4 +49,4 @@ The application exposes three statically generated routes:
 
 ## Deployment
 
-Pushes to `main` run linting, type checking, tests, a production build, and deployment to GitHub Pages. The monthly sitemap workflow updates `lastmod`, commits the change, and lets the main deployment workflow publish it.
+Pushes to `main` run linting, type checking, tests, refresh the canonical sitemap from the latest content commit, build the production export, and deploy it to GitHub Pages.

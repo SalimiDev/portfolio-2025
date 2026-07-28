@@ -1,51 +1,70 @@
 #!/usr/bin/env node
 
 /**
- * Sitemap Update Script
- * Updates all lastmod dates in sitemap.xml.
+ * Generates a sitemap for the canonical portfolio URL.
+ * By default, lastmod comes from the latest commit that changed site content.
  */
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { execFileSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
+const projectRoot = path.join(__dirname, '..');
+const sitemapPath = path.join(projectRoot, 'public', 'sitemap.xml');
 const requestedDate = process.env.UPDATE_DATE?.trim();
-const updateDate = requestedDate || new Date().toISOString().split('T')[0];
+const contentPaths = [
+    'src',
+    'public/images',
+    'public/favicon.ico',
+    'public/favicon-16x16.png',
+    'public/favicon-32x32.png',
+    'public/apple-touch-icon.png',
+    'public/android-chrome-192x192.png',
+    'public/android-chrome-512x512.png'
+];
 
-if (!/^\d{4}-\d{2}-\d{2}$/.test(updateDate) || Number.isNaN(Date.parse(`${updateDate}T00:00:00Z`))) {
+function getLatestContentDate() {
+    try {
+        return execFileSync('git', ['log', '-1', '--format=%cs', '--', ...contentPaths], {
+            cwd: projectRoot,
+            encoding: 'utf8'
+        }).trim();
+    } catch {
+        return '';
+    }
+}
+
+const updateDate = requestedDate || getLatestContentDate();
+const isValidDate =
+    updateDate && /^\d{4}-\d{2}-\d{2}$/.test(updateDate) && !Number.isNaN(Date.parse(`${updateDate}T00:00:00Z`));
+
+if (!isValidDate) {
     console.error(`❌ Invalid update date: ${updateDate}`);
     process.exit(1);
 }
 
-console.log('🔄 Updating Sitemap');
-console.log(`📅 Update date: ${updateDate}`);
-console.log(`📁 File path: ${sitemapPath}\n`);
+const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://mehdisalimi.com/</loc>
+        <lastmod>${updateDate}</lastmod>
+    </url>
+</urlset>
+`;
 
 try {
-    const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
-    const lastModRegex = /<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g;
-    const matches = [...sitemapContent.matchAll(lastModRegex)];
+    const currentContent = fs.existsSync(sitemapPath) ? fs.readFileSync(sitemapPath, 'utf8') : '';
 
-    if (matches.length > 0) {
-        const updatedContent = sitemapContent.replace(
-            /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g,
-            `<lastmod>${updateDate}</lastmod>`
-        );
-
-        fs.writeFileSync(sitemapPath, updatedContent, 'utf8');
-
-        console.log(`✅ Update successful!`);
-        console.log(`📝 All dates updated to ${updateDate}`);
-        console.log(`📊 URLs updated: ${matches.length}`);
-    } else {
-        console.log('❌ No lastmod dates found in file');
+    if (currentContent === sitemapContent) {
+        console.log(`✅ Sitemap is already current (${updateDate})`);
+        process.exit(0);
     }
+
+    fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
+    console.log(`✅ Sitemap updated from the latest content commit (${updateDate})`);
 } catch (error) {
-    console.error('❌ Update error:', error.message);
+    console.error('❌ Sitemap update failed:', error.message);
     process.exit(1);
 }
-
-console.log('\n✨ Sitemap updated successfully!');
