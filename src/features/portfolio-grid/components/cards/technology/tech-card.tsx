@@ -41,7 +41,7 @@ const TechCard: React.FC<TechCardProps> = memo(({ config }) => {
                                             className='my-0 flex aspect-square w-18 shrink-0 items-center justify-center gap-2 rounded-2xl bg-neutral-content dark:bg-neutral'>
                                             <Image
                                                 src={tech.techLogo}
-                                                alt={tech.techName}
+                                                alt={copy === 'primary' ? tech.techName : ''}
                                                 loading='lazy'
                                                 width={36}
                                                 height={36}

@@ -113,6 +113,14 @@ html {
     );
 }
 
+.moving-bar-name::before {
+    content: var(--moving-bar-name);
+}
+
+.moving-bar-year::before {
+    content: var(--moving-bar-year);
+}
+
 .layout {
     opacity: 1;
     transition: opacity 0.12s ease-out;

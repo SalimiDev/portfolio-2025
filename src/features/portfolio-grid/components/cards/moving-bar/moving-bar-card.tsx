@@ -6,9 +6,18 @@ import { PORTFOLIO_YEAR } from '@/features/portfolio-grid/config/portfolio';
 const repeatCount = 14;
 const marqueeCopies = ['primary', 'duplicate'] as const;
 const movingBarItemStepRem = 11.5;
+
+type MovingBarMarqueeStyle = CSSProperties & {
+    '--marquee-offset': string;
+    '--moving-bar-name': string;
+    '--moving-bar-year': string;
+};
+
 const movingBarMarqueeStyle = {
-    '--marquee-offset': `-${repeatCount * movingBarItemStepRem}rem`
-} as CSSProperties;
+    '--marquee-offset': `-${repeatCount * movingBarItemStepRem}rem`,
+    '--moving-bar-name': '"Mehdi Salimi"',
+    '--moving-bar-year': `"©${PORTFOLIO_YEAR}"`
+} as MovingBarMarqueeStyle;
 
 const MovingBar: React.FC = memo(() => {
     return (
@@ -17,16 +26,17 @@ const MovingBar: React.FC = memo(() => {
                 <GradientBackdrop />
                 {/* Content */}
                 <div className='mask-gradient-horizontal relative mx-auto flex size-full items-center overflow-hidden px-4 py-2 lg:h-17'>
-                    <div style={movingBarMarqueeStyle} className='relative flex w-max animate-moving-marquee'>
+                    <span className='sr-only'>Mehdi Salimi &copy;{PORTFOLIO_YEAR}</span>
+                    <div
+                        aria-hidden='true'
+                        style={movingBarMarqueeStyle}
+                        className='relative flex w-max animate-moving-marquee'>
                         {marqueeCopies.map((copy) => (
-                            <div
-                                key={copy}
-                                aria-hidden={copy === 'duplicate' ? true : undefined}
-                                className='flex shrink-0 gap-4 pr-4'>
+                            <div key={copy} className='flex shrink-0 gap-4 pr-4'>
                                 {Array.from({ length: repeatCount }).map((_, index) => (
                                     <span key={`${copy}-${index}`} className='flex w-42 shrink-0 gap-1'>
-                                        <span className='font-bold text-nowrap'>Mehdi Salimi</span>
-                                        <span>&copy;{PORTFOLIO_YEAR}</span>
+                                        <span className='moving-bar-name font-bold text-nowrap' />
+                                        <span className='moving-bar-year' />
                                     </span>
                                 ))}
                             </div>

@@ -46,9 +46,9 @@ export const viewport: Viewport = {
 };
 
 const siteUrl = 'https://mehdisalimi.com';
-const siteTitle = 'Mehdi Salimi | Software Engineer';
+const siteTitle = 'Mehdi Salimi | Software Engineer — Next.js Projects';
 const siteDescription =
-    'Software engineer building high-performance, accessible web applications with React, Next.js, and TypeScript.';
+    'Mehdi Salimi is a software engineer building high-performance, accessible React and Next.js projects, dashboards, and web applications with TypeScript.';
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),

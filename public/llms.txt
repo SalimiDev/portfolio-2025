@@ -1,0 +1,23 @@
+# Mehdi Salimi
+
+> Portfolio of Mehdi Salimi, a software engineer building responsive dashboards and interactive web applications.
+
+Mehdi Salimi works with JavaScript, React, Next.js, TypeScript, Tailwind CSS, and related frontend tools.
+
+## Portfolio
+
+- [Mehdi Salimi Portfolio](https://mehdisalimi.com/): Canonical profile, skills, work experience, and project index.
+
+## Selected Projects
+
+- [SmartComm](https://smartcomm.ir): Project at Armaghan Talaie using Next.js, TypeScript, Tailwind CSS, MUI, Zod, and Zustand.
+- [Hillter Hotel](https://salimidev.github.io/Hotel-ReactJsApp): Freelance project using Next.js, TypeScript, and Tailwind CSS.
+- [Tesla Clone](https://salimidev.github.io/TESLA-CLONE): Freelance project using React, Redux, and styled-components.
+- [Admin Dashboard](https://salimidev.github.io/react-admin-dashboard/): Freelance project using React, Nivo charts, Tailwind CSS, and Formik.
+- Business intelligence (BI): Project at PAYA using React, PrimeReact, Highcharts, and Tailwind CSS.
+
+## Profiles
+
+- [GitHub](https://github.com/SalimiDev)
+- [LinkedIn](https://www.linkedin.com/in/salimidevop/)
+- [Instagram](https://www.instagram.com/mehdi_salimi92/)
