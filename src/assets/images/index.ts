@@ -6,6 +6,7 @@ import business_inteligence from './projects/business_inteligence.webp';
 import hillter_hotel from './projects/hillter_hotel.webp';
 import tesla_clone from './projects/tesla_clone.webp';
 import user_avatar from './user_avatar.webp';
+import user_avatar_ui from './user_avatar.ui.webp';
 
 export {
     location_dark,
@@ -15,5 +16,6 @@ export {
     Station_money,
     Station_Setup,
     business_inteligence,
-    user_avatar
+    user_avatar,
+    user_avatar_ui
 };

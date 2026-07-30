@@ -3,24 +3,32 @@
  * Resizes large project images to appropriate dimensions for responsive display
  * Based on actual grid layout sizes to optimize PageSpeed performance
  */
-
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import sharp from 'sharp';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PROJECTS_DIR = path.join(__dirname, '..', 'src', 'assets', 'images', 'projects');
 const BACKUP_DIR = path.join(PROJECTS_DIR, 'originals');
+const AVATAR_PATH = path.join(__dirname, '..', 'src', 'assets', 'images', 'user_avatar.webp');
+const UI_AVATAR_PATH = path.join(__dirname, '..', 'src', 'assets', 'images', 'user_avatar.ui.webp');
 
-// Target widths for responsive images
-// Based on grid layout: max display size is ~600px on mobile, ~800px on larger screens
-const RESPONSIVE_SIZES = [
-    { width: 600, suffix: '@1x' },  // For mobile and small screens
-    { width: 1200, suffix: '@2x' }, // For retina displays and larger screens
-];
+// The full-size 1200px sources remain the desktop/retina fallback.
+// A 640px variant covers the largest mobile render size reported by Lighthouse.
+const MOBILE_PROJECT_WIDTH = 640;
+const MOBILE_PROJECT_SUFFIX = '.mobile';
+const UI_AVATAR_WIDTH = 180;
+const RESPONSIVE_PROJECT_FILES = new Set([
+    'admin_dash.webp',
+    'business_inteligence.webp',
+    'hillter_hotel.webp',
+    'nobino.webp',
+    'smartcomm.webp',
+    'tesla_clone.webp'
+]);
 
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
 
@@ -47,7 +55,11 @@ function getImageFiles() {
     return files
         .filter((file) => {
             const ext = path.extname(file).toLowerCase();
-            return IMAGE_EXTENSIONS.includes(ext);
+            return (
+                IMAGE_EXTENSIONS.includes(ext) &&
+                RESPONSIVE_PROJECT_FILES.has(file) &&
+                !file.includes(`${MOBILE_PROJECT_SUFFIX}.`)
+            );
         })
         .map((file) => path.join(PROJECTS_DIR, file));
 }
@@ -58,9 +70,13 @@ function getImageFiles() {
 async function backupOriginal(imagePath) {
     const filename = path.basename(imagePath);
     const backupPath = path.join(BACKUP_DIR, filename);
+    const imageName = path.parse(filename).name;
+    const hasBackup = fs
+        .readdirSync(BACKUP_DIR)
+        .some((backupFilename) => path.parse(backupFilename).name === imageName);
 
     // Only backup if not already backed up
-    if (!fs.existsSync(backupPath)) {
+    if (!hasBackup) {
         fs.copyFileSync(imagePath, backupPath);
         console.log(`  📦 Backed up original: ${filename}`);
     }
@@ -78,7 +94,6 @@ async function resizeImage(imagePath, targetWidth, suffix = '') {
         // Output filename
         const outputFilename = suffix ? `${nameWithoutExt}${suffix}.webp` : `${nameWithoutExt}.webp`;
         const outputPath = path.join(PROJECTS_DIR, outputFilename);
-        const tempPath = path.join(PROJECTS_DIR, `temp_${outputFilename}`);
 
         // Get original metadata
         const metadata = await sharp(imagePath).metadata();
@@ -89,24 +104,24 @@ async function resizeImage(imagePath, targetWidth, suffix = '') {
             return { success: true, skipped: true };
         }
 
-        // Resize and optimize to temp file
-        await sharp(imagePath)
+        // Encode to memory first so Windows never has to replace a file that Sharp still holds open.
+        const optimizedImage = await sharp(imagePath)
             .resize(targetWidth, null, {
                 fit: 'inside',
-                withoutEnlargement: true,
+                withoutEnlargement: true
             })
             .webp({
                 quality: 85, // Slightly higher quality for project images
-                effort: 6,
+                effort: 6
             })
-            .toFile(tempPath);
+            .toBuffer();
 
         const originalSize = fs.statSync(imagePath).size;
-        const optimizedSize = fs.statSync(tempPath).size;
-        const newMetadata = await sharp(tempPath).metadata();
+        const optimizedSize = optimizedImage.length;
+        const newMetadata = await sharp(optimizedImage).metadata();
 
-        // Replace original with optimized version
-        fs.renameSync(tempPath, outputPath);
+        // Replace the generated output safely on repeated runs.
+        fs.writeFileSync(outputPath, optimizedImage);
 
         console.log(
             `  ✓ ${outputFilename}` +
@@ -134,8 +149,35 @@ async function processImage(imagePath) {
 
     // Generate main optimized version (max 1200px for @2x retina)
     const mainResult = await resizeImage(imagePath, 1200);
+    const mobileResult = await resizeImage(imagePath, MOBILE_PROJECT_WIDTH, MOBILE_PROJECT_SUFFIX);
 
-    return mainResult;
+    return {
+        success: mainResult.success && mobileResult.success,
+        skipped: mainResult.skipped && mobileResult.skipped
+    };
+}
+
+async function generateUiAvatar() {
+    const originalSize = fs.statSync(AVATAR_PATH).size;
+    const output = await sharp(AVATAR_PATH)
+        .resize(UI_AVATAR_WIDTH, null, {
+            fit: 'inside',
+            withoutEnlargement: true
+        })
+        .webp({
+            quality: 82,
+            effort: 6
+        })
+        .toBuffer();
+
+    fs.writeFileSync(UI_AVATAR_PATH, output);
+
+    const metadata = await sharp(output).metadata();
+    console.log(
+        `\n👤 UI avatar` +
+            `\n    ${metadata.width}x${metadata.height}` +
+            `\n    ${(originalSize / 1024).toFixed(1)}KB → ${(output.length / 1024).toFixed(1)}KB`
+    );
 }
 
 /**
@@ -157,6 +199,7 @@ async function main() {
 
     // Process all images
     const results = await Promise.all(imageFiles.map((file) => processImage(file)));
+    await generateUiAvatar();
 
     // Summary
     const successful = results.filter((r) => r.success && !r.skipped).length;

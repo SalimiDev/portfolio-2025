@@ -17,6 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
     const {
         projectUrl,
         projectImage,
+        projectImageMobile,
         projectImageFit = 'contain',
         projectName,
         companyName,
@@ -35,25 +36,31 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
                     <div className='relative flex h-full flex-col justify-center gap-6 overflow-hidden p-4 sm:px-8 sm:py-6'>
                         <div className='relative flex size-full flex-col items-stretch justify-between'>
                             {projectImageFit === 'contain' && (
+                                <picture>
+                                    <source media='(max-width: 768px)' srcSet={projectImageMobile.src} />
+                                    <Image
+                                        aria-hidden='true'
+                                        className='transparent absolute inset-0 size-full scale-110 rounded-lg object-cover opacity-35 blur-xl'
+                                        src={projectImage}
+                                        alt=''
+                                        loading='lazy'
+                                        fill
+                                        sizes={projectImageSizes}
+                                    />
+                                </picture>
+                            )}
+                            <picture>
+                                <source media='(max-width: 768px)' srcSet={projectImageMobile.src} />
                                 <Image
-                                    aria-hidden='true'
-                                    className='transparent absolute inset-0 size-full scale-110 rounded-lg object-cover opacity-35 blur-xl'
+                                    className={`transparent absolute inset-0 z-50 size-full rounded-lg shadow-2xl ${imageFitClass}`}
                                     src={projectImage}
-                                    alt=''
+                                    alt={projectName}
                                     loading='lazy'
+                                    placeholder='blur'
                                     fill
                                     sizes={projectImageSizes}
                                 />
-                            )}
-                            <Image
-                                className={`transparent absolute inset-0 z-50 size-full rounded-lg shadow-2xl ${imageFitClass}`}
-                                src={projectImage}
-                                alt={projectName}
-                                loading='lazy'
-                                placeholder='blur'
-                                fill
-                                sizes={projectImageSizes}
-                            />
+                            </picture>
                         </div>
 
                         <div className='flex flex-col items-start gap-1'>

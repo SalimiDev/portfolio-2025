@@ -1,6 +1,12 @@
 import { admin_dash, business_inteligence, hillter_hotel, tesla_clone } from '@/assets/images';
+import adminDashMobile from '@/assets/images/projects/admin_dash.mobile.webp';
+import businessInteligenceMobile from '@/assets/images/projects/business_inteligence.mobile.webp';
+import hillterHotelMobile from '@/assets/images/projects/hillter_hotel.mobile.webp';
 import nobino from '@/assets/images/projects/nobino.webp';
+import nobinoMobile from '@/assets/images/projects/nobino.mobile.webp';
 import smartcomm from '@/assets/images/projects/smartcomm.webp';
+import smartcommMobile from '@/assets/images/projects/smartcomm.mobile.webp';
+import teslaCloneMobile from '@/assets/images/projects/tesla_clone.mobile.webp';
 import IconGithub from '@/components/icons/src/github';
 import NobinoIcon from '@/components/icons/src/nobino';
 import SmartCommIcon from '@/components/icons/src/smartcomm';
@@ -14,6 +20,7 @@ export const projectCards = [
         companyName: 'Armaghan Talaie',
         companyLogo: NobinoIcon,
         projectImage: nobino,
+        projectImageMobile: nobinoMobile,
         projectImageFit: 'fill',
         projectName: 'Nobino',
         projectUrl: 'https://nobino.ir',
@@ -47,6 +54,7 @@ export const projectCards = [
         companyName: 'Armaghan Talaie',
         companyLogo: SmartCommIcon,
         projectImage: smartcomm,
+        projectImageMobile: smartcommMobile,
         projectImageFit: 'cover',
         projectName: 'SmartComm',
         projectUrl: 'https://smartcomm.ir',
@@ -80,6 +88,7 @@ export const projectCards = [
         companyName: 'Freelance',
         companyLogo: IconGithub,
         projectImage: hillter_hotel,
+        projectImageMobile: hillterHotelMobile,
         projectImageFit: 'fill',
         projectName: 'Hillter Hotel',
         projectUrl: 'https://salimidev.github.io/Hotel-ReactJsApp',
@@ -113,6 +122,7 @@ export const projectCards = [
         companyName: 'Freelance',
         companyLogo: IconGithub,
         projectImage: tesla_clone,
+        projectImageMobile: teslaCloneMobile,
         projectImageFit: 'cover',
         projectName: 'Tesla Clone',
         projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
@@ -146,6 +156,7 @@ export const projectCards = [
         companyName: 'Freelance',
         companyLogo: IconGithub,
         projectImage: admin_dash,
+        projectImageMobile: adminDashMobile,
         projectImageFit: 'cover',
         projectName: 'Admin Dashboard',
         projectUrl: 'https://salimidev.github.io/react-admin-dashboard/',
@@ -179,6 +190,7 @@ export const projectCards = [
         companyName: 'PAYA',
         companyLogo: IconGithub,
         projectImage: business_inteligence,
+        projectImageMobile: businessInteligenceMobile,
         projectImageFit: 'fill',
         projectName: 'Business intelligence (BI)',
         projectUrl: '',
