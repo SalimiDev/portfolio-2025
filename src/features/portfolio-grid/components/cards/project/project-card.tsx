@@ -11,11 +11,13 @@ interface ProjectCardProps {
     config: Extract<GridCardConfig, { componentType: 'ProjectCard' }>;
 }
 
+const projectImageSizes = '(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 996px) 50vw, 600px';
+
 const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
     const {
         projectUrl,
         projectImage,
-        projectImageFit = 'fill',
+        projectImageFit = 'contain',
         projectName,
         companyName,
         projectTech,
@@ -32,6 +34,17 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
                 <div className='relative h-full overflow-hidden'>
                     <div className='relative flex h-full flex-col justify-center gap-6 overflow-hidden p-4 sm:px-8 sm:py-6'>
                         <div className='relative flex size-full flex-col items-stretch justify-between'>
+                            {projectImageFit === 'contain' && (
+                                <Image
+                                    aria-hidden='true'
+                                    className='transparent absolute inset-0 size-full scale-110 rounded-lg object-cover opacity-35 blur-xl'
+                                    src={projectImage}
+                                    alt=''
+                                    loading='lazy'
+                                    fill
+                                    sizes={projectImageSizes}
+                                />
+                            )}
                             <Image
                                 className={`transparent absolute inset-0 z-50 size-full rounded-lg shadow-2xl ${imageFitClass}`}
                                 src={projectImage}
@@ -39,7 +52,7 @@ const ProjectCard: React.FC<ProjectCardProps> = memo(({ config }) => {
                                 loading='lazy'
                                 placeholder='blur'
                                 fill
-                                sizes='(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 996px) 50vw, 600px'
+                                sizes={projectImageSizes}
                             />
                         </div>
 

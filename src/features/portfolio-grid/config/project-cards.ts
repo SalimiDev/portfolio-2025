@@ -1,21 +1,23 @@
 import { admin_dash, business_inteligence, hillter_hotel, tesla_clone } from '@/assets/images';
-import armaghanTalaie from '@/assets/images/projects/armaghan_talaie.webp';
+import nobino from '@/assets/images/projects/nobino.webp';
+import smartcomm from '@/assets/images/projects/smartcomm.webp';
 import IconGithub from '@/components/icons/src/github';
+import NobinoIcon from '@/components/icons/src/nobino';
 import SmartCommIcon from '@/components/icons/src/smartcomm';
 
 import type { GridCardConfig } from '../model/grid-card.types';
 
 export const projectCards = [
     {
-        id: 16,
+        id: 17,
         componentType: 'ProjectCard',
         companyName: 'Armaghan Talaie',
-        companyLogo: SmartCommIcon,
-        projectImage: armaghanTalaie,
+        companyLogo: NobinoIcon,
+        projectImage: nobino,
         projectImageFit: 'fill',
-        projectName: 'SmartComm',
-        projectUrl: 'https://smartcomm.ir',
-        projectTech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MUI', 'Zod', 'Zustand'],
+        projectName: 'Nobino',
+        projectUrl: 'https://nobino.ir',
+        projectTech: ['Next.js', 'TypeScript', 'Redux', 'MUI'],
         layouts: {
             xs: {
                 All: { x: 0, y: 51, w: 2, h: 12 },
@@ -40,14 +42,15 @@ export const projectCards = [
         }
     },
     {
-        id: 12,
+        id: 16,
         componentType: 'ProjectCard',
-        companyName: 'Freelance',
-        companyLogo: IconGithub,
-        projectImage: hillter_hotel,
-        projectName: 'Hillter Hotel',
-        projectUrl: 'https://salimidev.github.io/Hotel-ReactJsApp',
-        projectTech: ['Next.js', 'TypeScript', 'Tailwind-CSS'],
+        companyName: 'Armaghan Talaie',
+        companyLogo: SmartCommIcon,
+        projectImage: smartcomm,
+        projectImageFit: 'cover',
+        projectName: 'SmartComm',
+        projectUrl: 'https://smartcomm.ir',
+        projectTech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MUI', 'Zod', 'Zustand'],
         layouts: {
             xs: {
                 All: { x: 0, y: 63, w: 2, h: 12 },
@@ -72,14 +75,15 @@ export const projectCards = [
         }
     },
     {
-        id: 13,
+        id: 12,
         componentType: 'ProjectCard',
         companyName: 'Freelance',
         companyLogo: IconGithub,
-        projectImage: tesla_clone,
-        projectName: 'Tesla Clone',
-        projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
-        projectTech: ['React.js', 'Redux', 'styled-components'],
+        projectImage: hillter_hotel,
+        projectImageFit: 'fill',
+        projectName: 'Hillter Hotel',
+        projectUrl: 'https://salimidev.github.io/Hotel-ReactJsApp',
+        projectTech: ['Next.js', 'TypeScript', 'Tailwind-CSS'],
         layouts: {
             xs: {
                 All: { x: 0, y: 75, w: 2, h: 12 },
@@ -104,14 +108,15 @@ export const projectCards = [
         }
     },
     {
-        id: 14,
+        id: 13,
         componentType: 'ProjectCard',
         companyName: 'Freelance',
         companyLogo: IconGithub,
-        projectImage: admin_dash,
-        projectName: 'Admin Dashboard',
-        projectUrl: 'https://salimidev.github.io/react-admin-dashboard/',
-        projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
+        projectImage: tesla_clone,
+        projectImageFit: 'cover',
+        projectName: 'Tesla Clone',
+        projectUrl: 'https://salimidev.github.io/TESLA-CLONE',
+        projectTech: ['React.js', 'Redux', 'styled-components'],
         layouts: {
             xs: {
                 All: { x: 0, y: 87, w: 2, h: 12 },
@@ -136,14 +141,15 @@ export const projectCards = [
         }
     },
     {
-        id: 15,
+        id: 14,
         componentType: 'ProjectCard',
-        companyName: 'PAYA',
+        companyName: 'Freelance',
         companyLogo: IconGithub,
-        projectImage: business_inteligence,
-        projectName: 'Business intelligence (BI)',
-        projectUrl: '',
-        projectTech: ['React.js', 'PrimeReact', 'Highcharts', 'Tailwind-CSS'],
+        projectImage: admin_dash,
+        projectImageFit: 'cover',
+        projectName: 'Admin Dashboard',
+        projectUrl: 'https://salimidev.github.io/react-admin-dashboard/',
+        projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
         layouts: {
             xs: {
                 All: { x: 0, y: 99, w: 2, h: 12 },
@@ -164,6 +170,39 @@ export const projectCards = [
                 All: { x: 0, y: 51, w: 6, h: 15 },
                 About: { x: 0, y: 47, w: 6, h: 15 },
                 Work: { x: 6, y: 36, w: 6, h: 15 }
+            }
+        }
+    },
+    {
+        id: 15,
+        componentType: 'ProjectCard',
+        companyName: 'PAYA',
+        companyLogo: IconGithub,
+        projectImage: business_inteligence,
+        projectImageFit: 'fill',
+        projectName: 'Business intelligence (BI)',
+        projectUrl: '',
+        projectTech: ['React.js', 'PrimeReact', 'Highcharts', 'Tailwind-CSS'],
+        layouts: {
+            xs: {
+                All: { x: 0, y: 111, w: 2, h: 12 },
+                About: { x: 0, y: 109, w: 2, h: 12 },
+                Work: { x: 0, y: 79, w: 2, h: 12 }
+            },
+            sm: {
+                All: { x: 0, y: 107, w: 6, h: 12 },
+                About: { x: 0, y: 108, w: 6, h: 12 },
+                Work: { x: 0, y: 79, w: 6, h: 12 }
+            },
+            md: {
+                All: { x: 5, y: 50, w: 5, h: 12 },
+                About: { x: 5, y: 54, w: 5, h: 13 },
+                Work: { x: 0, y: 40, w: 5, h: 13 }
+            },
+            lg: {
+                All: { x: 6, y: 51, w: 6, h: 15 },
+                About: { x: 6, y: 59, w: 6, h: 15 },
+                Work: { x: 0, y: 44, w: 6, h: 15 }
             }
         }
     }

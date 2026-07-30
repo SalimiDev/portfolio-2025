@@ -31,7 +31,7 @@ describe('portfolio grid configuration', () => {
     it('keeps project cards ordered without layout overlaps', () => {
         const overlaps: string[] = [];
 
-        expect(projectCards[0].projectName).toBe('SmartComm');
+        expect(projectCards[0].projectName).toBe('Nobino');
 
         for (const breakpoint of breakpoints) {
             for (const title of navigationTitles) {

@@ -10,6 +10,7 @@ Mehdi Salimi works with JavaScript, React, Next.js, TypeScript, Tailwind CSS, an
 
 ## Selected Projects
 
+- [Nobino](https://nobino.ir): Project at Armaghan Talaie using Next.js, TypeScript, Redux, and MUI.
 - [SmartComm](https://smartcomm.ir): Project at Armaghan Talaie using Next.js, TypeScript, Tailwind CSS, MUI, Zod, and Zustand.
 - [Hillter Hotel](https://salimidev.github.io/Hotel-ReactJsApp): Freelance project using Next.js, TypeScript, and Tailwind CSS.
 - [Tesla Clone](https://salimidev.github.io/TESLA-CLONE): Freelance project using React, Redux, and styled-components.
