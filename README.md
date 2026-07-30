@@ -50,3 +50,10 @@ The application exposes three statically generated routes:
 ## Deployment
 
 Pushes to `main` run linting, type checking, tests, refresh the canonical sitemap from the latest content commit, build the production export, and deploy it to GitHub Pages.
+
+The custom domain is proxied through ArvanCloud. Keep these CDN response-cache policies in place:
+
+- `/_next/static/*`: `Cache-Control: public, max-age=31536000, immutable`
+- `/sw.js` and HTML routes: do not apply the immutable rule; keep them revalidated
+
+Next.js emits content-hashed filenames under `/_next/static/`, so a new deployment changes the URL of every modified asset while unchanged assets remain safely cacheable.

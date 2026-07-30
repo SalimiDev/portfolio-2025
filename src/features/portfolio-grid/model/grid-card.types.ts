@@ -1,4 +1,4 @@
-import { StaticImageData } from 'next/image';
+import type { StaticImageData } from 'next/image';
 
 import type { SvgIconProp } from '@/components/icons/icon.types';
 
@@ -29,7 +29,7 @@ interface ResumeCard extends BaseGridCardConfig {
 }
 interface AboutMeCard extends BaseGridCardConfig {
     componentType: 'AboutMeCard';
-    avatar: string;
+    avatar: StaticImageData;
     fullName: string;
     description: string;
 }

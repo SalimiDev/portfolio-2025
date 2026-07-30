@@ -1,4 +1,4 @@
-import { location_dark } from '@/assets/images';
+import { location_dark, user_avatar } from '@/assets/images';
 import {
     cssLogo,
     figmaLogo,
@@ -25,7 +25,7 @@ export const profileCards = [
     {
         id: 1,
         componentType: 'AboutMeCard',
-        avatar: '/images/user_avatar.webp',
+        avatar: user_avatar,
         fullName: 'Mehdi Salimi',
         description: `I’m a software engineer with ${YEARS_OF_EXPERIENCE} years of experience, specializing in building responsive
                     dashboards and interactive websites. I work with modern tools like JavaScript, Next.js, React, and

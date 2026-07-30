@@ -1,6 +1,7 @@
 import { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 
+import { user_avatar } from '@/assets/images';
 import RoutedPortfolioGrid from '@/features/portfolio-grid/components/routed-portfolio-grid';
 
 import { Header } from './_components/header';
@@ -49,6 +50,8 @@ const siteUrl = 'https://mehdisalimi.com';
 const siteTitle = 'Mehdi Salimi | Software Engineer — Next.js Projects';
 const siteDescription =
     'Mehdi Salimi is a software engineer building high-performance, accessible React and Next.js projects, dashboards, and web applications with TypeScript.';
+const avatarUrl = user_avatar.src;
+const absoluteAvatarUrl = new URL(avatarUrl, siteUrl).toString();
 
 export const metadata: Metadata = {
     metadataBase: new URL(siteUrl),
@@ -75,7 +78,7 @@ export const metadata: Metadata = {
         locale: 'en_US',
         images: [
             {
-                url: '/images/user_avatar.webp',
+                url: avatarUrl,
                 width: 914,
                 height: 864,
                 alt: 'Portrait of Mehdi Salimi',
@@ -89,7 +92,7 @@ export const metadata: Metadata = {
         title: siteTitle,
         description: siteDescription,
         creator: '@salimidevop',
-        images: ['/images/user_avatar.webp']
+        images: [avatarUrl]
     },
     robots: {
         index: true,
@@ -146,7 +149,7 @@ const structuredData = {
             url: siteUrl,
             image: {
                 '@type': 'ImageObject',
-                url: `${siteUrl}/images/user_avatar.webp`,
+                url: absoluteAvatarUrl,
                 width: 914,
                 height: 864
             },

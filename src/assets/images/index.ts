@@ -5,5 +5,15 @@ import admin_dash from './projects/admin_dash.webp';
 import business_inteligence from './projects/business_inteligence.webp';
 import hillter_hotel from './projects/hillter_hotel.webp';
 import tesla_clone from './projects/tesla_clone.webp';
+import user_avatar from './user_avatar.webp';
 
-export { location_dark, hillter_hotel, tesla_clone, admin_dash, Station_money, Station_Setup, business_inteligence };
+export {
+    location_dark,
+    hillter_hotel,
+    tesla_clone,
+    admin_dash,
+    Station_money,
+    Station_Setup,
+    business_inteligence,
+    user_avatar
+};
