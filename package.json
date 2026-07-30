@@ -24,7 +24,9 @@
         "generate:icons": "gulp --cwd icons && prettier --write \"src/components/icons/**/*.{ts,tsx}\"",
         "optimize:project-images": "node scripts/resize-project-images.mjs",
         "update-sitemap": "node scripts/update-sitemap.mjs",
-        "seo:update": "pnpm run update-sitemap"
+        "seo:update": "pnpm run update-sitemap",
+        "analyze": "next experimental-analyze",
+        "analyze:output": "next experimental-analyze --output"
     },
     "dependencies": {
         "next": "^16.2.12",
