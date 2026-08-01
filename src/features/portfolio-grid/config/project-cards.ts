@@ -1,11 +1,11 @@
-import { admin_dash, business_inteligence, hillter_hotel, tesla_clone } from '@/assets/images';
-import adminDashMobile from '@/assets/images/projects/admin_dash.mobile.webp';
+import { business_inteligence, hillter_hotel, paydar_crane, tesla_clone } from '@/assets/images';
 import businessInteligenceMobile from '@/assets/images/projects/business_inteligence.mobile.webp';
 import hillterHotelMobile from '@/assets/images/projects/hillter_hotel.mobile.webp';
-import nobino from '@/assets/images/projects/nobino.webp';
 import nobinoMobile from '@/assets/images/projects/nobino.mobile.webp';
-import smartcomm from '@/assets/images/projects/smartcomm.webp';
+import nobino from '@/assets/images/projects/nobino.webp';
+import paydarCraneMobile from '@/assets/images/projects/paydar_crane.mobile.webp';
 import smartcommMobile from '@/assets/images/projects/smartcomm.mobile.webp';
+import smartcomm from '@/assets/images/projects/smartcomm.webp';
 import teslaCloneMobile from '@/assets/images/projects/tesla_clone.mobile.webp';
 import IconGithub from '@/components/icons/src/github';
 import NobinoIcon from '@/components/icons/src/nobino';
@@ -155,12 +155,12 @@ export const projectCards = [
         componentType: 'ProjectCard',
         companyName: 'Freelance',
         companyLogo: IconGithub,
-        projectImage: admin_dash,
-        projectImageMobile: adminDashMobile,
+        projectImage: paydar_crane,
+        projectImageMobile: paydarCraneMobile,
         projectImageFit: 'cover',
-        projectName: 'Admin Dashboard',
-        projectUrl: 'https://salimidev.github.io/react-admin-dashboard/',
-        projectTech: ['React.js', 'Nivo charts', 'Tailwind-CSS', 'Formik'],
+        projectName: 'PaydarCrane',
+        projectUrl: 'https://paydarcrane.ir',
+        projectTech: ['React.js', 'Tailwind-CSS', 'Formik'],
         layouts: {
             xs: {
                 All: { x: 0, y: 99, w: 2, h: 12 },
