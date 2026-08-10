@@ -166,6 +166,13 @@ const structuredData = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang='en' dir='ltr' className={poppins.variable} suppressHydrationWarning>
+            <head>
+                <script
+                    src='https://analytics.ahrefs.com/analytics.js'
+                    data-key='6hyjAUA3690VOhtN0hl7dQ'
+                    async
+                />
+            </head>
             <body className='grid bg-base-25 p-1 text-base-200 antialiased lg:container dark:bg-base-100 dark:text-base-content'>
                 <Providers>
                     <Header />
